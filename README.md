@@ -1,6 +1,7 @@
 ---
 showHero: true
-title: ReFi BCN — Seeding pathways toward just and resilient economies
+layout: plain
+title: Seeding pathways toward just and resilient economies
 description: We connect Catalonia’s regenerative movements with global innovations in finance, technology, and governance to accelerate the transition toward a life-centered economy.
 image: /assets/hero_home.png
 cta:
