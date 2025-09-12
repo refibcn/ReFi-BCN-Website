@@ -177,25 +177,25 @@ showComments: false
 
 ---
 
-<section className="relative z-10 border-t border-gray-200">
-  {/* full-width background band so no corner cutouts */}
-  <div className="full-bleed">
-    <div className="mx-auto max-w-7xl px-6 lg:px-12 pt-16 pb-0">
-      <div className="flex flex-col items-center gap-4">
-        <img src="/assets/ReFiBCN.png" alt="ReFi BCN logo" className="h-32 w-32" />
-        <nav aria-label="Site links">
-          <ul className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm md:text-base leading-6 text-gray-700">
-            <li><a href="/regenerant-cat" className="hover:text-gray-500">Regenerant Catalunya</a></li>
-            <li className="text-gray-300 select-none">•</li>
-            <li><a href="https://refibcn.cat/Home_CAT" className="hover:text-gray-500">Ecosystem Map</a></li>
-            <li className="text-gray-300 select-none">•</li>
-            <li><a href="/blog" className="hover:text-gray-500">Blog</a></li>
-            <li className="text-gray-300 select-none">•</li>
-            <li><a href="mailto:hola@ReFiBCN.cat" className="hover:text-gray-500">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
+<section className="theme-footer relative z-10 border-t border-gray-200">
+  <div className="mx-auto max-w-7xl px-6 lg:px-12 pt-16 pb-0">
+    <div className="flex flex-col items-center gap-4">
+      <img src="/assets/ReFiBCN.png" alt="ReFi BCN logo" className="h-32 w-32" />
+      <nav aria-label="Site links">
+        <ul className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm md:text-base leading-6 text-gray-700">
+          <li><a href="/regenerant-cat" className="hover:text-gray-500">Regenerant Catalunya</a></li>
+          <li className="text-gray-300 select-none">•</li>
+          <li><a href="https://refibcn.cat/Home_CAT" className="hover:text-gray-500">Ecosystem Map</a></li>
+          <li className="text-gray-300 select-none">•</li>
+          <li><a href="/blog" className="hover:text-gray-500">Blog</a></li>
+          <li className="text-gray-300 select-none">•</li>
+          <li><a href="mailto:hola@ReFiBCN.cat" className="hover:text-gray-500">Contact</a></li>
+        </ul>
+      </nav>
     </div>
+  </div>
+</section>
+
   </div>
 </section>
 
