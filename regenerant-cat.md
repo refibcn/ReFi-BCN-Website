@@ -7,7 +7,6 @@ showEditLink: false
 showComments: false
 ---
 
-{/* HERO — match home page hero structure */}
 <div className="py-12 sm:py-24">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
@@ -34,9 +33,7 @@ showComments: false
   </div>
 </div>
 
----
 
-{/* SECTION 2 — style like 'Regenerant Catalunya 2025' on home */}
 <div className="bg-orange-50 py-12 sm:py-24 my-12">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <div className="mx-auto max-w-3xl lg:text-center">
@@ -61,9 +58,7 @@ showComments: false
   </div>
 </div>
 
----
 
-{/* SECTION 3 — style like 'What We Do' (use <dl> grid) */}
 <div className="py-12 sm:py-24">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <div className="mx-auto max-w-3xl lg:text-center">
@@ -98,9 +93,7 @@ showComments: false
   </div>
 </div>
 
----
 
-{/* SECTION 4 — two columns, logos directly under each heading */}
 <div className="py-12 sm:py-24">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <h2 className="mx-auto max-w-3xl text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-center">Who’s Involved</h2>
@@ -136,9 +129,7 @@ showComments: false
   </div>
 </div>
 
----
 
-{/* SECTION 5 — match the home 'Get Involved' styling (centered two-column list on orange) */}
 <div id="get-involved" className="bg-orange-50 py-12 sm:py-16">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <div className="mx-auto max-w-3xl text-center">
@@ -170,7 +161,6 @@ showComments: false
 
 ---
 
-{/* SECTION 6 — fake footer styled like home page */}
 <section className="border-t border-gray-200 -mb-10 sm:-mb-16">
   <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-12 sm:pt-16 pb-0">
     <div className="flex flex-col items-center gap-4">
