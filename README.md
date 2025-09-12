@@ -71,7 +71,7 @@ showComments: false
         <strong> Fluvià river</strong> to strengthening <strong>solidarity-based community infrastructures</strong> in Barcelona.
       </p>
       <div className="mt-10 flex items-center justify-center gap-x-6"> 
-          <a href="#get-involved" className="rounded-md bg-orange-400 px-3.5 py-2.5 text-sm font-semibold text-white shadow hover:bg-orange-300">
+          <a href="/regenerant-cat" className="rounded-md bg-orange-400 px-3.5 py-2.5 text-sm font-semibold text-white shadow hover:bg-orange-300">
             Learn More
           </a> 
         </div>
@@ -110,7 +110,7 @@ showComments: false
         <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Ecosystem Map</h2>
         <p className="mt-6 text-lg/8 text-gray-600">We’re mapping regenerative projects across Catalonia, as well as ReFi initiatives globally, creating an information layer to support collaboration.</p>
         <div className="mt-6">
-          <a href="#explore-ecosystem" className="font-semibold text-[var(--brand)] hover:text-[var(--brand-hov)]">→ Explore the Ecosystem</a>
+          <a href="https://refibcn.cat/Home_CAT" className="font-semibold text-[var(--brand)] hover:text-[var(--brand-hov)]">→ Explore the Ecosystem</a>
         </div>
       </div>
       <div>
@@ -154,7 +154,7 @@ showComments: false
         <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">What is ReFi?</h2>
         <p className="mt-6 text-lg/8 text-gray-600"><strong>Regenerative Finance</strong> (ReFi) is a movement rethinking how money, technology, and governance can serve holistic socioecological regeneration. ReFi BCN is a local node of <strong>ReFi DAO</strong>, a global organization nurturing the ReFi ecosystem.</p>
         <div className="mt-6">
-          <a href="#about-refi-dao" className="font-semibold text-[var(--brand)] hover:text-[var(--brand-hov)]">→ About ReFi DAO</a>
+          <a href="https://www.refidao.com/" className="font-semibold text-[var(--brand)] hover:text-[var(--brand-hov)]">→ About ReFi DAO</a>
         </div>
       </div>
       <div>
@@ -196,7 +196,7 @@ showComments: false
 
 ---
 
-<section className="relative z-10 border-t border-gray-200">
+<section className="relative z-10 border-t border-gray-200 -mb-10 sm:-mb-16">
   {/* full-width background band so no corner cutouts */}
   <div className="full-bleed">
     <div className="mx-auto max-w-7xl px-6 lg:px-12 pt-16 pb-0">
