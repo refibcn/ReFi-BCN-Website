@@ -129,17 +129,17 @@ showComments: false
 
     <div className="mt-12 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
       <div className="text-center">
-        <img src="/assets/luiz_fernando.jpg" alt="Luiz Fernando" className="mx-auto w-48 h-48 rounded-lg object-cover"/>
+        <img src="/assets/luiz_fernando.jpg" alt="Luiz Fernando" className="mx-auto w-56 h-56 rounded-lg object-cover"/>
         <p className="mt-4 font-semibold"><a href="https://www.linkedin.com/in/luizfernandosg/">Luiz Fernando</a></p>
         <p className="mt-2 text-sm text-gray-600">Tending the growth of regenerative networks at ReFi DAO and ReFi BCN, harnessing governance, grants, and operational automation to cultivate resilient ecosystems.</p>
       </div>
       <div className="text-center">
-        <img src="/assets/giulio_quarta.jpg" alt="Giulio Quarta" className="mx-auto w-48 h-48 rounded-lg object-cover"/>
+        <img src="/assets/giulio_quarta.jpg" alt="Giulio Quarta" className="mx-auto w-56 h-56 rounded-lg object-cover"/>
         <p className="mt-4 font-semibold"><a href="https://www.linkedin.com/in/giulio-quarta-b01a46122/">Giulio Quarta</a></p>
         <p className="mt-2 text-sm text-gray-600">Community-builder and pioneer of post-capitalist crypto gatherings, bringing people together to co-create experimental financial infrastructures for just economies.</p>
       </div>
       <div className="text-center">
-        <img src="/assets/andrea_farias.JPG" alt="Andrea Farias" className="mx-auto w-48 h-48 rounded-lg object-cover"/>
+        <img src="/assets/andrea_farias.JPG" alt="Andrea Farias" className="mx-auto w-56 h-56 rounded-lg object-cover"/>
         <p className="mt-4 font-semibold"><a href="https://www.linkedin.com/in/andrea-farias-bb944750/">Andrea Farias</a></p>
         <p className="mt-2 text-sm text-gray-600">Researcher, designer, and facilitator leveraging years of experience in product innovation to co-create tools and processes that strengthen communities in the face of planetary crisis.</p>
       </div>
