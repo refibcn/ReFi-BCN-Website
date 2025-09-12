@@ -1,0 +1,64 @@
+/* theme-overrides.css
+   Load this AFTER Tailwind/main styles so these rules win.
+   Sets:
+   - Main background: #FCFBF7
+   - Offset background: #F5F4EE (replaces old grey + orange section backgrounds)
+   - Brand (buttons & links): #1B4FF3 with a lighter hover
+*/
+
+/* Design tokens */
+:root{
+  --bg-main:   #FCFBF7;
+  --bg-offset: #F5F4EE;
+  --brand:     #1B4FF3;
+  --brand-hov: #3B66FF; /* slightly lighter */
+}
+
+/* Global background */
+html, body { background-color: var(--bg-main); }
+
+/* Top nav / header / footer backgrounds */
+header, nav, footer,
+.site-header, .site-nav, .site-footer,
+[data-nav], [data-footer]{
+  background-color: var(--bg-main);
+}
+
+/* Offset sections (replace previous grey/orange section bands) */
+.bg-gray-50,
+.bg-orange-50,
+.bg-orange-500{
+  background-color: var(--bg-offset) !important;
+}
+
+/* Links (all states) */
+a, a:link, a:visited{
+  color: var(--brand);
+  text-decoration-color: currentColor;
+}
+a:hover, a:focus{
+  color: var(--brand-hov);
+}
+
+/* Buttons (anchors styled as buttons + actual <button>) */
+button,
+[role="button"],
+.btn, .button,
+.bg-orange-400{                          /* old button class */
+  background-color: var(--brand) !important;
+  border-color: var(--brand) !important;
+  color: #fff;                           /* keep button text readable */
+}
+.hover\:bg-orange-300:hover{             /* old hover class */
+  background-color: var(--brand-hov) !important;
+}
+
+/* Any orange link utility classes used previously -> brand */
+.text-orange-500{ color: var(--brand) !important; }
+.hover\:text-orange-400:hover{ color: var(--brand-hov) !important; }
+
+/* Optional: focus ring color to match brand */
+:focus-visible{
+  outline: 2px solid var(--brand-hov);
+  outline-offset: 2px;
+}
