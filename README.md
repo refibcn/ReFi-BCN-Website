@@ -122,7 +122,7 @@ showComments: false
 </div>
 
 
-<div className="py-12 sm:py-24 bg-gray-50">
+<div className="py-12 sm:py-24">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-center">About Us</h2>
     <p className="mt-6 text-lg/8 text-gray-600 lg:text-center">ReFi BCN is a collective of practitioners working to create a collaborative, self-governed society.</p>
@@ -197,7 +197,7 @@ showComments: false
 
 ---
 
-<section className="relative z-10 border-t border-gray-200 -mb-10 sm:-mb-16 bg-white">
+<section className="border-t border-gray-200 theme-bg-main -mb-10 sm:-mb-16">
   <div className="mx-auto max-w-7xl px-6 lg:px-12 pt-16 pb-0">
     <div className="flex flex-col items-center gap-4">
       <img src="/assets/ReFiBCN.png" alt="ReFi BCN logo" className="h-32 w-32" />
