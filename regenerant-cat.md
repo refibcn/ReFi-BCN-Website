@@ -40,14 +40,16 @@ showComments: false
       <h2 className="text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
         Local Regenerators Meet Global Allies
       </h2>
-      <p className="mt-6 text-lg/8 text-gray-600 italic">
+      <p className="mt-6 text-lg/8 text-gray-600">
         Catalonia’s ecosystems and communities are regenerating life. From watershed restoration of the Fluvià river
         to solidarity-based infrastructures in Barcelona, people are building the future we need.
       </p>
       <p className="mt-6 text-lg/8 text-gray-600">
         <strong>Regenerant Catalunya</strong> connects these local efforts with global regenerative finance communities — raising funds,
-        testing innovations, and channeling resources directly where they’re needed most. 💶 Nearly <strong>€30,000</strong> already
-        committed. More funders are welcome.
+        testing innovations, and channeling resources directly where they’re needed most.
+      </p>
+      <p className="mt-6 text-lg/8 text-gray-600">
+        💶 Nearly <strong>€30,000</strong> already committed. More funders are welcome.
       </p>
       <div className="mt-10 flex items-center justify-center gap-x-6">
         <a href="#get-involved" className="rounded-md bg-orange-400 px-3.5 py-2.5 text-sm font-semibold text-white shadow hover:bg-orange-300">
@@ -63,7 +65,7 @@ showComments: false
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <div className="mx-auto max-w-3xl lg:text-center">
       <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">How It Works</h2>
-      <p className="mt-6 text-lg/8 text-gray-600">Three simple steps to fund, learn and allocate fairly.</p>
+      <p className="mt-6 text-lg/8 text-gray-600"> Regenerant Catalunya follows a simple process to fund a grants pool, support participants and allocate the resources fairly.</p>
     </div>
 
     <div className="mx-auto mt-16 max-w-3xl sm:mt-20 lg:mt-24 lg:max-w-5xl">
@@ -96,35 +98,36 @@ showComments: false
 
 <div className="py-12 sm:py-24">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
-    <h2 className="mx-auto max-w-3xl text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-center">Who’s Involved</h2>
+    <h2 className="mx-auto max-w-3xl text-center text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+      Who’s Involved
+    </h2>
 
-    <div className="mx-auto mt-12 max-w-5xl grid grid-cols-1 gap-12 sm:grid-cols-2">
-      {/* Local partners column */}
-      <div>
+    <div className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-12 sm:grid-cols-2">
+      {/* Local partners + Regenerative projects */}
+      <div className="sm:pr-6">
         <p className="font-semibold text-gray-900">🌍 Local Partners</p>
         <p className="mt-1 text-gray-700">Seed the pool with their own contributions.</p>
         <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-6">
-          <li><img src="/assets/local-partner-m.png" alt="Miceli Social" className="h-14 w-14 rounded-full"/></li>
-          <li><img src="/assets/local-partner-f.png" alt="La Fundició" className="h-14 w-14 rounded-full"/></li>
+          <li><img src="/assets/local-partner-m.png" alt="Miceli Social" className="h-16 w-16 md:h-20 md:w-20 rounded-full" /></li>
+          <li><img src="/assets/local-partner-f.png" alt="La Fundició" className="h-16 w-16 md:h-20 md:w-20 rounded-full" /></li>
         </ul>
+
+        <div className="mt-8">
+          <p className="font-semibold text-gray-900">🌱 Regenerative Projects</p>
+          <p className="mt-1 text-gray-600">Frontline initiatives who receive direct support.</p>
+          <p className="mt-1 italic text-gray-500">To be announced soon!</p>
+        </div>
       </div>
 
-      {/* Global sponsors column */}
-      <div>
+      <div className="sm:pl-6">
         <p className="font-semibold text-gray-900">💶 Global Sponsors</p>
         <p className="mt-1 text-gray-700">Match local funds to multiply impact.</p>
         <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-6">
-          <li><img src="/assets/global-sponsor-g.png" alt="Gitcoin" className="h-14 w-14 rounded-full"/></li>
-          <li><img src="/assets/global-sponsor-celo.png" alt="Celo" className="h-14 w-14 rounded-full"/></li>
-          <li><img src="/assets/global-sponsor-eth.png" alt="Ethereum Foundation" className="h-14 w-14 rounded-full"/></li>
+          <li><img src="/assets/global-sponsor-g.png" alt="Gitcoin" className="h-16 w-16 md:h-20 md:w-20 rounded-full" /></li>
+          <li><img src="/assets/global-sponsor-celo.png" alt="Celo" className="h-16 w-16 md:h-20 md:w-20 rounded-full" /></li>
+          <li><img src="/assets/global-sponsor-eth.png" alt="Ethereum Foundation" className="h-16 w-16 md:h-20 md:w-20 rounded-full" /></li>
         </ul>
       </div>
-    </div>
-
-    <div className="mx-auto mt-10 max-w-3xl">
-      <p className="font-semibold text-gray-900">🌱 Regenerative Projects</p>
-      <p className="mt-1 italic text-gray-600">Frontline initiatives who receive direct support.</p>
-      <p className="mt-1 italic text-gray-500">To be announced soon!</p>
     </div>
   </div>
 </div>
