@@ -33,3 +33,13 @@ button, [role="button"], .btn, .button, .bg-orange-400, .bg-brand {
 button:hover {
   background: var(--brand-hov) !important;
 }
+/* put in your overrides file */
+.full-bleed {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  background: var(--bg-footer); /* same beige as real footer */
+}
