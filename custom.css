@@ -66,3 +66,16 @@ footer::before,
   background-color: transparent !important;
 }
 
+/* Fake footer nav: force a fully transparent backdrop for everything inside */
+.theme-footer nav,
+.theme-footer nav * {
+  background-color: transparent !important;
+}
+
+/* Some themes add background via gradients/pseudo-elements on links */
+.theme-footer nav a,
+.theme-footer nav a::before,
+.theme-footer nav a::after {
+  background: none !important;
+  box-shadow: none !important;   /* in case a soft card shadow is applied */
+}
