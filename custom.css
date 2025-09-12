@@ -1,42 +1,49 @@
-/* theme-overrides.css (v2) */
+/* theme-overrides.css (v3) */
+/* Load AFTER Tailwind/theme CSS */
 
-/* Tokens */
 :root{
-  --bg-main:   #FCFBF7;   /* light beige */
-  --bg-offset: #F5F4EE;   /* section band */
-  --brand:     #1B4FF3;   /* brand blue */
-  --brand-hov: #3B66FF;   /* lighter on hover */
-  --text-dark: #111827;   /* gray-900-ish */
+  --bg-main:   #FCFBF7;   /* site background */
+  --bg-offset: #FFFFFF;   /* highlight band (was dark beige) */
+  --bg-footer: #F5F4EE;   /* dark beige for both footers */
+  --brand:     #4556D1;   /* link & button color */
+  --brand-hov: #5E6CE0;   /* slightly lighter on hover */
 }
 
-/* Global backgrounds */
+/* Global background */
 html, body { background: var(--bg-main); }
 
-/* Keep header/top nav & footer on the main bg */
-header, nav, footer,
-.site-header, .site-nav, .site-footer { background: var(--bg-main); }
+/* Header/top nav stays on main bg */
+header, nav, .site-header, .site-nav { background: var(--bg-main); }
 
-/* Utility classes to opt-in a section background explicitly */
+/* Real footer on dark beige */
+footer, .site-footer { background: var(--bg-footer); }
+
+/* Utility helpers you can add to any section */
 .theme-bg-main   { background: var(--bg-main)   !important; }
 .theme-bg-offset { background: var(--bg-offset) !important; }
+.theme-footer    { background: var(--bg-footer) !important; }
 
-/* Convert former orange/gray bands to the new OFFSET bg */
-.bg-orange-50, .bg-gray-50 { background: var(--bg-offset) !important; }
+/* Convert any old band classes to the new white highlight */
+.bg-orange-50,
+.bg-gray-50 { background: var(--bg-offset) !important; }
 
-/* Links: dark by default, blue on hover (as per screenshot notes) */
-a, a:link, a:visited { color: var(--text-dark); }
-a:hover, a:focus     { color: var(--brand); }
+/* Links: brand by default, lighter on hover */
+a, a:link, a:visited { color: var(--brand); }
+a:hover, a:focus     { color: var(--brand-hov); }
 
-/* Nav links: same behavior; also remove underline */
-nav a { text-decoration: none; color: var(--text-dark); }
-nav a:hover { color: var(--brand); }
+/* Nav links too (and remove underline) */
+nav a { text-decoration: none; color: var(--brand); }
+nav a:hover { color: var(--brand-hov); }
 
-/* Buttons (and old “orange” button utilities) */
-button, [role="button"], .btn, .button,
+/* Buttons (including old orange utilities) */
+button,
+[role="button"],
+.btn, .button,
 .bg-orange-400 { background: var(--brand) !important; color:#fff !important; border-color: var(--brand) !important; }
 .hover\:bg-orange-300:hover { background: var(--brand-hov) !important; }
 
-/* Any legacy orange text utilities should become brand on hover only */
-.text-orange-500 { color: var(--text-dark) !important; }
-.hover\:text-orange-400:hover { color: var(--brand) !important; }
+/* Any legacy orange text hover utilities -> brand */
+.text-orange-500 { color: var(--brand) !important; }
+.hover\:text-orange-400:hover { color: var(--brand-hov) !important; }
+
 
