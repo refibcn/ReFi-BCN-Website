@@ -109,7 +109,7 @@ showComments: false
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
       <div>
         <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Ecosystem Map</h2>
-        <p className="mt-6 text-lg/8 text-gray-600 italic">We’re mapping regenerative projects across Catalonia, as well as ReFi initiatives globally, creating an information layer to support collaboration.</p>
+        <p className="mt-6 text-lg/8 text-gray-600">We’re mapping regenerative projects across Catalonia, as well as ReFi initiatives globally, creating an information layer to support collaboration.</p>
         <div className="mt-6">
           <a href="#explore-ecosystem" className="text-orange-500 hover:text-orange-400 font-semibold">→ Explore the Ecosystem</a>
         </div>
@@ -167,16 +167,33 @@ showComments: false
 
 
 <div id="get-involved" className="py-12 sm:py-24 bg-orange-50">
-  <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-    <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Get Involved</h2>
-    <p className="mt-6 text-lg/8 text-gray-600">We’re building the connections that make regeneration possible, but we can’t do it alone! Here’s how you can participate:</p>
-    <ul className="mt-6 space-y-4 text-lg text-gray-700">
-      <li>• Collaborate as a local project or funder</li>
-      <li>• Join our events and workshops</li>
-      <li>• Reach out for partnerships and support</li>
-      <li>• Contribute to our knowledge base</li>
-    </ul>
-    <p className="mt-6">Get in touch at <a href="mailto:hola@ReFiBCN.cat" className="text-orange-500 font-semibold hover:text-orange-400">hola@ReFiBCN.cat</a></p>
+  <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="mx-auto max-w-3xl text-center">
+      <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Get Involved</h2>
+      <p className="mt-6 text-lg/8 text-gray-600">
+        We’re building the connections that make regeneration possible, but we can’t do it alone! Here’s how you can participate:
+      </p>
+    </div>
+
+    <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2">
+      <ul className="list-disc list-outside space-y-4 pl-6 text-lg text-gray-700">
+        <li>Collaborate as a local project or funder</li>
+        <li>Join our events and workshops</li>
+      </ul>
+      <ul className="list-disc list-outside space-y-4 pl-6 text-lg text-gray-700">
+        <li>Reach out for partnerships and support</li>
+        <li>Contribute to our knowledge base</li>
+      </ul>
+    </div>
+
+    <p className="mt-10 text-center">
+      Get in touch at
+      {' '}
+      <a href="mailto:hola@ReFiBCN.cat" className="text-orange-500 font-semibold hover:text-orange-400">
+        hola@ReFiBCN.cat
+      </a>
+    </p>
   </div>
 </div>
+
 
