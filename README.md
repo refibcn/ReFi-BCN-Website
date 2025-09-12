@@ -56,7 +56,6 @@ showComments: false
   </div>
 </div>
 
----
 
 <div className="bg-orange-50 py-12 sm:py-24 my-12">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -81,7 +80,6 @@ showComments: false
   </div>
 </div>
 
----
 
 <div className="py-12 sm:py-24">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -105,7 +103,6 @@ showComments: false
   </div>
 </div>
 
----
 
 <div className="py-12 sm:py-24">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -124,7 +121,6 @@ showComments: false
   </div>
 </div>
 
----
 
 <div className="py-12 sm:py-24 bg-gray-50">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -151,7 +147,6 @@ showComments: false
   </div>
 </div>
 
----
 
 <div className="py-12 sm:py-24">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -170,7 +165,6 @@ showComments: false
   </div>
 </div>
 
----
 
 <div id="get-involved" className="py-12 sm:py-24 bg-orange-50">
   <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
