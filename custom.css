@@ -1,49 +1,35 @@
-/* theme-overrides.css (v3) */
-/* Load AFTER Tailwind/theme CSS */
+/* theme-overrides.css (minimal: backgrounds + buttons only) */
 
+/* Tokens */
 :root{
   --bg-main:   #FCFBF7;   /* site background */
-  --bg-offset: #FFFFFF;   /* highlight band (was dark beige) */
-  --bg-footer: #F5F4EE;   /* dark beige for both footers */
-  --brand:     #4556D1;   /* link & button color */
-  --brand-hov: #5E6CE0;   /* slightly lighter on hover */
+  --bg-offset: #FFFFFF;   /* highlight band */
+  --bg-footer: #F5F4EE;   /* both footers */
+  --brand:     #5A3FEF;   /* button color */
+  --brand-hov: #846BFA;   /* button hover */
 }
 
-/* Global background */
+/* Backgrounds */
 html, body { background: var(--bg-main); }
-
-/* Header/top nav stays on main bg */
 header, nav, .site-header, .site-nav { background: var(--bg-main); }
-
-/* Real footer on dark beige */
 footer, .site-footer { background: var(--bg-footer); }
 
-/* Utility helpers you can add to any section */
+/* Helpers if you need to force a bg on a section */
 .theme-bg-main   { background: var(--bg-main)   !important; }
 .theme-bg-offset { background: var(--bg-offset) !important; }
 .theme-footer    { background: var(--bg-footer) !important; }
 
 /* Convert any old band classes to the new white highlight */
-.bg-orange-50,
-.bg-gray-50 { background: var(--bg-offset) !important; }
+.bg-orange-50, .bg-gray-50 { background: var(--bg-offset) !important; }
 
-/* Links: brand by default, lighter on hover */
-a, a:link, a:visited { color: var(--brand); }
-a:hover, a:focus     { color: var(--brand-hov); }
-
-/* Nav links too (and remove underline) */
-nav a { text-decoration: none; color: var(--brand); }
-nav a:hover { color: var(--brand-hov); }
-
-/* Buttons (including old orange utilities) */
-button,
-[role="button"],
-.btn, .button,
-.bg-orange-400 { background: var(--brand) !important; color:#fff !important; border-color: var(--brand) !important; }
-.hover\:bg-orange-300:hover { background: var(--brand-hov) !important; }
-
-/* Any legacy orange text hover utilities -> brand */
-.text-orange-500 { color: var(--brand) !important; }
-.hover\:text-orange-400:hover { color: var(--brand-hov) !important; }
-
-
+/* Buttons only (no link/menu overrides) */
+button, [role="button"], .btn, .button, .bg-orange-400, .bg-brand {
+  background: var(--brand) !important;
+  border-color: var(--brand) !important;
+  color: #fff !important;
+}
+.hover\:bg-orange-300:hover,
+.hover\:bg-brand:hover,
+button:hover {
+  background: var(--brand-hov) !important;
+}
