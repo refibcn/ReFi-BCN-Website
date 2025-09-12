@@ -196,16 +196,16 @@ showComments: false
   </div>
 </div>
 
-<footer className="border-t border-gray-200">
-  <div className="mx-auto max-w-7xl px-6 lg:px-8 py-16 sm:py-20">
-    <div className="flex flex-col items-center gap-6">
+<section className="border-t border-gray-200">
+  <div className="mx-auto max-w-7xl px-6 lg:px-8 py-10">
+    <div className="flex flex-col items-center gap-4">
       <img
         src="/assets/ReFiBCN.png"
         alt="ReFi BCN logo"
-        className="h-28 w-28 rounded-full"
+        className="h-16 w-16 rounded-full"
       />
-      <nav aria-label="Footer">
-        <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm md:text-2xl font-medium text-gray-800">
+      <nav aria-label="Site links">
+        <ul className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm md:text-base leading-6 text-gray-700">
           <li><a href="/regenerant-catalunya" className="hover:text-orange-500">Regenerant Catalunya</a></li>
           <li className="text-gray-300 select-none">•</li>
           <li><a href="/ecosystem-map" className="hover:text-orange-500">Ecosystem Map</a></li>
@@ -217,5 +217,5 @@ showComments: false
       </nav>
     </div>
   </div>
-</footer>
+</section>
 
