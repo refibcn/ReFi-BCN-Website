@@ -33,13 +33,28 @@ button, [role="button"], .btn, .button, .bg-orange-400, .bg-brand {
 button:hover {
   background: var(--brand-hov) !important;
 }
-/* put in your overrides file */
-.full-bleed {
+
+/* Real footer: make the beige band extend edge-to-edge */
+:root { --bg-footer: #F5F4EE; }  /* already set, repeat here if needed */
+
+footer, .site-footer{
   position: relative;
+  background: transparent;        /* inner container can keep its own bg */
+  border-radius: 0 !important;    /* avoid rounded corners cutting the band */
+  z-index: 0;
+}
+
+footer::before,
+.site-footer::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
   left: 50%;
   right: 50%;
-  margin-left: -50vw;
+  margin-left: -50vw;             /* full-bleed trick */
   margin-right: -50vw;
   width: 100vw;
-  background: var(--bg-footer); /* same beige as real footer */
+  background: var(--bg-footer);   /* beige */
+  z-index: -1;                    /* sits behind footer content */
 }
