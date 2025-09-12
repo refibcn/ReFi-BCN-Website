@@ -1,11 +1,36 @@
 ---
-showHero: true
-title: Seeding pathways toward just and resilient economies
-description: We connect Catalonia’s regenerative movements with global innovations in finance, technology, and governance to accelerate the transition toward a life-centered economy.
-image: /assets/hero_home.png
-cta:
-  - label: "Get involved"
-    href: "#get-involved"
+title: ReFi BCN — Seeding pathways toward just and resilient economies
+description: Connecting Catalonia’s regenerative movements with global innovations in finance, technology, and governance to accelerate the transition toward a life-centered economy.
+layout: plain
+showToc: false
+showEditLink: false
+showComments: false
+---
+
+<div className="py-12 sm:py-24">
+  <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
+      <div className="text-left">
+        <h1 className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-6xl">
+          Seeding pathways toward just and resilient economies
+        </h1>
+        <p className="mt-8 text-pretty text-lg text-gray-600 sm:text-xl/8">
+          We connect Catalonia’s regenerative movements with global innovations in finance, 
+          technology, and governance to accelerate the transition toward a life-centered economy.
+        </p>
+        <div className="mt-10">
+          <a href="#get-involved" className="rounded-md bg-orange-400 px-3.5 py-2.5 text-sm font-semibold text-white shadow hover:bg-orange-300">
+            Get Involved
+          </a>
+        </div>
+      </div>
+      <div className="sm:px-6 lg:px-0">
+        <img src="/assets/hero_home.png" alt="ReFi BCN hero illustration" className="w-full rounded-lg object-cover"/>
+      </div>
+    </div>
+  </div>
+</div>
+
 ---
 
 <div className="py-12 sm:py-24">
