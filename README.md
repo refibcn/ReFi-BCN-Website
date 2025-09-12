@@ -25,7 +25,7 @@ showComments: false
         </div>
       </div>
       <div className="sm:px-6 lg:px-0">
-        <img src="[PATH-TO-HERO-IMAGE]" alt="ReFi BCN illustration" className="w-full rounded-lg object-cover"/>
+        <img src="/assets/hero_home.png" alt="ReFi BCN hero illustration" className="w-full rounded-lg object-cover"/>
       </div>
     </div>
   </div>
@@ -86,16 +86,18 @@ showComments: false
 <div className="py-12 sm:py-24">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl lg:text-center">Past Events</h2>
-    <p className="mt-6 text-lg/8 text-gray-600 lg:text-center">The first chapter of ReFi BCN has been about creating spaces where regenerative projects, technologists, funders, and community organizers could meet and begin shaping something bigger together.</p>
+    <p className="mt-6 text-lg/8 text-gray-600 lg:text-center">
+      The first chapter of ReFi BCN has been about creating spaces where regenerative projects, technologists, funders, and community organizers could meet and begin shaping something bigger together.
+    </p>
 
     <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2">
       <div>
-        <img src="[PATH-TO-UNCONFERENCE-IMAGE]" alt="ReFi Unconference 2024" className="aspect-video w-full rounded-lg bg-gray-100 object-cover"/>
+        <img src="/assets/refi_unconference.jpg" alt="ReFi Unconference 2024" className="aspect-video w-full rounded-lg bg-gray-100 object-cover"/>
         <h3 className="mt-4 text-lg font-semibold">🌍 ReFi Unconference (2024)</h3>
         <p className="mt-2 text-gray-600">Our first large gathering brought together local eco-social movements and global ReFi builders in a unique mix of talks, co-created sessions, and community-driven experiments.</p>
       </div>
       <div>
-        <img src="[PATH-TO-BIOFI-IMAGE]" alt="BioFi Barcelona 2025" className="aspect-video w-full rounded-lg bg-gray-100 object-cover"/>
+        <img src="/assets/biofi_barcelona.jpg" alt="BioFi Barcelona 2025" className="aspect-video w-full rounded-lg bg-gray-100 object-cover"/>
         <h3 className="mt-4 text-lg font-semibold">🌱 BioFi Barcelona (2025)</h3>
         <p className="mt-2 text-gray-600">In the spring of 2025, we convened this conversation on the future of bioregional finance, blending global insights with Catalonia’s traditions of cooperation and mutual aid.</p>
       </div>
@@ -116,7 +118,7 @@ showComments: false
         </div>
       </div>
       <div>
-        <img src="[PATH-TO-ECOSYSTEM-MAP]" alt="Ecosystem map" className="w-full rounded-lg object-cover"/>
+        <img src="/assets/ecosystem_map.png" alt="Ecosystem map" className="w-full rounded-lg object-cover"/>
       </div>
     </div>
   </div>
@@ -131,17 +133,17 @@ showComments: false
 
     <div className="mt-12 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
       <div className="text-center">
-        <img src="[PATH-TO-LUIZ-IMAGE]" alt="Luiz Fernando" className="mx-auto w-48 h-48 rounded-lg object-cover"/>
+        <img src="/assets/luiz_fernando.jpg" alt="Luiz Fernando" className="mx-auto w-48 h-48 rounded-lg object-cover"/>
         <p className="mt-4 font-semibold"><a href="https://www.linkedin.com/in/luizfernandosg/">Luiz Fernando</a></p>
         <p className="mt-2 text-sm text-gray-600">Tending the growth of regenerative networks at ReFi DAO and ReFi BCN, harnessing governance, grants, and operational automation to cultivate resilient ecosystems.</p>
       </div>
       <div className="text-center">
-        <img src="[PATH-TO-GIULIO-IMAGE]" alt="Giulio Quarta" className="mx-auto w-48 h-48 rounded-lg object-cover"/>
+        <img src="/assets/giulio_quarta.jpg" alt="Giulio Quarta" className="mx-auto w-48 h-48 rounded-lg object-cover"/>
         <p className="mt-4 font-semibold"><a href="https://www.linkedin.com/in/giulio-quarta-b01a46122/">Giulio Quarta</a></p>
         <p className="mt-2 text-sm text-gray-600">Community-builder and pioneer of post-capitalist crypto gatherings, bringing people together to co-create experimental financial infrastructures for just economies.</p>
       </div>
       <div className="text-center">
-        <img src="[PATH-TO-ANDREA-IMAGE]" alt="Andrea Farias" className="mx-auto w-48 h-48 rounded-lg object-cover"/>
+        <img src="/assets/andrea_farias.JPG" alt="Andrea Farias" className="mx-auto w-48 h-48 rounded-lg object-cover"/>
         <p className="mt-4 font-semibold"><a href="https://www.linkedin.com/in/andrea-farias-bb944750/">Andrea Farias</a></p>
         <p className="mt-2 text-sm text-gray-600">Researcher, designer, and facilitator leveraging years of experience in product innovation to co-create tools and processes that strengthen communities in the face of planetary crisis.</p>
       </div>
@@ -162,7 +164,7 @@ showComments: false
         </div>
       </div>
       <div>
-        <img src="[PATH-TO-REFI-IMAGE]" alt="ReFi graphic" className="w-full rounded-lg object-cover"/>
+        <img src="/assets/refi_dao.png" alt="ReFi DAO graphic" className="w-full rounded-lg object-cover"/>
       </div>
     </div>
   </div>
@@ -183,3 +185,4 @@ showComments: false
     <p className="mt-6">Get in touch at <a href="mailto:hola@ReFiBCN.cat" className="text-orange-500 font-semibold hover:text-orange-400">hola@ReFiBCN.cat</a></p>
   </div>
 </div>
+
