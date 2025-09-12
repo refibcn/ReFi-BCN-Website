@@ -53,7 +53,7 @@ showComments: false
       </p>
       <div className="mt-10 flex items-center justify-center gap-x-6">
         <a href="#get-involved" className="rounded-md bg-orange-400 px-3.5 py-2.5 text-sm font-semibold text-white shadow hover:bg-orange-300">
-          Learn more / contribute
+          Contribute to regeneration
         </a>
       </div>
     </div>
@@ -99,7 +99,7 @@ showComments: false
 <div className="py-12 sm:py-24">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <h2 className="text-center text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-      Who’s Involved
+      Who’s Participating
     </h2>
 
     <div className="mx-auto mt-12 max-w-5xl">
@@ -168,7 +168,7 @@ showComments: false
 
     <p className="mt-10 text-center">
       Get in touch at{" "}
-      <a href="mailto:hola@ReFiBCN.cat" className="text-orange-500 font-semibold hover:text-orange-400">
+      <a href="mailto:hola@ReFiBCN.cat" className="font-semibold text-[var(--brand)] hover:text-[var(--brand-hov)]">
         hola@ReFiBCN.cat
       </a>
     </p>
