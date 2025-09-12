@@ -164,7 +164,7 @@ showComments: false
   </div>
 </div>
 
-<div id="get-involved" className="bg-orange-50 py-12 sm:py-16">
+<div id="get-involved" className="py-12 sm:py-16">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <div className="mx-auto max-w-3xl text-center">
       <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Get Involved</h2>
@@ -213,5 +213,6 @@ showComments: false
       </nav>
     </div>
   </div>
+</section>
 
 
