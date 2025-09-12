@@ -110,7 +110,7 @@ showComments: false
         <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Ecosystem Map</h2>
         <p className="mt-6 text-lg/8 text-gray-600">We’re mapping regenerative projects across Catalonia, as well as ReFi initiatives globally, creating an information layer to support collaboration.</p>
         <div className="mt-6">
-          <a href="#explore-ecosystem" className="text-orange-500 hover:text-orange-400 font-semibold">→ Explore the Ecosystem</a>
+          <a href="#explore-ecosystem" className="font-semibold text-[var(--brand)] hover:text-[var(--brand-hov)]">→ Explore the Ecosystem</a>
         </div>
       </div>
       <div>
@@ -154,7 +154,7 @@ showComments: false
         <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">What is ReFi?</h2>
         <p className="mt-6 text-lg/8 text-gray-600"><strong>Regenerative Finance</strong> (ReFi) is a movement rethinking how money, technology, and governance can serve holistic socioecological regeneration. ReFi BCN is a local node of <strong>ReFi DAO</strong>, a global organization nurturing the ReFi ecosystem.</p>
         <div className="mt-6">
-          <a href="#about-refi-dao" className="text-orange-500 hover:text-orange-400 font-semibold">→ About ReFi DAO</a>
+          <a href="#about-refi-dao" className="font-semibold text-[var(--brand)] hover:text-[var(--brand-hov)]">→ About ReFi DAO</a>
         </div>
       </div>
       <div>
@@ -187,7 +187,7 @@ showComments: false
 
     <p className="mt-10 text-center">
       Get in touch at{" "}
-      <a href="mailto:hola@ReFiBCN.cat" className="text-orange-500 font-semibold hover:text-orange-400">
+      <a href="mailto:hola@ReFiBCN.cat" className="font-semibold text-[var(--brand)] hover:text-[var(--brand-hov)]">
         hola@ReFiBCN.cat
       </a>
     </p>
