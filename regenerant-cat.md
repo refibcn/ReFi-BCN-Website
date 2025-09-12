@@ -146,7 +146,7 @@ showComments: false
 </div>
 
 
-<div id="get-involved" className="bg-orange-50 py-12 sm:py-16">
+<div id="get-involved" className="py-12 sm:py-16">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <div className="mx-auto max-w-3xl text-center">
       <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Get Involved</h2>
@@ -183,13 +183,13 @@ showComments: false
       <img src="/assets/ReFiBCN.png" alt="ReFi BCN logo" className="h-32 w-32" />
       <nav aria-label="Site links">
         <ul className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm md:text-base leading-6 text-gray-700">
-          <li><a href="/regenerant-cat" className="hover:text-orange-500">Regenerant Catalunya</a></li>
+          <li><a href="/regenerant-cat" className="hover:text-grey-500">Regenerant Catalunya</a></li>
           <li className="text-gray-300 select-none">•</li>
-          <li><a href="https://refibcn.cat/Home_CAT" className="hover:text-orange-500">Ecosystem Map</a></li>
+          <li><a href="https://refibcn.cat/Home_CAT" className="hover:text-grey-500">Ecosystem Map</a></li>
           <li className="text-gray-300 select-none">•</li>
-          <li><a href="/blog" className="hover:text-orange-500">Blog</a></li>
+          <li><a href="/blog" className="hover:text-grey-500">Blog</a></li>
           <li className="text-gray-300 select-none">•</li>
-          <li><a href="mailto:hola@ReFiBCN.cat" className="hover:text-orange-500">Contact</a></li>
+          <li><a href="mailto:hola@ReFiBCN.cat" className="hover:text-grey-500">Contact</a></li>
         </ul>
       </nav>
     </div>
