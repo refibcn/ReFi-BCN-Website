@@ -196,7 +196,3 @@ showComments: false
   </div>
 </section>
 
-  </div>
-</section>
-
-
