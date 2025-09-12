@@ -18,10 +18,10 @@ showComments: false
           We connect Catalonia’s regenerative movements with global innovations in finance, 
           technology, and governance to accelerate the transition toward a life-centered economy.
         </p>
-        <div className="mt-10">
+        <div className="mt-10 flex items-center justify-center gap-x-6"> 
           <a href="#get-involved" className="rounded-md bg-orange-400 px-3.5 py-2.5 text-sm font-semibold text-white shadow hover:bg-orange-300">
             Get Involved
-          </a>
+          </a> 
         </div>
       </div>
       <div className="sm:px-6 lg:px-0">
@@ -30,8 +30,6 @@ showComments: false
     </div>
   </div>
 </div>
-
----
 
 <div className="py-12 sm:py-24">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -72,11 +70,11 @@ showComments: false
         <strong> €30,000</strong> will be allocated directly to regenerative projects — from restoring the 
         <strong> Fluvià river</strong> to strengthening <strong>solidarity-based community infrastructures</strong> in Barcelona.
       </p>
-      <div className="mt-10">
-        <a href="#learn-more" className="rounded-md bg-orange-400 px-3.5 py-2.5 text-sm font-semibold text-white shadow hover:bg-orange-300">
-          Learn More
-        </a>
-      </div>
+      <div className="mt-10 flex items-center justify-center gap-x-6"> 
+          <a href="#get-involved" className="rounded-md bg-orange-400 px-3.5 py-2.5 text-sm font-semibold text-white shadow hover:bg-orange-300">
+            Learn More
+          </a> 
+        </div>
     </div>
   </div>
 </div>
