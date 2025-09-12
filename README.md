@@ -165,8 +165,7 @@ showComments: false
   </div>
 </div>
 
-
-<div id="get-involved" className="py-12 sm:py-24 bg-orange-50">
+<div id="get-involved" className="bg-orange-50 py-12 sm:py-16">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <div className="mx-auto max-w-3xl text-center">
       <h2 className="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Get Involved</h2>
@@ -175,20 +174,20 @@ showComments: false
       </p>
     </div>
 
-    <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2">
-      <ul className="list-disc list-outside space-y-4 pl-6 text-lg text-gray-700">
+    {/* Center the two lists by constraining the grid width */}
+    <div className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-y-6 gap-x-12 sm:grid-cols-2">
+      <ul className="list-disc list-outside pl-6 text-left space-y-4 text-lg text-gray-700">
         <li>Collaborate as a local project or funder</li>
         <li>Join our events and workshops</li>
       </ul>
-      <ul className="list-disc list-outside space-y-4 pl-6 text-lg text-gray-700">
+      <ul className="list-disc list-outside pl-6 text-left space-y-4 text-lg text-gray-700">
         <li>Reach out for partnerships and support</li>
         <li>Contribute to our knowledge base</li>
       </ul>
     </div>
 
     <p className="mt-10 text-center">
-      Get in touch at
-      {' '}
+      Get in touch at{" "}
       <a href="mailto:hola@ReFiBCN.cat" className="text-orange-500 font-semibold hover:text-orange-400">
         hola@ReFiBCN.cat
       </a>
@@ -196,14 +195,10 @@ showComments: false
   </div>
 </div>
 
-<section className="border-t border-gray-200">
-  <div className="mx-auto max-w-7xl px-6 lg:px-8 py-10">
+<section className="border-t border-gray-200 -mb-8 sm:-mb-12">
+  <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-6 pb-0">
     <div className="flex flex-col items-center gap-4">
-      <img
-        src="/assets/ReFiBCN.png"
-        alt="ReFi BCN logo"
-        className="h-16 w-16 rounded-full"
-      />
+      <img src="/assets/ReFiBCN.png" alt="ReFi BCN logo" className="h-24 w-24" />
       <nav aria-label="Site links">
         <ul className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm md:text-base leading-6 text-gray-700">
           <li><a href="/regenerant-catalunya" className="hover:text-orange-500">Regenerant Catalunya</a></li>
