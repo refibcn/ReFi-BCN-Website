@@ -1,6 +1,6 @@
 {
   "nav": {
-    "logo": "favicon.png",
+    "logo": "assets/favicon.png",
     "title": "ReFi Barcelona",
     "links": [
       { "href": "/regenerant-cat", "name": "Regenerant Catalunya" },
