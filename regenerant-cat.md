@@ -177,7 +177,7 @@ showComments: false
 
 ---
 
-<section className="relative z-10 border-t border-gray-200 theme-bg-main -mb-10 sm:-mb-16">
+<section className="theme-footer relative z-10 border-t border-gray-200 theme-bg-main -mb-10 sm:-mb-16">
   <div className="mx-auto max-w-7xl px-6 lg:px-12 pt-16 pb-0">
     <div className="flex flex-col items-center gap-4">
       <img src="/assets/ReFiBCN.png" alt="ReFi BCN logo" className="h-32 w-32" />
