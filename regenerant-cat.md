@@ -141,12 +141,12 @@ showComments: false
 
     <div className="mx-auto mt-10 grid max-w-3xl grid-cols-1 gap-y-6 gap-x-12 sm:grid-cols-2">
       <ul className="list-disc list-outside pl-6 text-left space-y-4 text-lg text-gray-700">
-        <li>Join as a <strong>funder or sponsor</strong></li>
+        <li>Grow the pool as a <strong>funder or sponsor</strong></li>
         <li>Partner as a <strong>local project</strong></li>
       </ul>
       <ul className="list-disc list-outside pl-6 text-left space-y-4 text-lg text-gray-700">
         <li>Connect as a <strong>community ally</strong></li>
-        <li>Follow and contribute to our knowledge base</li>
+        <li>Reach out and ask us a question!</li>
       </ul>
     </div>
 
