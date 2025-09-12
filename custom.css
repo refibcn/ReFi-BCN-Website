@@ -58,3 +58,11 @@ footer::before,
   background: var(--bg-footer);   /* beige */
   z-index: -1;                    /* sits behind footer content */
 }
+
+/* Fake footer nav: ensure links have no background chips */
+.theme-footer nav a,
+.theme-footer nav li,
+.theme-footer nav ul {
+  background-color: transparent !important;
+}
+
