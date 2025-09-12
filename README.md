@@ -7,6 +7,40 @@ showEditLink: false
 showComments: false
 ---
 
+<section className="relative isolate overflow-hidden bg-orange-50">
+  <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="grid grid-cols-1 items-center gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:py-28">
+      <div className="max-w-2xl">
+        <h1 className="text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-6xl">
+          Seeding pathways toward just and resilient economies
+        </h1>
+        <p className="mt-6 text-pretty text-lg text-gray-600 sm:text-xl/8">
+          We connect Catalonia’s regenerative movements with global innovations in finance, technology,
+          and governance to accelerate the transition toward a life-centered economy.
+        </p>
+        <div className="mt-10 flex items-center gap-x-6">
+          <a
+            href="#get-involved"
+            className="inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-md bg-orange-400 px-3.5 py-2.5 text-sm font-semibold text-white shadow hover:bg-orange-300"
+          >
+            Get involved
+          </a>
+        </div>
+      </div>
+      <div className="relative">
+        <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:p-4">
+          <img
+            src="/assets/hero_home.png"
+            alt="ReFi BCN hero illustration"
+            className="w-full rounded-md object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 <div className="py-12 sm:py-24">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
