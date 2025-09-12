@@ -136,7 +136,7 @@ showComments: false
 
       <div className="mt-12 sm:mt-16">
         <p className="font-semibold text-gray-900">🌱 Regenerative Projects</p>
-        <p className="mt-1 italic text-gray-600">Frontline initiatives who receive direct support.</p>
+        <p className="mt-1 text-gray-600">Frontline initiatives who receive direct support.</p>
         <p className="mt-1 italic text-gray-500">To be announced soon!</p>
         {/* Add project logos here later (this row spans full width) */}
         <div className="mt-6 flex flex-wrap items-center gap-6"></div>
