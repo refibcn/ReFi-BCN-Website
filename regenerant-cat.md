@@ -7,7 +7,6 @@ showEditLink: false
 showComments: false
 ---
 
-{/* Hero */}
 <section className="py-12 sm:py-16">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2">
@@ -27,7 +26,6 @@ showComments: false
   </div>
 </section>
 
-{/* Local Regenerators Meet Global Allies */}
 <section className="border-t border-gray-200 py-10 sm:py-14">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <div className="mx-auto max-w-3xl">
@@ -48,7 +46,6 @@ showComments: false
   </div>
 </section>
 
-{/* How It Works */}
 <section className="border-t border-gray-200 py-10 sm:py-14">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <h2 className="mx-auto max-w-3xl text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900">How It Works</h2>
@@ -79,7 +76,6 @@ showComments: false
   </div>
 </section>
 
-{/* Who's Involved */}
 <section className="border-t border-gray-200 py-10 sm:py-14">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <h2 className="mx-auto max-w-3xl text-2xl sm:text-3xl font-semibold tracking-tight text-gray-900">Who’s Involved</h2>
@@ -116,7 +112,6 @@ showComments: false
   </div>
 </section>
 
-{/* Get Involved */}
 <section id="get-involved" className="border-t border-gray-200 py-10 sm:py-14">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <div className="mx-auto max-w-3xl">
@@ -135,7 +130,6 @@ showComments: false
   </div>
 </section>
 
-{/* Fake footer nav */}
 <section className="border-t border-gray-200 mt-6 -mb-10 sm:-mb-14">
   <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-8 pb-0">
     <div className="flex flex-col items-center gap-4">
