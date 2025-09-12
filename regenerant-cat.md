@@ -98,35 +98,48 @@ showComments: false
 
 <div className="py-12 sm:py-24">
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
-    <h2 className="mx-auto max-w-3xl text-center text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+    <h2 className="text-center text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
       Who’s Involved
     </h2>
 
-    <div className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-12 sm:grid-cols-2">
-      {/* Local partners + Regenerative projects */}
-      <div className="sm:pr-6">
-        <p className="font-semibold text-gray-900">🌍 Local Partners</p>
-        <p className="mt-1 text-gray-700">Seed the pool with their own contributions.</p>
-        <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-6">
-          <li><img src="/assets/local-partner-m.png" alt="Miceli Social" className="h-16 w-16 md:h-20 md:w-20 rounded-full" /></li>
-          <li><img src="/assets/local-partner-f.png" alt="La Fundició" className="h-16 w-16 md:h-20 md:w-20 rounded-full" /></li>
-        </ul>
+    <div className="mx-auto mt-12 max-w-5xl">
+      <div className="grid grid-cols-1 gap-12 sm:grid-cols-2">
+        <div>
+          <p className="font-semibold text-gray-900">🌍 Local Partners</p>
+          <p className="mt-1 text-gray-700">Seed the pool with their own contributions.</p>
+          <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-6">
+            <li>
+              <img src="/assets/local-partner-m.png" alt="Miceli Social" className="h-16 w-16 md:h-20 md:w-20 rounded-full" />
+            </li>
+            <li>
+              <img src="/assets/local-partner-f.png" alt="La Fundició" className="h-16 w-16 md:h-20 md:w-20 rounded-full" />
+            </li>
+          </ul>
+        </div>
 
-        <div className="mt-8">
-          <p className="font-semibold text-gray-900">🌱 Regenerative Projects</p>
-          <p className="mt-1 text-gray-600">Frontline initiatives who receive direct support.</p>
-          <p className="mt-1 italic text-gray-500">To be announced soon!</p>
+        <div>
+          <p className="font-semibold text-gray-900">💶 Global Sponsors</p>
+          <p className="mt-1 text-gray-700">Match local funds to multiply impact.</p>
+          <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-6">
+            <li>
+              <img src="/assets/global-sponsor-g.png" alt="Gitcoin" className="h-16 w-16 md:h-20 md:w-20 rounded-full" />
+            </li>
+            <li>
+              <img src="/assets/global-sponsor-celo.png" alt="Celo" className="h-16 w-16 md:h-20 md:w-20 rounded-full" />
+            </li>
+            <li>
+              <img src="/assets/global-sponsor-eth.png" alt="Ethereum Foundation" className="h-16 w-16 md:h-20 md:w-20 rounded-full" />
+            </li>
+          </ul>
         </div>
       </div>
 
-      <div className="sm:pl-6">
-        <p className="font-semibold text-gray-900">💶 Global Sponsors</p>
-        <p className="mt-1 text-gray-700">Match local funds to multiply impact.</p>
-        <ul className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-6">
-          <li><img src="/assets/global-sponsor-g.png" alt="Gitcoin" className="h-16 w-16 md:h-20 md:w-20 rounded-full" /></li>
-          <li><img src="/assets/global-sponsor-celo.png" alt="Celo" className="h-16 w-16 md:h-20 md:w-20 rounded-full" /></li>
-          <li><img src="/assets/global-sponsor-eth.png" alt="Ethereum Foundation" className="h-16 w-16 md:h-20 md:w-20 rounded-full" /></li>
-        </ul>
+      <div className="mt-12 sm:mt-16">
+        <p className="font-semibold text-gray-900">🌱 Regenerative Projects</p>
+        <p className="mt-1 italic text-gray-600">Frontline initiatives who receive direct support.</p>
+        <p className="mt-1 italic text-gray-500">To be announced soon!</p>
+        {/* Add project logos here later (this row spans full width) */}
+        <div className="mt-6 flex flex-wrap items-center gap-6"></div>
       </div>
     </div>
   </div>
@@ -164,7 +177,7 @@ showComments: false
 
 ---
 
-<section className="border-t border-gray-200 -mb-10 sm:-mb-16">
+<section className="relative z-10 border-t border-gray-200 -mb-10 sm:-mb-16 bg-white">
   <div className="mx-auto max-w-7xl px-6 lg:px-12 pt-16 pb-0">
     <div className="flex flex-col items-center gap-4">
       <img src="/assets/ReFiBCN.png" alt="ReFi BCN logo" className="h-32 w-32" />
@@ -182,3 +195,4 @@ showComments: false
     </div>
   </div>
 </section>
+
