@@ -9,6 +9,13 @@
   --brand-hov: #846BFA;   /* button hover */
 }
 
+/* Typography - Section Titles */
+h1, h2, h3, h4, h5, h6,
+.text-4xl, .text-5xl, .text-6xl, .text-3xl {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  letter-spacing: -0.015em;
+}
+
 /* Backgrounds */
 html, body { background: var(--bg-main); }
 header, nav, .site-header, .site-nav { background: var(--bg-main); }
