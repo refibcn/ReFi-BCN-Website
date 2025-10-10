@@ -3,8 +3,8 @@
 /* Tokens */
 :root{
   --bg-main:   #E6DFD7;   /* site background */
-  --bg-offset: #FFFFFF;   /* highlight band */
-  --bg-footer: #F5F4EE;   /* both footers */
+  --bg-offset: #E6DFD7;   /* highlight band */
+  --bg-footer: #E6DFD7;   /* both footers */
   --brand:     #5A3FEF;   /* button color */
   --brand-hov: #846BFA;   /* button hover */
 }
@@ -35,7 +35,7 @@ button:hover {
 }
 
 /* Real footer: make the beige band extend edge-to-edge */
-:root { --bg-footer: #F5F4EE; }  /* already set, repeat here if needed */
+:root { --bg-footer: #E6DFD7; }  /* already set, repeat here if needed */
 
 footer, .site-footer{
   position: relative;
