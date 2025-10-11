@@ -98,7 +98,7 @@ Together with local partners like **Miceli Social** and **La Fundició**, and gl
     <div>
       <h2>Ecosystem Map</h2>
       <p>We're mapping regenerative projects across Catalonia, as well as ReFi initiatives globally, creating an information layer to support collaboration.</p>
-      <p><a href="https://refibcn.cat/Home_CAT">→ Explore the Ecosystem</a></p>
+      <p><a href="https://mapa.refibcn.cat">→ Explore the Ecosystem</a></p>
     </div>
     <div class="hero-image">
       <img src="/static/gitcoin-explorer.png" alt="Ecosystem map"/>

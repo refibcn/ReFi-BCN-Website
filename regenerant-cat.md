@@ -185,7 +185,7 @@ showComments: false
         <ul className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm md:text-base leading-6 text-gray-700">
           <li><a href="/regenerant-cat" className="hover:text-gray-500">Regenerant Catalunya</a></li>
           <li className="text-gray-300 select-none">•</li>
-          <li><a href="https://refibcn.cat/Home_CAT" className="hover:text-gray-500">Ecosystem Map</a></li>
+          <li><a href="https://mapa.refibcn.cat" className="hover:text-gray-500">Ecosystem Map</a></li>
           <li className="text-gray-300 select-none">•</li>
           <li><a href="/blog" className="hover:text-gray-500">Blog</a></li>
           <li className="text-gray-300 select-none">•</li>
