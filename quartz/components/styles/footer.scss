@@ -9,7 +9,13 @@ footer {
     padding: 0;
     display: flex;
     flex-direction: row;
-    gap: 1rem;
+    gap: 0.5rem;
+    align-items: center;
     margin-top: -1rem;
+  }
+  
+  & li.separator {
+    opacity: 0.5;
+    user-select: none;
   }
 }

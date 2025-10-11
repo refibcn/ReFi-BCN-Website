@@ -12,11 +12,11 @@ export default (() => {
           <span></span>
         </button>
         <ul class="nav-links">
-          <li><a href="/about">About</a></li>
-          <li><a href="/events">Events</a></li>
-          <li><a href="/ecosystem">Ecosystem</a></li>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="mailto:hola@refibcn.cat">Contact</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#regenerant-catalunya">Regenerant Catalunya</a></li>
+          <li><a href="#ecosystem-map">Ecosystem Map</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     )

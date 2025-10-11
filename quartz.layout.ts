@@ -14,8 +14,7 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     links: {
       "ReFi Barcelona": "https://refibcn.cat",
-      "Regen Coordination": "https://regen.build",
-      "GitHub": "https://github.com/refibcn/Regenerant-Catalunya",
+      "GitHub": "https://github.com/refibcn/ReFi-BCN-Website",
     },
   }),
 }

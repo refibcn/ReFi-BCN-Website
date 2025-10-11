@@ -18,10 +18,13 @@ export default ((opts?: Options) => {
         </div>
         <div class="footer-links">
           <ul>
-            {Object.entries(links).map(([text, link]) => (
-              <li>
-                <a href={link}>{text}</a>
-              </li>
+            {Object.entries(links).map(([text, link], index) => (
+              <>
+                {index > 0 && <li class="separator">•</li>}
+                <li>
+                  <a href={link}>{text}</a>
+                </li>
+              </>
             ))}
           </ul>
         </div>

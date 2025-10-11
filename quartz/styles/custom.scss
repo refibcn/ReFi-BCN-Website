@@ -1,7 +1,7 @@
 @use "./base.scss";
 
 // ============================================
-// ReFi BCN Toolkit Style - Regenerant Catalunya
+// ReFi BCN Toolkit Style
 // Inspired by Local ReFi Toolkit
 // ============================================
 
@@ -11,6 +11,7 @@
   --brand-purple-light: #8B6EC3;
   --brand-orange: #E67E50;
   --brand-orange-light: #F49870;
+  --brand-forest: #214033;
   --brand-sand: #E6DFD7;
   
   // Blue color scheme (primary)
@@ -131,9 +132,9 @@ header {
   width: auto;
   max-width: none;
   margin-top: 0.5rem;
-  border: 2px solid var(--brand-forest);
-  border-top: 2px solid var(--brand-forest);
-  padding: 0.75rem 2rem;
+  border: 2px solid var(--blue-dark);
+  border-top: 2px solid var(--blue-dark);
+  padding: 0.5rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -145,16 +146,16 @@ header {
 header .page-title {
   font-weight: 700;
   font-size: 1.25rem;
-  color: var(--brand-forest);
+  color: var(--blue-dark);
   flex-shrink: 0;
   
   a {
-    color: var(--brand-forest);
+    color: var(--blue-dark);
     text-decoration: none;
     border-bottom: none;
     
     &:hover {
-      color: var(--green-light);
+      color: var(--blue-light);
     }
   }
 }
@@ -186,9 +187,9 @@ header .darkmode {
   align-items: center;
   justify-content: center;
   background: none;
-  border: 2px solid var(--green-dark);
+  border: 2px solid var(--blue-dark);
   cursor: pointer;
-  color: var(--green-dark);
+  color: var(--blue-dark);
   transition: all 0.2s ease;
   padding: 0;
   margin: 0;
@@ -206,9 +207,9 @@ header .darkmode {
 
 header .search button:hover,
 header .darkmode:hover {
-  background: var(--green-dark);
+  background: var(--blue-dark);
   color: var(--light);
-  border-color: var(--green-dark);
+  border-color: var(--blue-dark);
 }
 
 // Hide search button text
@@ -239,12 +240,12 @@ header .search button p {
       display: block;
       width: 1.5rem;
       height: 2px;
-      background: var(--green-dark);
+      background: var(--blue-dark);
       transition: all 0.3s ease;
     }
     
     &:hover span {
-      background: var(--green-light);
+      background: var(--blue-light);
     }
     
     &.active span:nth-child(1) {
@@ -273,7 +274,7 @@ header .search button p {
     }
     
     a {
-      color: var(--green-dark) !important;
+      color: var(--blue-dark) !important;
       text-decoration: none;
       font-weight: 500;
       font-size: 1rem;
@@ -281,12 +282,12 @@ header .search button p {
       border-bottom: none;
       
       &:hover {
-        color: var(--green-light) !important;
+        color: var(--blue-light) !important;
       }
       
       &.active {
-        color: var(--green-medium) !important;
-        border-bottom: 2px solid var(--green-dark);
+        color: var(--blue-medium) !important;
+        border-bottom: 2px solid var(--blue-dark);
       }
     }
   }
@@ -303,7 +304,7 @@ header .search button p {
       right: 1.5rem;
       flex-direction: column;
       background: var(--light);
-      border: 2px solid var(--green-dark);
+      border: 2px solid var(--blue-dark);
       border-top: none;
       padding: 1rem;
       gap: 1rem;
@@ -406,22 +407,22 @@ ul, ol {
 // ============================================
 
 a {
-  color: var(--green-medium);
+  color: var(--blue-medium);
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: all 0.2s ease;
   
   &:hover {
-    color: var(--green-light);
-    border-bottom-color: var(--green-light);
+    color: var(--blue-light);
+    border-bottom-color: var(--blue-light);
   }
   
   &:visited {
-    color: var(--green-dark);
+    color: var(--blue-dark);
   }
   
   &:focus-visible {
-    outline: 2px solid var(--green-medium);
+    outline: 2px solid var(--blue-medium);
     outline-offset: 2px;
   }
 }
@@ -543,17 +544,17 @@ code {
 button,
 .button,
 .button-primary {
-  background: var(--green-dark);
+  background: var(--blue-dark);
   color: var(--light);
   padding: 0.75rem 1.5rem;
-  border: 1px solid var(--green-dark);
+  border: 1px solid var(--blue-dark);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
   
   &:hover {
-    background: var(--green-medium);
-    border-color: var(--green-medium);
+    background: var(--blue-medium);
+    border-color: var(--blue-medium);
     transform: translateY(-1px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
@@ -568,7 +569,7 @@ button,
 // ============================================
 
 .breadcrumbs {
-  color: var(--green-dark);
+  color: var(--blue-dark);
   opacity: 0.85;
   font-size: 0.875rem;
   
@@ -576,7 +577,7 @@ button,
     border-bottom: none;
     
     &:hover {
-      color: var(--green-light);
+      color: var(--blue-light);
     }
   }
 }
@@ -587,18 +588,18 @@ button,
 
 .tags {
   a {
-    background: var(--green-highlight);
-    color: var(--green-dark);
+    background: var(--blue-highlight);
+    color: var(--blue-dark);
     padding: 0.25rem 0.75rem;
-    border: 1px solid var(--green-dark);
-    border-bottom: 1px solid var(--green-dark);
+    border: 1px solid var(--blue-dark);
+    border-bottom: 1px solid var(--blue-dark);
     font-size: 0.875rem;
     transition: all 0.2s ease;
     
     &:hover {
-      background: var(--green-dark);
+      background: var(--blue-dark);
       color: var(--light);
-      border-color: var(--green-dark);
+      border-color: var(--blue-dark);
     }
   }
 }
@@ -614,13 +615,13 @@ button,
   position: fixed !important;
   
   input[type="text"] {
-    border: 2px solid var(--brand-forest);
+    border: 2px solid var(--blue-dark);
     padding: 0.625rem 1rem;
     transition: all 0.2s ease;
     
     &:focus {
-      border-color: var(--green-medium);
-      box-shadow: 0 0 0 3px var(--green-highlight);
+      border-color: var(--blue-medium);
+      box-shadow: 0 0 0 3px var(--blue-highlight);
       outline: none;
     }
   }
@@ -632,14 +633,14 @@ button,
 
 #results-container {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  border: 2px solid var(--brand-forest);
+  border: 2px solid var(--blue-dark);
   
   .result-card {
-    border-bottom: 1px solid var(--brand-forest);
+    border-bottom: 1px solid var(--blue-dark);
     transition: all 0.2s ease;
     
     &:hover {
-      background: var(--green-highlight);
+      background: var(--blue-highlight);
     }
   }
 }
@@ -673,7 +674,7 @@ button,
   margin-top: 2rem;
   
   h3 {
-    color: var(--green-dark);
+    color: var(--blue-dark);
   }
 }
 
@@ -703,9 +704,9 @@ footer {
   max-width: 750px;
   margin: 2rem auto 0.5rem; // Closer to content, bottom margin matches top bar's top margin
   padding: 3rem 2rem;
-  border: 2px solid var(--green-dark);
-  border-bottom: 2px solid var(--green-dark);
-  border-top: 2px solid var(--green-dark);
+  border: 2px solid var(--blue-dark);
+  border-bottom: 2px solid var(--blue-dark);
+  border-top: 2px solid var(--blue-dark);
   background: var(--light);
   box-sizing: border-box;
   
@@ -747,12 +748,12 @@ footer {
     }
     
     a {
-      color: var(--green-dark) !important; // Darker green #214033
+      color: var(--blue-dark) !important; // Dark navy #092045
       text-decoration: none;
       font-weight: 500;
       
       &:hover {
-        color: var(--green-light) !important;
+        color: var(--blue-light) !important;
       }
     }
   }
@@ -761,20 +762,20 @@ footer {
   .footer-copyright {
     text-align: center;
     font-size: 0.875rem;
-    color: var(--green-dark) !important; // Darker green #214033
+    color: var(--blue-dark) !important; // Dark navy #092045
     
     p {
       margin: 0;
-      color: var(--green-dark) !important;
+      color: var(--blue-dark) !important;
     }
     
     a {
-      color: var(--green-dark) !important; // Darker green #214033
+      color: var(--blue-dark) !important; // Dark navy #092045
       text-decoration: none;
       font-weight: 500;
       
       &:hover {
-        color: var(--green-light) !important;
+        color: var(--blue-light) !important;
       }
     }
   }
@@ -891,12 +892,12 @@ html {
 }
 
 // ============================================
-// LINK PREVIEW POPOVERS (Green Borders)
+// LINK PREVIEW POPOVERS (Blue Borders)
 // ============================================
 
 .popover > .popover-inner {
-  border: 2px solid var(--green-dark) !important;
-  box-shadow: 6px 6px 36px 0 rgba(33, 64, 51, 0.25);
+  border: 2px solid var(--blue-dark) !important;
+  box-shadow: 6px 6px 36px 0 rgba(9, 32, 69, 0.25);
 }
 
 // ============================================
@@ -987,42 +988,82 @@ article[data-slug="index"] {
   }
 }
 
-// Hero Section - Two-column layout
+// Hero Section - Flexible layout for main hero and other two-column sections
 .hero-section {
   padding: 3rem 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: start;
   
   @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
     padding: 6rem 0;
-    gap: 3rem;
+  }
+  
+  // Specific styles for main hero with .hero-top and .hero-bottom
+  .hero-top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+    
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem;
+    }
+  }
+  
+  .hero-title {
+    @media (min-width: 768px) {
+      margin-left: -8rem;
+      margin-right: 3rem;
+    }
   }
   
   h1 {
-    font-size: 3rem;
-    line-height: 1.1;
-    margin-bottom: 2rem;
+    font-size: 2.75rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0;
     color: var(--darkgray);
     
     @media (min-width: 640px) {
-      font-size: 3.75rem;
+      font-size: 3.5rem;
+      line-height: 1.15;
     }
+  }
+  
+  // Bottom section: Text and CTA centered below (for main hero)
+  .hero-bottom {
+    max-width: 48rem;
+    margin: 0 auto;
+    text-align: center;
   }
   
   .hero-text {
     font-size: 1.125rem;
-    line-height: 1.75;
+    line-height: 1.8;
     margin-bottom: 2.5rem;
     color: var(--darkgray);
     
     @media (min-width: 640px) {
       font-size: 1.25rem;
+      line-height: 1.85;
     }
   }
   
+  // Default two-column layout for direct children (Ecosystem Map, What is ReFi)
+  &:not(:has(.hero-top)) {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+  }
+  
+  // Hero image styles (applies to all hero sections)
   .hero-image {
     position: relative;
     
@@ -1043,16 +1084,17 @@ article[data-slug="index"] {
   .hero-cta {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1.5rem;
   }
 }
 
 // Section with background tint
 .section-tinted {
-  background: var(--green-highlight);
+  background: var(--blue-highlight);
   padding: 1.5rem 1rem;
   margin: 3rem -1rem;
-  border: 2px solid var(--green-dark);
+  border: 2px solid var(--blue-dark);
   
   @media (min-width: 640px) {
     padding: 3rem 2rem;
@@ -1062,7 +1104,7 @@ article[data-slug="index"] {
 
 // Section containers with borders (for alternating visual rhythm)
 .section-container {
-  border: 2px solid var(--green-dark);
+  border: 2px solid var(--blue-dark);
   padding: 3rem 1rem;
   margin: 3rem -1rem;
   
@@ -1073,7 +1115,7 @@ article[data-slug="index"] {
   
   // Variant with background for alternating sections
   &.section-container-tinted {
-    background: var(--green-highlight);
+    background: var(--blue-highlight);
   }
   
   // Remove extra top margin on section titles within containers
@@ -1188,22 +1230,22 @@ article[data-slug="index"] {
 .cta-button {
   display: inline-block;
   background: var(--light);
-  color: var(--green-dark) !important;
+  color: var(--blue-dark) !important;
   padding: 1rem 1.75rem;
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
-  border: 2px solid var(--green-dark);
+  border: 2px solid var(--blue-dark);
   transition: all 0.2s ease;
   
   &:hover {
-    background: var(--green-dark);
-    border-color: var(--green-dark);
+    background: var(--blue-dark);
+    border-color: var(--blue-dark);
     color: var(--light) !important;
   }
   
   &:visited {
-    color: var(--green-dark) !important;
+    color: var(--blue-dark) !important;
   }
   
   &:visited:hover {
@@ -1216,8 +1258,10 @@ article[data-slug="index"] {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  margin: 2.5rem auto;
+  margin-top: 2.5rem;
   max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
   
   @media (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
@@ -1246,5 +1290,153 @@ article[data-slug="index"] {
 .section-content-wide {
   max-width: 64rem;
   margin: 0 auto;
+}
+
+// ============================================
+// LANDING PAGE GRIDS (ReFi BCN Specific)
+// ============================================
+
+// Feature grid for "What We Do" (3x2 on desktop)
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 3rem;
+  
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .feature-item {
+    dt {
+      font-weight: 600;
+      font-size: 1.125rem;
+      margin-bottom: 0.75rem;
+      color: var(--darkgray);
+    }
+    
+    dd {
+      margin: 0;
+      color: var(--darkgray);
+      line-height: 1.6;
+    }
+  }
+}
+
+// Event grid for "Past Events" (2 columns)
+.event-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .event-item {
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1.5rem;
+      border: 2px solid var(--blue-dark);
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--darkgray);
+    }
+    
+    p {
+      color: var(--darkgray);
+      line-height: 1.7;
+    }
+  }
+}
+
+// Team grid for "About Us" (3 columns)
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+  
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .team-member {
+    text-align: center;
+    
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      border: 2px solid var(--blue-dark);
+    }
+    
+    .team-name {
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      
+      a {
+        color: var(--blue-medium);
+        text-decoration: none;
+        
+        &:hover {
+          color: var(--blue-light);
+        }
+      }
+    }
+    
+    .team-bio {
+      color: var(--darkgray);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// Callout section (for Regenerant Catalunya highlight)
+.callout-section {
+  background: var(--blue-highlight);
+  border: 2px solid var(--blue-dark);
+  padding: 3rem 1rem;
+  margin: 3rem -1rem;
+  text-align: center;
+  
+  @media (min-width: 640px) {
+    padding: 3rem 2rem;
+    margin: 3rem -2rem;
+  }
+  
+  h2 {
+    margin-top: 0;
+    font-size: 2.5rem;
+    color: var(--darkgray);
+  }
+  
+  p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .cta-button {
+    margin-top: 2rem;
+  }
 }
 
