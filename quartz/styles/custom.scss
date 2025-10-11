@@ -1,0 +1,1250 @@
+@use "./base.scss";
+
+// ============================================
+// ReFi BCN Toolkit Style - Regenerant Catalunya
+// Inspired by Local ReFi Toolkit
+// ============================================
+
+// Brand colors as CSS variables
+:root {
+  --brand-purple: #6B4EA3;
+  --brand-purple-light: #8B6EC3;
+  --brand-orange: #E67E50;
+  --brand-orange-light: #F49870;
+  --brand-sand: #E6DFD7;
+  
+  // Blue color scheme (primary)
+  --blue-dark: #092045;       // Dark navy (main)
+  --blue-medium: #1A3A6B;     // Medium blue (links)
+  --blue-light: #2E5491;      // Light blue (hover states)
+  --blue-highlight: rgba(9, 32, 69, 0.15);  // Transparent blue for backgrounds
+}
+
+// ============================================
+// GLOBAL ACCENT COLORS
+// ============================================
+
+.navigation {
+  border-color: var(--blue-dark);
+  
+  a:hover {
+    color: var(--blue-light) !important;
+  }
+  
+  button {
+    border-color: var(--blue-dark);
+    &:hover {
+      background: var(--blue-dark);
+    }
+  }
+}
+
+article {
+  a {
+    color: var(--blue-medium);
+    &:hover {
+      color: var(--blue-light);
+    }
+  }
+  
+  .cta-button {
+    background: var(--light);
+    color: var(--blue-dark) !important;
+    border: 2px solid var(--blue-dark);
+    
+    &:hover {
+      background: var(--blue-dark);
+      color: var(--light) !important;
+    }
+    
+    &:visited {
+      color: var(--blue-dark) !important;
+    }
+    
+    &:visited:hover {
+      color: var(--light) !important;
+    }
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--darkgray);
+  }
+  
+  .section-container {
+    border-color: var(--blue-dark);
+  }
+  
+  .popover > .popover-inner {
+    border-color: var(--blue-dark) !important;
+  }
+}
+
+// ============================================
+// GLOBAL: NO BORDER RADIUS ANYWHERE
+// ============================================
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+// ============================================
+// BODY & LAYOUT
+// ============================================
+
+body {
+  padding-top: 60px; // Account for fixed header
+  background-color: var(--light);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  font-feature-settings: "kern" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+}
+
+// PAGE-LEVEL WIDTH CONSTRAINTS
+.page {
+  max-width: 750px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+}
+
+#quartz-body {
+  max-width: 750px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+}
+
+// ============================================
+// FIXED TOP BAR (HEADER) - Full Width
+// ============================================
+
+header {
+  position: fixed;
+  top: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  transform: none;
+  z-index: 100;
+  background-color: var(--light);
+  width: auto;
+  max-width: none;
+  margin-top: 0.5rem;
+  border: 2px solid var(--brand-forest);
+  border-top: 2px solid var(--brand-forest);
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  box-sizing: border-box;
+}
+
+// Page title in header
+header .page-title {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--brand-forest);
+  flex-shrink: 0;
+  
+  a {
+    color: var(--brand-forest);
+    text-decoration: none;
+    border-bottom: none;
+    
+    &:hover {
+      color: var(--green-light);
+    }
+  }
+}
+
+// Header actions container
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+// Search and Darkmode buttons in header
+header .search,
+header .darkmode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+header .search button,
+header .darkmode {
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  min-height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: 2px solid var(--green-dark);
+  cursor: pointer;
+  color: var(--green-dark);
+  transition: all 0.2s ease;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  line-height: 1;
+  box-sizing: border-box;
+  
+  svg {
+    width: 1rem;
+    height: 1rem;
+    display: block;
+    margin: auto;
+  }
+}
+
+header .search button:hover,
+header .darkmode:hover {
+  background: var(--green-dark);
+  color: var(--light);
+  border-color: var(--green-dark);
+}
+
+// Hide search button text
+header .search button p {
+  display: none;
+}
+
+// ============================================
+// NAVIGATION
+// ============================================
+
+.navigation {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 0.25rem;
+    
+    span {
+      display: block;
+      width: 1.5rem;
+      height: 2px;
+      background: var(--green-dark);
+      transition: all 0.3s ease;
+    }
+    
+    &:hover span {
+      background: var(--green-light);
+    }
+    
+    &.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    &.active span:nth-child(2) {
+      opacity: 0;
+    }
+    
+    &.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    
+    li {
+      margin: 0;
+    }
+    
+    a {
+      color: var(--green-dark) !important;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.2s ease;
+      border-bottom: none;
+      
+      &:hover {
+        color: var(--green-light) !important;
+      }
+      
+      &.active {
+        color: var(--green-medium) !important;
+        border-bottom: 2px solid var(--green-dark);
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+    
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 1.5rem;
+      right: 1.5rem;
+      flex-direction: column;
+      background: var(--light);
+      border: 2px solid var(--green-dark);
+      border-top: none;
+      padding: 1rem;
+      gap: 1rem;
+      display: none;
+      z-index: 99;
+      
+      &.open {
+        display: flex;
+      }
+      
+      li {
+        width: 100%;
+        text-align: center;
+      }
+      
+      a {
+        display: block;
+        padding: 0.5rem;
+      }
+    }
+  }
+}
+
+// ============================================
+// HIDE SIDEBARS BY DEFAULT
+// ============================================
+
+#quartz-body {
+  grid-template-columns: 0 auto 0 !important;
+  grid-template-areas: 
+    "grid-sidebar-left grid-header grid-sidebar-right"
+    "grid-sidebar-left grid-center grid-sidebar-right"
+    "grid-sidebar-left grid-footer grid-sidebar-right" !important;
+}
+
+.sidebar.left,
+.sidebar.right {
+  display: none !important;
+  width: 0 !important;
+}
+
+// Center content with max-width
+.center {
+  grid-column: 1 / 4 !important;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+}
+
+// ============================================
+// TYPOGRAPHY
+// ============================================
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: -0.03em;
+  margin-top: 1em;
+}
+
+h2 {
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+  margin-top: 1.75em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5em;
+}
+
+// Paragraphs and content spacing
+p {
+  margin-bottom: 1.25rem;
+}
+
+ul, ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+  
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+// ============================================
+// LINKS
+// ============================================
+
+a {
+  color: var(--green-medium);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    color: var(--green-light);
+    border-bottom-color: var(--green-light);
+  }
+  
+  &:visited {
+    color: var(--green-dark);
+  }
+  
+  &:focus-visible {
+    outline: 2px solid var(--green-medium);
+    outline-offset: 2px;
+  }
+}
+
+// ============================================
+// BOLD GRAPHIC LINES & BORDERS
+// ============================================
+
+// Horizontal rules
+hr {
+  border: none;
+  border-top: 3px solid var(--brand-forest);
+  margin: 3rem 0;
+}
+
+// Callouts with bold borders
+.callout {
+  border: 2px solid var(--brand-forest);
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 1.5rem 0;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 4px 12px rgba(33, 64, 51, 0.08);
+    transform: translateY(-2px);
+  }
+  
+  &[data-callout="note"],
+  &[data-callout="info"] {
+    border-left: 4px solid var(--brand-purple);
+  }
+  
+  &[data-callout="warning"],
+  &[data-callout="caution"] {
+    border-left: 4px solid var(--brand-orange);
+  }
+  
+  &[data-callout="success"],
+  &[data-callout="tip"] {
+    border-left: 4px solid var(--brand-forest);
+  }
+}
+
+// Blockquotes with bold orange accent
+blockquote {
+  border-left: 4px solid var(--brand-orange);
+  background: rgba(230, 126, 80, 0.05);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  
+  p:first-child {
+    margin-top: 0;
+  }
+  
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Tables with bold borders
+table {
+  border: 2px solid var(--brand-forest);
+  border-collapse: collapse;
+  overflow: hidden;
+  
+  thead {
+    background: rgba(107, 78, 163, 0.08);
+    
+    th {
+      color: var(--brand-purple);
+      font-weight: 600;
+      border: 1px solid var(--brand-forest);
+      padding: 0.75rem;
+    }
+  }
+  
+  tbody {
+    tr {
+      transition: background 0.2s ease;
+      
+      &:hover {
+        background: rgba(107, 78, 163, 0.05);
+      }
+      
+      td {
+        border: 1px solid var(--brand-forest);
+        padding: 0.75rem;
+      }
+    }
+  }
+}
+
+// ============================================
+// CODE BLOCKS
+// ============================================
+
+pre {
+  border: 2px solid var(--brand-forest);
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+code {
+  font-size: 0.9em;
+}
+
+:not(pre) > code {
+  background: rgba(107, 78, 163, 0.08);
+  color: var(--brand-purple);
+  padding: 0.125rem 0.375rem;
+  font-size: 0.875em;
+}
+
+// ============================================
+// BUTTONS
+// ============================================
+
+button,
+.button,
+.button-primary {
+  background: var(--green-dark);
+  color: var(--light);
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--green-dark);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: var(--green-medium);
+    border-color: var(--green-medium);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// ============================================
+// BREADCRUMBS
+// ============================================
+
+.breadcrumbs {
+  color: var(--green-dark);
+  opacity: 0.85;
+  font-size: 0.875rem;
+  
+  a {
+    border-bottom: none;
+    
+    &:hover {
+      color: var(--green-light);
+    }
+  }
+}
+
+// ============================================
+// TAGS
+// ============================================
+
+.tags {
+  a {
+    background: var(--green-highlight);
+    color: var(--green-dark);
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--green-dark);
+    border-bottom: 1px solid var(--green-dark);
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background: var(--green-dark);
+      color: var(--light);
+      border-color: var(--green-dark);
+    }
+  }
+}
+
+// ============================================
+// SEARCH
+// ============================================
+
+#search-container {
+  z-index: 101 !important;
+  top: 50px !important;
+  max-height: calc(100vh - 50px) !important;
+  position: fixed !important;
+  
+  input[type="text"] {
+    border: 2px solid var(--brand-forest);
+    padding: 0.625rem 1rem;
+    transition: all 0.2s ease;
+    
+    &:focus {
+      border-color: var(--green-medium);
+      box-shadow: 0 0 0 3px var(--green-highlight);
+      outline: none;
+    }
+  }
+}
+
+#search-space {
+  max-height: calc(100vh - 4rem) !important;
+}
+
+#results-container {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border: 2px solid var(--brand-forest);
+  
+  .result-card {
+    border-bottom: 1px solid var(--brand-forest);
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background: var(--green-highlight);
+    }
+  }
+}
+
+// ============================================
+// GRAPH VIEW
+// ============================================
+
+#graph-container {
+  .node {
+    fill: var(--brand-purple);
+    
+    &.active {
+      fill: var(--brand-orange);
+    }
+  }
+  
+  .link {
+    stroke: var(--brand-orange);
+    opacity: 0.4;
+  }
+}
+
+// ============================================
+// BACKLINKS
+// ============================================
+
+.backlinks {
+  border-top: 2px solid var(--brand-forest);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  
+  h3 {
+    color: var(--green-dark);
+  }
+}
+
+// ============================================
+// CONTENT META
+// ============================================
+
+.content-meta {
+  color: var(--gray);
+  font-size: 0.875rem;
+  border-top: 1px solid var(--brand-forest);
+  border-bottom: 1px solid var(--brand-forest);
+  padding: 0.5rem 0;
+  margin: 1rem 0;
+  
+  a {
+    border-bottom: none;
+  }
+}
+
+// ============================================
+// FOOTER - Matching Top Bar Style
+// ============================================
+
+footer {
+  // Container matching top bar style with proper alignment
+  max-width: 750px;
+  margin: 2rem auto 0.5rem; // Closer to content, bottom margin matches top bar's top margin
+  padding: 3rem 2rem;
+  border: 2px solid var(--green-dark);
+  border-bottom: 2px solid var(--green-dark);
+  border-top: 2px solid var(--green-dark);
+  background: var(--light);
+  box-sizing: border-box;
+  
+  @media (max-width: 639px) {
+    padding: 2rem 1rem;
+  }
+  
+  // Logo container
+  .footer-logo {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    
+    img {
+      height: 6rem;
+      width: 6rem;
+      display: inline-block;
+      opacity: 1; // Ensure full opacity
+      filter: none; // Remove any filters
+    }
+  }
+  
+  // Links section
+  .footer-links {
+    text-align: center;
+    margin-bottom: 1rem;
+    
+    ul {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    li {
+      margin: 0;
+    }
+    
+    a {
+      color: var(--green-dark) !important; // Darker green #214033
+      text-decoration: none;
+      font-weight: 500;
+      
+      &:hover {
+        color: var(--green-light) !important;
+      }
+    }
+  }
+  
+  // Copyright section
+  .footer-copyright {
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--green-dark) !important; // Darker green #214033
+    
+    p {
+      margin: 0;
+      color: var(--green-dark) !important;
+    }
+    
+    a {
+      color: var(--green-dark) !important; // Darker green #214033
+      text-decoration: none;
+      font-weight: 500;
+      
+      &:hover {
+        color: var(--green-light) !important;
+      }
+    }
+  }
+}
+
+// ============================================
+// DARK MODE ADJUSTMENTS
+// ============================================
+
+body[saved-theme="dark"] {
+  header {
+    background-color: var(--light);
+    border-color: var(--darkgray);
+  }
+  
+  .callout {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--darkgray);
+  }
+  
+  :not(pre) > code {
+    background: rgba(155, 126, 211, 0.15);
+    color: var(--brand-purple-light);
+  }
+  
+  table {
+    border-color: var(--darkgray);
+    
+    thead {
+      background: rgba(155, 126, 211, 0.1);
+      
+      th {
+        border-color: var(--darkgray);
+      }
+    }
+    
+    tbody td {
+      border-color: var(--darkgray);
+    }
+  }
+  
+  blockquote {
+    background: rgba(255, 176, 144, 0.08);
+  }
+  
+  hr, .backlinks, .content-meta, footer {
+    border-color: var(--darkgray);
+  }
+  
+  pre {
+    border-color: var(--darkgray);
+  }
+  
+  #search-container input[type="text"],
+  #results-container {
+    border-color: var(--darkgray);
+  }
+}
+
+// ============================================
+// RESPONSIVE TYPOGRAPHY
+// ============================================
+
+@media (max-width: 800px) {
+  body {
+    font-size: 1rem;
+    padding-top: 55px;
+  }
+  
+  header {
+    margin: 0.25rem;
+    max-width: calc(100% - 0.5rem);
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.375rem;
+  }
+  
+  .center {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+  }
+}
+
+// ============================================
+// ACCESSIBILITY
+// ============================================
+
+// Smooth scrolling
+html {
+  scroll-behavior: smooth;
+}
+
+// Selection color
+::selection {
+  background: rgba(107, 78, 163, 0.25);
+  color: var(--dark);
+}
+
+// Focus visible for keyboard navigation
+*:focus-visible {
+  outline: 2px solid var(--brand-purple);
+  outline-offset: 2px;
+}
+
+// ============================================
+// LINK PREVIEW POPOVERS (Green Borders)
+// ============================================
+
+.popover > .popover-inner {
+  border: 2px solid var(--green-dark) !important;
+  box-shadow: 6px 6px 36px 0 rgba(33, 64, 51, 0.25);
+}
+
+// ============================================
+// UTILITY: Sidebar Toggle (Frontmatter-based)
+// ============================================
+
+// When a page has showSidebars: true in frontmatter
+// This would need custom JS to add this class
+body.show-sidebars {
+  #quartz-body {
+    grid-template-columns: 320px auto 320px !important;
+  }
+  
+  .sidebar.left,
+  .sidebar.right {
+    display: block !important;
+    width: 320px !important;
+    border: 2px solid var(--brand-forest);
+  }
+  
+  .center {
+    grid-column: 2 / 3 !important;
+  }
+}
+
+// ============================================
+// LANDING PAGE SECTIONS
+// ============================================
+
+// Hide header anchor links on index page only
+article[data-slug="index"] {
+  // Hide all anchor-related elements
+  .anchor-icon,
+  a.internal.alias,
+  a.internal,
+  h1 a,
+  h2 a,
+  h3 a,
+  h4 a,
+  h5 a,
+  h6 a {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    pointer-events: none !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    &::before,
+    &::after {
+      display: none !important;
+      content: none !important;
+      visibility: hidden !important;
+    }
+    
+    // Remove pointer cursor on headers
+    cursor: default !important;
+    
+    // Hide all child links and SVGs
+    a,
+    svg,
+    .anchor,
+    [class*="anchor"] {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
+      width: 0 !important;
+      height: 0 !important;
+      pointer-events: none !important;
+    }
+  }
+  
+  // Style standalone h2 elements like section titles
+  > h2 {
+    font-size: 2.25rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+    color: var(--darkgray);
+    font-weight: 600;
+    
+    @media (min-width: 640px) {
+      font-size: 3rem;
+      margin-top: 6rem;
+    }
+  }
+}
+
+// Hero Section - Two-column layout
+.hero-section {
+  padding: 3rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    padding: 6rem 0;
+    gap: 3rem;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+    color: var(--darkgray);
+    
+    @media (min-width: 640px) {
+      font-size: 3.75rem;
+    }
+  }
+  
+  .hero-text {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    color: var(--darkgray);
+    
+    @media (min-width: 640px) {
+      font-size: 1.25rem;
+    }
+  }
+  
+  .hero-image {
+    position: relative;
+    
+    @media (min-width: 768px) {
+      // Push image beyond the normal margin
+      margin-right: -8rem;
+      margin-left: 3rem;
+    }
+    
+    img {
+      width: 135%;
+      max-width: 135%;
+      border-radius: 0;
+      object-fit: cover;
+    }
+  }
+  
+  .hero-cta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+// Section with background tint
+.section-tinted {
+  background: var(--green-highlight);
+  padding: 1.5rem 1rem;
+  margin: 3rem -1rem;
+  border: 2px solid var(--green-dark);
+  
+  @media (min-width: 640px) {
+    padding: 3rem 2rem;
+    margin: 3rem -2rem;
+  }
+}
+
+// Section containers with borders (for alternating visual rhythm)
+.section-container {
+  border: 2px solid var(--green-dark);
+  padding: 3rem 1rem;
+  margin: 3rem -1rem;
+  
+  @media (min-width: 640px) {
+    padding: 3rem 2rem;
+    margin: 3rem -2rem;
+  }
+  
+  // Variant with background for alternating sections
+  &.section-container-tinted {
+    background: var(--green-highlight);
+  }
+  
+  // Remove extra top margin on section titles within containers
+  .section-title {
+    margin-top: 0;
+  }
+  
+  // Last section container should have no bottom margin
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+// Standard section spacing
+.section-standard {
+  padding: 3rem 0;
+  
+  @media (min-width: 640px) {
+    padding: 6rem 0;
+  }
+}
+
+// Section titles
+.section-title {
+  font-size: 2.25rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--darkgray);
+  font-weight: 600;
+  
+  @media (min-width: 640px) {
+    font-size: 3rem;
+  }
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  line-height: 2;
+  margin-top: 1.5rem;
+  color: var(--darkgray);
+  
+  @media (min-width: 640px) {
+    font-size: 1.125rem;
+  }
+}
+
+// Three-column grid for "How It Works"
+.three-col-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 4rem;
+  
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 5rem;
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 6rem;
+  }
+  
+  .grid-item {
+    dt {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--darkgray);
+    }
+    
+    dd {
+      margin: 0;
+      color: var(--darkgray);
+    }
+  }
+}
+
+// Two-column grid for participants
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+  
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Logo grid for partners/sponsors
+.logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  
+  img {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+    
+    @media (min-width: 768px) {
+      height: 5rem;
+      width: 5rem;
+    }
+  }
+}
+
+// CTA Button
+.cta-button {
+  display: inline-block;
+  background: var(--light);
+  color: var(--green-dark) !important;
+  padding: 1rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--green-dark);
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: var(--green-dark);
+    border-color: var(--green-dark);
+    color: var(--light) !important;
+  }
+  
+  &:visited {
+    color: var(--green-dark) !important;
+  }
+  
+  &:visited:hover {
+    color: var(--light) !important;
+  }
+}
+
+// Get Involved section
+.get-involved-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin: 2.5rem auto;
+  max-width: 48rem;
+  
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+  
+  ul {
+    padding-left: 1.5rem;
+    text-align: left;
+    font-size: 1.125rem;
+    
+    li {
+      margin-bottom: 1rem;
+      color: var(--darkgray);
+    }
+  }
+}
+
+// Center content for sections
+.section-content-centered {
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-content-wide {
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
