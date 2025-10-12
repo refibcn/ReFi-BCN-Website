@@ -1,0 +1,404 @@
+---
+description: Website content organization, sections, and navigation structure
+globs: **/content/**,**/index.md
+---
+
+# Content Structure & Organization
+
+## Website Sections
+
+### 1. Hero Section
+**Purpose:** Immediate impact and call-to-action
+
+**Content Structure:**
+- **Title (H1):** "ReFi Barcelona" or mission statement
+- **Body Text:** Concise explanation of what ReFi Barcelona does
+- **CTA Button:** Primary action (e.g., "Learn More" with scroll arrow)
+- **Hero Image:** Visual representation of the community
+
+**HTML Structure:**
+```html
+<div class="hero-section">
+  <div class="hero-top">
+    <div class="hero-title">
+      <h1>Main Title</h1>
+    </div>
+    <div class="hero-image">
+      <img src="/static/hero_home.png" alt="Description"/>
+    </div>
+  </div>
+  <div class="hero-bottom">
+    <p class="hero-text">Description paragraph...</p>
+    <a href="#about" class="cta-button">Learn More</a>
+  </div>
+</div>
+```
+
+**Content Guidelines:**
+- Keep title concise (1-2 lines preferred, max 4)
+- Body text should be 2-3 sentences
+- CTA should link to next logical section
+- Image should be high-quality and relevant
+
+---
+
+### 2. About ReFi / What is ReFi? Section
+**Purpose:** Explain Regenerative Finance and ReFi Barcelona's role
+
+**Content Structure:**
+- **Title (H2):** "What is ReFi?" or similar
+- **Body Text:** ReFi movement explanation
+- **Featured Image:** Community photo or diagram
+- **Link:** To ecosystem map (mapa.refibcn.cat)
+
+**Styling:**
+- Uses `.section-container` with special hero-section styling
+- H2 at standard size (2.5rem)
+- Featured image with prominent placement
+- Link styled as button or prominent text link
+
+**Content Guidelines:**
+- Explain ReFi concept clearly for newcomers
+- Connect global movement to local context
+- Include visual representation
+- Provide pathway to learn more (ecosystem map)
+
+---
+
+### 3. What We Do Section
+**Purpose:** Showcase core activities and services
+
+**Content Structure:**
+- **Title (H2):** "What We Do"
+- **Grid of 3 Items:** Each with icon/emoji, title, description
+
+**HTML Pattern:**
+```html
+<div class="section-content-wide">
+  <dl class="feature-grid">
+    <div class="feature-item">
+      <dt>🗺️ Ecosystem Map</dt>
+      <dd>Description of ecosystem mapping...</dd>
+    </div>
+    <div class="feature-item">
+      <dt>🎉 Events & Gatherings</dt>
+      <dd>Description of events...</dd>
+    </div>
+    <div class="feature-item">
+      <dt>💰 Funding Programs</dt>
+      <dd>Description of funding...</dd>
+    </div>
+  </dl>
+</div>
+```
+
+**Content Guidelines:**
+- Use emojis or icons for visual interest
+- Keep titles short (3-5 words)
+- Descriptions: 2-3 sentences each
+- Action-oriented language
+- Link to specific resources where relevant
+
+**Typical Activities:**
+- Ecosystem Mapping
+- Events & Community Gatherings
+- Funding Programs & Grants
+- Capacity Building & Education
+- Network Weaving & Partnerships
+
+---
+
+### 4. Past Events Section
+**Purpose:** Showcase community activity and impact
+
+**Content Structure:**
+- **Title (H2):** "Past Events"
+- **Grid of Event Cards:** Each with image, title, description, optional link
+
+**HTML Pattern:**
+```html
+<div class="section-content-wide">
+  <div class="event-grid">
+    <div class="event-item">
+      <img src="/static/event1.jpg" alt="Event name"/>
+      <h3>Event Title</h3>
+      <p>Event description and impact...</p>
+      <a href="#">Learn more</a>
+    </div>
+  </div>
+</div>
+```
+
+**Content Guidelines:**
+- High-quality event photos
+- Concise titles (event name)
+- Impact-focused descriptions (who, what, why)
+- Optional: Date, location, attendance numbers
+- Include link to recap/documentation if available
+
+**Image Requirements:**
+- Good lighting and composition
+- Shows community engagement
+- Represents diverse participation
+- Landscape orientation preferred
+
+---
+
+### 5. About Us (Team) Section
+**Purpose:** Build trust through team transparency
+
+**Content Structure:**
+- **Title (H2):** "About Us" or "Team"
+- **Grid of Team Member Cards:** Photo, name, role, bio
+
+**HTML Pattern:**
+```html
+<div class="team-grid">
+  <div class="team-member">
+    <img src="/static/person.jpg" alt="Name"/>
+    <p class="team-name">
+      <a href="https://linkedin.com/in/...">Name</a>
+    </p>
+    <p class="team-role">Role Title</p>
+    <p class="team-bio">Biography text...</p>
+  </div>
+</div>
+```
+
+**Content Guidelines:**
+- **Photos:** Professional headshots, consistent style
+- **Names:** Full name, linked to LinkedIn/website
+- **Roles:** Clear job title (1-2 lines max)
+- **Bios:** 2-4 sentences covering:
+  - Expertise/background
+  - Contribution to ReFi BCN
+  - Relevant experience or passion
+
+**Linking Strategy:**
+- Name links to professional profile (LinkedIn preferred)
+- Role can include organization links
+- Keep external links minimal but relevant
+
+---
+
+### 6. Footer Section
+**Purpose:** Navigation, contact, and credits
+
+**Content Structure:**
+- **Logo:** ReFi Barcelona visual identity
+- **Links:** Quick navigation to key pages/resources
+- **Contact:** Email address
+- **Credits:** "Created with Quartz" and copyright
+
+**HTML Pattern:**
+```html
+<footer>
+  <div class="footer-logo">
+    <img src="/static/ReFiBCN.png" alt="ReFi Barcelona"/>
+  </div>
+  <div class="footer-content">
+    <div class="footer-links">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li class="separator">•</li>
+        <li><a href="https://github.com/refibcn">GitHub</a></li>
+      </ul>
+    </div>
+    <div class="footer-copyright">
+      <p>Created with Quartz • © 2025</p>
+    </div>
+  </div>
+</footer>
+```
+
+**Content Guidelines:**
+- Keep links minimal and essential
+- Include contact email prominently
+- Attribute technical stack (Quartz)
+- Simple, clean copyright notice
+
+---
+
+## Navigation Structure
+
+### Top Navigation
+**Configured in:** `quartz.layout.ts`
+
+**Components:**
+- Page Title (ReFi Barcelona logo/text)
+- Navigation Menu (if multiple pages)
+- Search Bar
+
+**Content Guidelines:**
+- Keep navigation minimal for single-page site
+- Ensure mobile-responsive menu
+- Search for future content expansion
+
+### Anchor Links
+**Internal Navigation:**
+- Hero CTA → #about (About ReFi section)
+- Other CTAs → relevant sections with IDs
+- Smooth scroll behavior
+
+**HTML Pattern:**
+```html
+<a href="#section-id" class="cta-button">Link Text</a>
+
+<!-- Later in document -->
+<div id="section-id" class="section-container">
+  ...
+</div>
+```
+
+---
+
+## Content Management Workflow
+
+### 1. Editing Content
+**File:** `content/index.md`
+
+**Process:**
+1. Open `content/index.md` in editor
+2. Locate section to edit (use HTML comments as markers)
+3. Update text, keeping HTML structure intact
+4. Save file
+
+**Markdown + HTML Mix:**
+- Use Markdown for simple formatting (*italic*, **bold**, links)
+- Use HTML for complex layouts (grids, cards, sections)
+- Keep structure consistent with existing patterns
+
+### 2. Adding Images
+**Location:** `quartz/static/`
+
+**Process:**
+1. Add image file to `quartz/static/` folder
+2. Use descriptive filename (e.g., `event_biofi_barcelona.jpg`)
+3. Reference in HTML: `<img src="/static/filename.jpg" alt="Description"/>`
+4. Optimize images before adding (< 500KB preferred)
+
+**Image Guidelines:**
+- Format: JPG for photos, PNG for logos/graphics
+- Resolution: High enough for retina displays (2x)
+- Optimization: Compress without visible quality loss
+- Alt Text: Descriptive for accessibility
+
+### 3. Preview Changes
+**Command:** `npx quartz build --serve`
+
+**Process:**
+1. Open terminal in repository root
+2. Run build command
+3. Open http://localhost:8080 in browser
+4. Review changes across different screen sizes
+5. Test links and interactions
+
+### 4. Deploy Changes
+**Process:**
+1. Stage changes: `git add .`
+2. Commit: `git commit -m "Description of changes"`
+3. Push: `git push origin main`
+4. GitHub Actions automatically builds and deploys
+5. Changes live at https://refibcn.cat in ~1-2 minutes
+
+---
+
+## Content Principles
+
+### Clarity
+- Write for general audience (not just ReFi insiders)
+- Explain acronyms and jargon
+- Use simple, direct language
+- Structure information logically
+
+### Action-Oriented
+- Include clear calls-to-action
+- Make next steps obvious
+- Provide concrete ways to engage
+- Link to relevant resources
+
+### Authenticity
+- Show real team members and events
+- Use actual community photos
+- Transparent about mission and activities
+- Honest about impact and challenges
+
+### Accessibility
+- Alt text on all images
+- Descriptive link text (not "click here")
+- Proper heading hierarchy
+- Readable font sizes
+
+---
+
+## Section Templates
+
+### Adding a New Section
+```html
+<div class="section-container">
+  <div class="section-content-centered">
+    <h2 class="section-title">Section Title</h2>
+    <p class="section-subtitle">Optional subtitle or intro</p>
+  </div>
+  
+  <div class="section-content-wide">
+    <!-- Content grid or cards here -->
+  </div>
+</div>
+```
+
+### Adding a New Box Grid
+```html
+<div class="section-content-wide">
+  <div class="three-col-grid">
+    <div class="grid-item">
+      <h3>Item Title</h3>
+      <p>Item description...</p>
+    </div>
+    <!-- Repeat for more items -->
+  </div>
+</div>
+```
+
+### Adding Tinted Background Section
+```html
+<div class="section-tinted">
+  <div class="section-content-centered">
+    <h2>Title</h2>
+    <p>Content that stands out with background color...</p>
+  </div>
+</div>
+```
+
+---
+
+## SEO & Metadata
+
+**Configured in:** `content/index.md` frontmatter
+
+```yaml
+---
+title: "ReFi Barcelona"
+description: "Connecting Catalonia's regenerative movements with global innovations"
+---
+```
+
+**Best Practices:**
+- Keep title concise (< 60 characters)
+- Description should be compelling (< 160 characters)
+- Include relevant keywords naturally
+- Update when content significantly changes
+
+---
+
+## Content Review Checklist
+
+Before publishing changes:
+- [ ] All links work correctly
+- [ ] Images load and have alt text
+- [ ] Text is clear and free of typos
+- [ ] Mobile responsive (test at 375px width)
+- [ ] CTAs are prominent and functional
+- [ ] Contact information is current
+- [ ] Consistent with brand voice
+- [ ] Accessible (headings, contrast, alt text)

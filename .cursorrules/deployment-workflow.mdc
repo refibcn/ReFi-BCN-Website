@@ -1,0 +1,460 @@
+---
+description: Deployment workflow, GitHub Pages configuration, and domain setup
+globs: **/.github/workflows/**,**/DEPLOY*.md,**/HTTPS*.md
+---
+
+# Deployment Workflow & Configuration
+
+## Deployment Overview
+
+**Platform:** GitHub Pages  
+**Custom Domain:** refibcn.cat  
+**DNS Provider:** Cloudflare  
+**Build System:** GitHub Actions  
+**SSL/TLS:** GitHub Pages + Cloudflare (Enforced HTTPS)  
+**Deploy Time:** ~1-2 minutes after push
+
+---
+
+## GitHub Actions Workflow
+
+**File:** `.github/workflows/deploy.yml`
+
+**Workflow Name:** Deploy Quartz site to GitHub Pages
+
+**Trigger:** Push to `main` branch
+
+**Jobs:**
+1. **build** - Builds the Quartz site
+   - Checks out code
+   - Sets up Node.js 22
+   - Installs dependencies (`npm ci`)
+   - Builds Quartz (`npx quartz build`)
+   - Uploads artifact to GitHub Pages
+
+2. **deploy** - Deploys to GitHub Pages
+   - Takes build artifact
+   - Deploys to `github-pages` environment
+   - Makes site live at custom domain
+
+**Permissions Required:**
+```yaml
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+```
+
+---
+
+## Deployment Process
+
+### Automatic Deployment (Standard Workflow)
+
+**Step 1: Make Changes**
+- Edit content in `content/`
+- Edit styles in `quartz/styles/`
+- Test locally with `npx quartz build --serve`
+
+**Step 2: Commit & Push**
+```bash
+git add .
+git commit -m "Descriptive commit message"
+git push origin main
+```
+
+**Step 3: Automatic Build**
+- GitHub Actions detects push
+- Builds Quartz site (30-40 seconds)
+- Uploads to GitHub Pages
+
+**Step 4: Automatic Deploy**
+- Deploys built site (5-10 seconds)
+- Updates live site at https://refibcn.cat
+
+**Total Time:** ~1-2 minutes from push to live
+
+### Manual Deployment Trigger
+
+**Via GitHub UI:**
+1. Go to: https://github.com/refibcn/ReFi-BCN-Website/actions
+2. Select "Deploy Quartz site to GitHub Pages" workflow
+3. Click "Run workflow" button
+4. Select `main` branch
+5. Click "Run workflow"
+
+**Via Command Line:**
+```bash
+gh workflow run deploy.yml
+```
+
+---
+
+## GitHub Pages Configuration
+
+**Settings Location:** https://github.com/refibcn/ReFi-BCN-Website/settings/pages
+
+**Required Configuration:**
+- **Source:** GitHub Actions (not "Deploy from a branch")
+- **Custom domain:** refibcn.cat
+- **Enforce HTTPS:** ✅ Enabled
+
+**Why GitHub Actions Source:**
+- Allows custom build processes (Quartz)
+- No branch protection conflicts
+- More flexible than branch deployment
+- Required for complex static site generators
+
+---
+
+## Domain Configuration
+
+### Custom Domain Setup
+
+**Domain:** refibcn.cat  
+**DNS Provider:** Cloudflare  
+**Configuration Type:** CNAME record
+
+**DNS Records:**
+```
+Type: CNAME
+Name: @ (or refibcn.cat)
+Target: refibcn.github.io
+Proxy Status: Proxied (Orange cloud)
+TTL: Auto
+```
+
+**CNAME File:** `quartz/static/CNAME`
+```
+refibcn.cat
+```
+
+### Cloudflare Configuration
+
+**SSL/TLS Settings:**
+1. Go to SSL/TLS → Overview
+2. Set encryption mode: **Full** or **Full (strict)**
+3. Enable "Always Use HTTPS"
+4. Enable "Automatic HTTPS Rewrites"
+
+**Page Rules (Optional):**
+- URL: `http://*refibcn.cat/*`
+- Setting: Always Use HTTPS
+
+**DNS Only vs Proxied:**
+- **Proxied (Recommended):** Orange cloud, Cloudflare features enabled
+- **DNS Only:** Gray cloud, direct to GitHub Pages
+
+---
+
+## Troubleshooting
+
+### HTTPS Not Available
+
+**Problem:** "Enforce HTTPS" checkbox unavailable or grayed out
+
+**Solutions:**
+
+**1. Wait for Certificate Provisioning**
+- GitHub Pages needs time to provision SSL certificate
+- Usually 10-30 minutes after domain configuration
+- Check back later, should resolve automatically
+
+**2. Remove and Re-add Domain**
+- Go to GitHub Pages settings
+- Click "Remove" next to custom domain
+- Wait 5 minutes
+- Re-add domain: `refibcn.cat`
+- Wait for verification and certificate
+
+**3. Verify DNS Configuration**
+```bash
+dig refibcn.cat
+```
+Should show CNAME pointing to refibcn.github.io
+
+**4. Check Cloudflare SSL**
+- Ensure SSL/TLS encryption is set to "Full" or "Full (strict)"
+- Not "Off" or "Flexible"
+
+**5. Clear DNS Cache**
+```bash
+# Mac/Linux
+sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+
+# Windows
+ipconfig /flushdns
+```
+
+**Reference:** `HTTPS-TROUBLESHOOTING.md` for detailed guide
+
+### Build Failures
+
+**Problem:** GitHub Actions build fails
+
+**Common Causes:**
+1. Syntax errors in Markdown/HTML
+2. Missing dependencies
+3. Invalid quartz configuration
+4. File permission issues
+
+**Debugging Steps:**
+1. Check GitHub Actions logs:
+   https://github.com/refibcn/ReFi-BCN-Website/actions
+2. Click on failed run
+3. Expand failed step
+4. Read error message
+5. Fix issue locally
+6. Test with `npx quartz build --serve`
+7. Commit and push fix
+
+**Common Fixes:**
+- Check for unclosed HTML tags
+- Validate image paths
+- Ensure all files are committed
+- Run `npm ci` locally to verify dependencies
+
+### Deploy Failures
+
+**Problem:** Build succeeds but deploy fails
+
+**Error:** "Branch 'main' is not allowed to deploy"
+
+**Solution:**
+1. Go to GitHub Pages settings
+2. Change Source from "Deploy from a branch" to "GitHub Actions"
+3. Retry deployment
+
+**Error:** "404 - Page not found"
+
+**Solutions:**
+1. Verify CNAME file exists: `quartz/static/CNAME`
+2. Check baseUrl in `quartz.config.ts` matches domain
+3. Wait 5-10 minutes for DNS propagation
+4. Clear browser cache and retry
+
+---
+
+## Monitoring Deployments
+
+### GitHub Actions Dashboard
+
+**URL:** https://github.com/refibcn/ReFi-BCN-Website/actions
+
+**Information Provided:**
+- Recent workflow runs
+- Build status (success/failure)
+- Build duration
+- Commit that triggered build
+- Detailed logs for debugging
+
+### Viewing Deployment History
+
+**Command Line:**
+```bash
+gh run list --limit 10
+```
+
+**View Specific Run:**
+```bash
+gh run view <run-id>
+```
+
+**Watch Live Build:**
+```bash
+gh run watch <run-id>
+```
+
+### Site Status Checks
+
+**Live Site:** https://refibcn.cat
+
+**GitHub Pages URL:** https://refibcn.github.io/ReFi-BCN-Website/
+
+**DNS Check:**
+```bash
+dig refibcn.cat
+```
+
+**SSL Check:**
+```bash
+curl -I https://refibcn.cat
+```
+
+---
+
+## Configuration Files
+
+### quartz.config.ts
+
+**Critical Settings:**
+```typescript
+export default {
+  configuration: {
+    pageTitle: "ReFi Barcelona",
+    baseUrl: "refibcn.cat",          // Must match custom domain
+    // ...
+  },
+}
+```
+
+### quartz.layout.ts
+
+**Page Layout Configuration:**
+```typescript
+export const sharedPageComponents: SharedLayout = {
+  head: Component.Head(),
+  header: [
+    Component.PageTitle(),
+    Component.Navigation(),
+    Component.Search(),
+  ],
+  afterBody: [],
+  footer: Component.Footer({
+    links: {
+      "ReFi Barcelona": "https://refibcn.cat",
+      "GitHub": "https://github.com/refibcn/ReFi-BCN-Website",
+    },
+  }),
+}
+```
+
+### .github/workflows/deploy.yml
+
+**Key Configuration:**
+```yaml
+on:
+  push:
+    branches:
+      - main                    # Triggers on push to main
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04      # Build environment
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22     # Node.js version
+```
+
+---
+
+## Best Practices
+
+### Before Deploying
+
+1. **Test Locally**
+   ```bash
+   npx quartz build --serve
+   ```
+   Visit http://localhost:8080 and verify changes
+
+2. **Check Responsiveness**
+   - Test at mobile width (375px)
+   - Test at tablet width (768px)
+   - Test at desktop width (1024px+)
+
+3. **Verify Links**
+   - All internal links work
+   - All external links open correctly
+   - No broken images
+
+4. **Review Content**
+   - Proofread for typos
+   - Check formatting
+   - Verify information accuracy
+
+### Commit Messages
+
+**Good Examples:**
+- "Update team bios and roles"
+- "Add Network Nationing event to Past Events"
+- "Fix responsive layout on mobile"
+- "Improve box styling for What We Do section"
+
+**Bad Examples:**
+- "Update"
+- "Fix stuff"
+- "Changes"
+- "asdf"
+
+**Format:**
+```
+<type>: <short description>
+
+<optional longer description>
+```
+
+Types: feat, fix, docs, style, refactor, content
+
+### Deployment Frequency
+
+- **Content Updates:** Deploy as needed
+- **Design Changes:** Test thoroughly, deploy in batches
+- **Bug Fixes:** Deploy immediately after verification
+- **Major Updates:** Consider staging branch first
+
+---
+
+## Emergency Procedures
+
+### Rollback to Previous Version
+
+**Quick Rollback:**
+```bash
+git log --oneline            # Find last good commit
+git revert <commit-hash>     # Creates new commit undoing changes
+git push origin main         # Triggers redeploy
+```
+
+**Hard Rollback (Use carefully):**
+```bash
+git reset --hard <commit-hash>
+git push origin main --force  # ⚠️ Only if necessary
+```
+
+### Site Down / Not Loading
+
+**Checklist:**
+1. Check GitHub Actions - recent build failed?
+2. Check GitHub Pages settings - custom domain correct?
+3. Check DNS - `dig refibcn.cat` resolves correctly?
+4. Check Cloudflare status - service operational?
+5. Check SSL certificate - still valid?
+
+**Quick Fix:**
+- Trigger manual deployment
+- Remove and re-add custom domain
+- Contact GitHub Support if persistent
+
+### Build System Issues
+
+**If npm/node issues:**
+```bash
+rm -rf node_modules package-lock.json
+npm install
+npx quartz build --serve
+```
+
+**If Quartz issues:**
+```bash
+npm update quartz
+```
+
+---
+
+## Related Documentation
+
+**In Repository:**
+- `DEPLOY_INSTRUCTIONS.md` - Basic deployment guide
+- `HTTPS-TROUBLESHOOTING.md` - SSL/HTTPS troubleshooting
+- `.github/workflows/deploy.yml` - Workflow configuration
+
+**External Resources:**
+- [GitHub Pages Docs](https://docs.github.com/en/pages)
+- [Quartz Documentation](https://quartz.jzhao.xyz/)
+- [Cloudflare DNS Docs](https://developers.cloudflare.com/dns/)
+
+**Support:**
+- GitHub Issues: https://github.com/refibcn/ReFi-BCN-Website/issues
+- Team Contact: hola@refibcn.cat

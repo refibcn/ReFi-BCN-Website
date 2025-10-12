@@ -1,0 +1,148 @@
+---
+alwaysApply: true
+description: ReFi Barcelona organization overview and website context
+---
+
+# ReFi Barcelona - Project Overview
+
+## Organization Context
+**ReFi Barcelona** is a local node of the global Regenerative Finance (ReFi) movement, connecting Catalonia's regenerative initiatives with global innovations in finance, technology, and governance to accelerate the transition toward a life-centered economy.
+
+## Mission
+We bridge grassroots regenerative action with web3 infrastructure, creating pathways for funding, coordination, and collaboration that serve both local communities and the broader regenerative ecosystem.
+
+## Core Activities
+- **Local Node Building:** Cultivating the ReFi ecosystem in Catalonia through events, workshops, and community gatherings
+- **Ecosystem Mapping:** Maintaining a comprehensive map of regenerative projects and actors in the region (mapa.refibcn.cat)
+- **Funding Programs:** Running local funding rounds like Regenerant Catalunya to channel resources to on-the-ground projects
+- **Capacity Building:** Providing education and support for regenerative projects to adopt web3 tools and practices
+- **Network Weaving:** Connecting local actors with global ReFi communities, partners, and resources
+
+## Core Team
+- **Luiz Fernando Segala Gomes:** Founder & Strategy Lead - Building technical, financial, and operational capacity for regenerative networks
+- **Giulio Quarta:** Operations, Partnerships & Community Lead - Pioneer of post-capitalist crypto gatherings, community builder
+- **Andrea Farias:** Program Design & Communications Lead - Researcher, designer, and facilitator strengthening communities
+
+## Website Purpose
+
+**This Repository Serves As:**
+- **Digital Home:** Primary web presence for ReFi Barcelona at https://refibcn.cat
+- **Community Hub:** Information about events, initiatives, and how to get involved
+- **Ecosystem Gateway:** Entry point to the broader ReFi ecosystem in Catalonia
+- **Trust Builder:** Professional presentation of team, activities, and impact
+
+**Website Sections:**
+1. **Hero Section:** Mission and immediate call-to-action
+2. **About Us:** What ReFi Barcelona is and does
+3. **What We Do:** Core activities and services (Ecosystem Map, Events, Funding Programs)
+4. **Past Events:** Showcase of significant community gatherings
+5. **About Us (Team):** Team member bios and contact information
+6. **Footer:** Links, contact, and credits
+
+## Design System Overview
+
+**Brand Colors (CSS Variables):**
+- Primary: `--blue-dark` (#092045) - Dark navy for main elements
+- Links: `--blue-medium` (#1A3A6B) - Medium blue for clickable elements
+- Hover: `--blue-light` (#2E5491) - Light blue for hover states  
+- Highlight: `--blue-highlight` (rgba(9, 32, 69, 0.15)) - Transparent blue for backgrounds
+
+**Key Design Patterns:**
+- **Box Components:** Cards with 2px borders, padding 2rem 1.5rem, hover effects
+- **Grid Layouts:** Responsive 3-column (What We Do), 2-column (Events), responsive (Team)
+- **Hero Section:** Two-column layout with large title, descriptive text, and CTA button
+- **Consistent Spacing:** 3rem vertical sections, responsive horizontal padding
+- **Typography:** Clear hierarchy with standardized font sizes
+
+## Repository Structure
+
+**Content Files:**
+- `content/index.md` - Homepage (all sections)
+- `quartz/static/` - Images, logos, photos
+
+**Styling:**
+- `quartz/styles/custom.scss` - All custom styles (1600+ lines)
+- `quartz/components/styles/` - Component-specific styles
+
+**Configuration:**
+- `quartz.config.ts` - Site metadata, base URL (refibcn.cat)
+- `quartz.layout.ts` - Page layout, header/footer components
+- `.github/workflows/deploy.yml` - Automatic deployment
+
+**Components:**
+- `quartz/components/Footer.tsx` - Custom footer layout
+- `quartz/components/Navigation.tsx` - Top navigation
+
+## When Working in This Repository
+
+**This is a Quartz Website Repository for:**
+- Publishing ReFi Barcelona's public web presence
+- Showcasing activities, events, and team
+- Providing information and calls-to-action
+- Connecting the community
+
+**Repository Workflow:**
+1. Edit content files in `content/` folder
+2. Edit styles in `quartz/styles/custom.scss`
+3. Preview locally: `npx quartz build --serve` (http://localhost:8080)
+4. Commit and push to `main` branch
+5. GitHub Actions automatically deploys to refibcn.cat
+6. Changes live in ~1-2 minutes
+
+**Always Check First:**
+- Is the design consistent with existing patterns?
+- Does the content align with ReFi Barcelona's mission?
+- Is the styling following the design system (colors, spacing, boxes)?
+- Will this work responsively on mobile?
+
+**Content Management:**
+- **Primary File:** `content/index.md` contains all homepage sections
+- **Images:** Store in `quartz/static/` folder
+- **Styling:** Centralized in `quartz/styles/custom.scss`
+- **Quick Preview:** `npx quartz build --serve` shows changes immediately
+
+**Design Consistency:**
+- Use CSS variables for colors (never hardcode colors)
+- Follow box component pattern for new sections
+- Maintain 3rem vertical spacing between sections
+- Test responsive behavior at mobile widths
+- Keep hover states consistent (transform translateY, color changes)
+
+**Deployment Process:**
+- **Automatic:** Push to main → GitHub Actions builds → Deploys to refibcn.cat
+- **Manual Trigger:** Can also run GitHub Actions workflow manually
+- **Domain:** Custom domain via Cloudflare DNS (CNAME → refibcn.github.io)
+- **SSL:** Enforced HTTPS via GitHub Pages + Cloudflare
+
+## Key Resources
+
+**Live Sites:**
+- Main Website: https://refibcn.cat
+- Ecosystem Map: https://mapa.refibcn.cat
+- Regenerant Catalunya: https://regenerant.refibcn.cat (if deployed)
+
+**External Links:**
+- GitHub Repository: https://github.com/refibcn/ReFi-BCN-Website
+- ReFi DAO: https://refidao.com
+- Global ReFi: https://www.regen.network
+
+**Contact:**
+- Email: hola@refibcn.cat
+- GitHub: @refibcn
+
+## Current Focus
+
+**Website Status:** Live and actively maintained
+**Recent Updates:** 
+- Added Network Nationing Jul 2025 image to "What is ReFi?" section
+- Updated About Us with team roles and detailed bios
+- Improved box styling and text flow across all sections
+- Compact footer with optimized layout
+- Removed dark mode toggle for cleaner interface
+- Enhanced search bar styling with consistent borders
+
+**Ongoing:**
+- Keeping event information current
+- Adding new team members or role updates as needed
+- Maintaining ecosystem map integration
+- Ensuring all content is accurate and up-to-date

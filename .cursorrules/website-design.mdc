@@ -1,0 +1,395 @@
+---
+description: ReFi Barcelona website design system, styling patterns, and visual identity
+globs: **/*custom.scss,**/index.md,**/styles/**
+---
+
+# Website Design System
+
+## Brand Colors & CSS Variables
+
+### Primary Color Palette (Blue Theme)
+```scss
+:root {
+  --blue-dark: #092045;       // Dark navy (main text, borders, buttons)
+  --blue-medium: #1A3A6B;     // Medium blue (links, secondary elements)
+  --blue-light: #2E5491;      // Light blue (hover states)
+  --blue-highlight: rgba(9, 32, 69, 0.15);  // Transparent blue (backgrounds)
+}
+```
+
+### Usage Guidelines
+- **Never hardcode colors** - Always use CSS variables
+- **Borders:** `var(--blue-dark)` for all borders (2px solid)
+- **Links:** `var(--blue-medium)` default, `var(--blue-light)` on hover
+- **Backgrounds:** `var(--blue-highlight)` for hover effects on boxes
+- **Text:** Use Quartz defaults (`--darkgray`, `--gray`, `--light`)
+
+## Component Design Patterns
+
+### Box Components (Cards)
+**Standard Box Pattern:**
+```scss
+.component-item {
+  border: 2px solid var(--blue-dark);
+  padding: 2rem 1.5rem;
+  background: transparent;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    background: var(--blue-highlight);
+    transform: translateY(-2px);
+  }
+}
+```
+
+**Applied To:**
+- Feature Grid items (What We Do section)
+- Event Grid items (Past Events section)
+- Team Member cards (About Us section)
+
+**Key Properties:**
+- **Border:** Always 2px solid with primary color
+- **Padding:** 2rem vertical, 1.5rem horizontal (adjusted for content)
+- **Background:** Transparent by default, highlight color on hover
+- **Hover Effect:** Subtle lift (-2px translateY) + background color
+- **Transition:** Smooth 0.2s ease for all changes
+
+### Grid Layouts
+
+**Three-Column Grid (What We Do):**
+```scss
+.feature-grid {
+  display: grid;
+  grid-template-columns: 1fr;              // Mobile: 1 column
+  gap: 1.5rem;
+  
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr); // Tablet: 2 columns
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr); // Desktop: 3 columns
+  }
+}
+```
+
+**Two-Column Grid (Events):**
+```scss
+.event-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); // 2 columns at tablet+
+  }
+}
+```
+
+**Responsive Grid (Team Members):**
+```scss
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+```
+
+## Typography
+
+### Heading Hierarchy
+```scss
+article {
+  h1 {
+    font-size: 3.25rem;   // Hero titles only
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: 2.5rem;     // Section headers
+    margin-bottom: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;    // Event titles, subsections
+  }
+}
+```
+
+### Text Sizes in Components
+- **Feature/Event Titles (dt/h3):** 1rem - 1.25rem
+- **Body Text (dd/p):** 0.95rem
+- **Team Roles:** 0.9rem (italic)
+- **Team Bios:** 0.9rem
+
+### Line Heights
+- **Headings:** 1.2 - 1.3
+- **Body Text:** 1.6 (optimal readability)
+- **Compact Text:** 1.4 - 1.5
+
+## Spacing System
+
+### Section Spacing
+```scss
+.section-container,
+.section-tinted,
+.callout-section {
+  padding: 3rem 1.5rem;        // Mobile
+  
+  @media (min-width: 768px) {
+    padding: 3rem 2rem;        // Tablet
+  }
+  
+  @media (min-width: 1024px) {
+    padding: 3rem 3rem;        // Desktop
+  }
+}
+```
+
+### Component Spacing
+- **Grid Gap:** 1.5rem between items
+- **Box Padding:** 2rem vertical, 1.5rem horizontal (or 1rem for tight content)
+- **Margin Bottom:** 0.75rem - 1.5rem between elements
+- **Section Gaps:** 3rem vertical between major sections
+
+### Image Bleeding (Events/Team Cards)
+Images extend to box edges:
+```scss
+img {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  margin-top: -2rem;
+  width: calc(100% + 3rem);
+  max-width: calc(100% + 3rem);
+  border-bottom: 2px solid var(--blue-dark);
+}
+```
+
+## Hero Section Design
+
+### Layout Structure
+```scss
+.hero-section {
+  .hero-top {
+    display: grid;
+    grid-template-columns: 5fr 3fr;  // 5:3 ratio for title:image
+    align-items: end;                // Align to bottom
+    gap: 2rem;
+  }
+  
+  .hero-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;         // Left-aligned text and button
+    margin-left: -8rem;              // Extend to left
+    margin-right: 2rem;
+  }
+}
+```
+
+### Hero Title Styling
+```scss
+.hero-title h1 {
+  font-size: 3.25rem;
+  line-height: 1.2;
+  margin-left: -8rem;    // Extend to left edge
+  margin-right: 2rem;    // Gap from image
+}
+```
+
+### CTA Button
+```scss
+.cta-button {
+  background: var(--light);
+  color: var(--blue-dark);
+  border: 2px solid var(--blue-dark);
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  
+  &::after {
+    content: " ↓";           // Down arrow for scroll
+    margin-left: 0.5rem;
+  }
+  
+  &:hover {
+    background: var(--blue-dark);
+    color: var(--light);
+  }
+}
+```
+
+## Special Styling Patterns
+
+### Link Highlights (Team Names, Contact)
+```scss
+.team-name a,
+.highlight-link {
+  background: var(--lightgray);
+  padding: 0.25rem 0.5rem;
+  color: var(--darkgray);
+  text-decoration: none;
+  white-space: nowrap;
+  
+  &:hover {
+    background: var(--blue-highlight);
+    color: var(--blue-dark);
+  }
+}
+```
+
+### Search Bar Styling
+```scss
+.search-container .search-space > input {
+  border: 1px solid var(--blue-medium) !important;
+  
+  &:hover {
+    border-color: var(--blue-light) !important;
+  }
+  
+  &:focus {
+    border-color: var(--blue-dark) !important;
+    outline: 2px solid var(--blue-highlight) !important;
+  }
+}
+```
+
+### Footer Layout
+```scss
+footer {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 1.5rem;
+  
+  .footer-logo img {
+    height: 6rem;
+    width: 6rem;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+```
+
+## Responsive Design Strategy
+
+### Breakpoints
+```scss
+// Mobile-first approach
+@media (min-width: 640px)  { /* Tablet */ }
+@media (min-width: 768px)  { /* Large tablet */ }
+@media (min-width: 1024px) { /* Desktop */ }
+```
+
+### Mobile Optimizations
+- Stack columns vertically (grid-template-columns: 1fr)
+- Reduce padding (3rem → 1.5rem)
+- Smaller font sizes for headings
+- Full-width CTAs
+- Simpler hero layout
+
+### Tablet Adjustments
+- 2-column grids where appropriate
+- Moderate padding (2rem)
+- Balanced typography
+- Multi-column footer possible
+
+### Desktop Enhancements
+- Full 3-column grids
+- Maximum padding (3rem)
+- Optimal line lengths
+- Rich hero layouts
+- Horizontal footer
+
+## Accessibility Considerations
+
+### Color Contrast
+- All text meets WCAG AA standards
+- Links have sufficient contrast
+- Hover states are clearly visible
+- Focus states have outlines
+
+### Interactive Elements
+- Clear hover feedback (color + transform)
+- Focus indicators on all interactive elements
+- Sufficient target sizes (44x44px minimum)
+- Keyboard navigation supported
+
+### Content Structure
+- Semantic HTML throughout
+- Proper heading hierarchy
+- Alt text on all images
+- Descriptive link text
+
+## File Organization
+
+**Main Styling File:**
+```
+quartz/styles/custom.scss
+```
+
+**Structure:**
+1. CSS Variables (lines 1-30)
+2. Global Accent Colors (lines 31-100)
+3. Global Styling (lines 101-200)
+4. Hero Section (lines 300-600)
+5. Section Containers (lines 600-900)
+6. Component Grids (lines 1400-1600)
+7. Footer & Navigation (lines 1500-1650)
+
+**Component Styles:**
+```
+quartz/components/styles/
+  - footer.scss (if exists)
+  - search.scss (if exists)
+```
+
+## Design Principles
+
+1. **Consistency:** Use established patterns for all new components
+2. **Simplicity:** Clean, uncluttered layouts
+3. **Responsiveness:** Mobile-first, gracefully enhanced
+4. **Performance:** Minimal CSS, efficient selectors
+5. **Maintainability:** Well-organized, commented code
+6. **Accessibility:** Inclusive design for all users
+
+## Common Design Tasks
+
+**Adding a New Box Section:**
+1. Use box component pattern (border, padding, hover)
+2. Apply appropriate grid layout
+3. Use CSS variables for colors
+4. Test responsive behavior
+5. Verify accessibility
+
+**Updating Colors:**
+1. Modify CSS variables at root level
+2. Never hardcode hex colors
+3. Test across all components
+4. Verify contrast ratios
+
+**Adjusting Spacing:**
+1. Use rem units (scales with font size)
+2. Maintain 3rem vertical rhythm
+3. Consistent gaps in grids (1.5rem)
+4. Test at multiple screen sizes
+
+**Typography Changes:**
+1. Update font sizes in article scope
+2. Maintain hierarchy (h1 > h2 > h3)
+3. Keep line heights appropriate (1.2-1.6)
+4. Test readability at mobile sizes
