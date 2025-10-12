@@ -17,7 +17,7 @@ description: "Connecting Catalonia's regenerative movements with global innovati
       We connect Catalonia's regenerative movements with global innovations in finance, 
       technology, and governance to accelerate the transition toward a life-centered economy.
     </p>
-    <a href="#contact" class="cta-button">Get Involved</a>
+    <a href="#about" class="cta-button">Learn More</a>
   </div>
 </div>
 
@@ -116,16 +116,19 @@ Together with local partners like **Miceli Social** and **La Fundició**, and gl
     <div class="team-member">
       <img src="/static/luiz_fernando.jpg" alt="Luiz Fernando"/>
       <p class="team-name"><a href="https://www.linkedin.com/in/luizfernandosg/">Luiz Fernando</a></p>
-      <p class="team-bio">Tending the growth of regenerative networks at ReFi DAO and ReFi BCN, harnessing governance, grants, and operational automation to cultivate resilient ecosystems.</p>
+      <p class="team-role">Founder & Strategy Lead</p>
+      <p class="team-bio">Building technical, financial, and operational capacity for regenerative networks at ReFi DAO, ReFi BCN and beyond - leveraging governance, grants, and operational automation to cultivate resilient ecosystems.</p>
     </div>
     <div class="team-member">
       <img src="/static/giulio_quarta.jpg" alt="Giulio Quarta"/>
       <p class="team-name"><a href="https://www.linkedin.com/in/giulio-quarta-b01a46122/">Giulio Quarta</a></p>
+      <p class="team-role">Operations, Partnerships & Community Lead</p>
       <p class="team-bio">Community-builder and pioneer of post-capitalist crypto gatherings, bringing people together to co-create experimental financial infrastructures for just economies.</p>
     </div>
     <div class="team-member">
       <img src="/static/andrea_farias.JPG" alt="Andrea Farias"/>
       <p class="team-name"><a href="https://www.linkedin.com/in/andrea-farias-bb944750/">Andrea Farias</a></p>
+      <p class="team-role">Program Design & Communications Lead</p>
       <p class="team-bio">Researcher, designer, and facilitator leveraging years of experience in product innovation to co-create tools and processes that strengthen communities in the face of planetary crisis.</p>
     </div>
   </div>
@@ -147,7 +150,7 @@ Together with local partners like **Miceli Social** and **La Fundició**, and gl
 
 <div class="hero-image">
 
-<img src="/static/refi_dao.png" alt="ReFi DAO graphic"/>
+<img src="/static/network_nationing_jul_2025.jpg" alt="Network Nationing Jul 2025"/>
 
 </div>
 
