@@ -242,6 +242,12 @@ header .search {
   justify-content: center;
   margin: 0;
   flex-shrink: 0;
+  margin-left: auto;
+  margin-right: 0.5rem;
+  
+  @media (max-width: 768px) {
+    margin-right: 0.5rem;
+  }
 }
 
 header .search button {
@@ -262,6 +268,13 @@ header .search button {
   font-weight: normal;
   line-height: 1;
   box-sizing: border-box;
+  
+  @media (max-width: 768px) {
+    min-width: 44px;
+    min-height: 44px;
+    width: 44px;
+    height: 44px;
+  }
   
   svg {
     width: 1rem;
@@ -291,6 +304,13 @@ header .search button p {
   align-items: center;
   flex: 1;
   justify-content: center;
+  margin-left: 0;
+  
+  @media (max-width: 768px) {
+    flex: 0;
+    justify-content: flex-end;
+    margin-left: 0;
+  }
   
   .hamburger {
     display: none;
@@ -715,6 +735,16 @@ button,
 // ============================================
 // SEARCH
 // ============================================
+
+// Ensure search modal is properly centered on mobile
+.search-container .search-space {
+  @media (max-width: 768px) {
+    width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 !important;
+  }
+}
 
 .search-container .search-space > input {
   border: 1px solid var(--blue-medium) !important;
