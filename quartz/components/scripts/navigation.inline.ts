@@ -1,16 +1,31 @@
 export default () => {
-  console.log("[Navigation] Script loaded")
-  const hamburger = document.querySelector(".hamburger")
-  const navLinks = document.querySelector(".nav-links")
-  console.log("[Navigation] Elements found:", { hamburger: !!hamburger, navLinks: !!navLinks })
-  
-  if (hamburger && navLinks) {
-    console.log("[Navigation] Adding click listener")
+  // Wait for DOM to be fully ready
+  const init = () => {
+    const hamburger = document.querySelector(".hamburger") as HTMLElement
+    const navLinks = document.querySelector(".nav-links") as HTMLElement
+    
+    if (!hamburger || !navLinks) {
+      console.warn("[Navigation] Elements not found")
+      return
+    }
+    
+    console.log("[Navigation] Initializing menu")
+    
+    // Toggle menu on hamburger click
     hamburger.addEventListener("click", (e) => {
+      e.preventDefault()
       e.stopPropagation()
-      navLinks.classList.toggle("open")
-      hamburger.classList.toggle("active")
-      console.log("[Navigation] Menu toggled, open:", navLinks.classList.contains("open"))
+      const isOpen = navLinks.classList.contains("open")
+      
+      if (isOpen) {
+        navLinks.classList.remove("open")
+        hamburger.classList.remove("active")
+      } else {
+        navLinks.classList.add("open")
+        hamburger.classList.add("active")
+      }
+      
+      console.log("[Navigation] Menu is now:", isOpen ? "closed" : "open")
     })
     
     // Close menu when clicking a link
@@ -29,6 +44,15 @@ export default () => {
         hamburger.classList.remove("active")
       }
     })
+    
+    console.log("[Navigation] Menu initialized successfully")
+  }
+  
+  // Run immediately if DOM is ready, otherwise wait
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init)
+  } else {
+    init()
   }
 }
 
