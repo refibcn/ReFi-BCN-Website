@@ -102,6 +102,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
+  
+  @media (max-width: 640px) {
+    font-size: 1rem;
+    padding-top: 55px;
+  }
+  
+  @media (max-width: 375px) {
+    font-size: 0.9375rem;
+    padding-top: 50px;
+  }
 }
 
 // PAGE-LEVEL WIDTH CONSTRAINTS
@@ -109,12 +119,28 @@ body {
   max-width: 750px !important;
   margin: 0 auto !important;
   padding: 0 2rem !important;
+  
+  @media (max-width: 639px) {
+    padding: 0 1rem !important;
+  }
+  
+  @media (max-width: 375px) {
+    padding: 0 0.75rem !important;
+  }
 }
 
 #quartz-body {
   max-width: 750px !important;
   margin: 0 auto !important;
   padding: 0 2rem !important;
+  
+  @media (max-width: 639px) {
+    padding: 0 1rem !important;
+  }
+  
+  @media (max-width: 375px) {
+    padding: 0 0.75rem !important;
+  }
 }
 
 // ============================================
@@ -140,6 +166,21 @@ header {
   justify-content: space-between;
   gap: 2rem;
   box-sizing: border-box;
+  
+  @media (max-width: 640px) {
+    left: 0.5rem;
+    right: 0.5rem;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+    margin-top: 0.25rem;
+  }
+  
+  @media (max-width: 375px) {
+    left: 0.25rem;
+    right: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    gap: 0.5rem;
+  }
 }
 
 // Page title in header
@@ -148,6 +189,14 @@ header .page-title {
   font-size: 1.25rem;
   color: var(--blue-dark);
   flex-shrink: 0;
+  
+  @media (max-width: 640px) {
+    font-size: 1.125rem;
+  }
+  
+  @media (max-width: 375px) {
+    font-size: 1rem;
+  }
   
   a {
     color: var(--blue-dark);
@@ -292,6 +341,10 @@ header .search button p {
   @media (max-width: 768px) {
     .hamburger {
       display: flex;
+      min-width: 44px;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
     }
     
     .nav-links {
@@ -319,8 +372,27 @@ header .search button p {
       
       a {
         display: block;
-        padding: 0.5rem;
+        padding: 0.75rem;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .nav-links {
+      left: 0.5rem;
+      right: 0.5rem;
+      padding: 0.75rem;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .nav-links {
+      left: 0.25rem;
+      right: 0.25rem;
     }
   }
 }
@@ -354,6 +426,16 @@ header .search button p {
   padding-top: 1rem;
   padding-bottom: 2rem;
   box-sizing: border-box;
+  
+  @media (max-width: 639px) {
+    padding-top: 0.75rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  @media (max-width: 375px) {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+  }
 }
 
 // ============================================
@@ -371,18 +453,42 @@ h1 {
   font-size: 2.5rem;
   letter-spacing: -0.03em;
   margin-top: 1em;
+  
+  @media (max-width: 640px) {
+    font-size: 2rem;
+  }
+  
+  @media (max-width: 375px) {
+    font-size: 1.75rem;
+  }
 }
 
 h2 {
   font-size: 2rem;
   letter-spacing: -0.02em;
   margin-top: 1.75em;
+  
+  @media (max-width: 640px) {
+    font-size: 1.75rem;
+  }
+  
+  @media (max-width: 375px) {
+    font-size: 1.5rem;
+  }
 }
 
 h3 {
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 1.5em;
+  
+  @media (max-width: 640px) {
+    font-size: 1.25rem;
+  }
+  
+  @media (max-width: 375px) {
+    font-size: 1.125rem;
+  }
 }
 
 // Paragraphs and content spacing
@@ -934,6 +1040,40 @@ body[saved-theme="dark"] {
 }
 
 // ============================================
+// TABLES & OVERFLOW CONTENT - Mobile Enhancements
+// ============================================
+
+// Ensure tables scroll properly on mobile
+.table-container {
+  -webkit-overflow-scrolling: touch;
+  
+  @media (max-width: 639px) {
+    margin: 0 -1rem;
+    padding: 0 1rem;
+    width: calc(100% + 2rem);
+  }
+  
+  @media (max-width: 375px) {
+    margin: 0 -0.75rem;
+    padding: 0 0.75rem;
+    width: calc(100% + 1.5rem);
+  }
+}
+
+// Code blocks mobile scrolling
+pre {
+  -webkit-overflow-scrolling: touch;
+  
+  @media (max-width: 639px) {
+    font-size: 0.8125rem;
+  }
+  
+  @media (max-width: 375px) {
+    font-size: 0.75rem;
+  }
+}
+
+// ============================================
 // ACCESSIBILITY
 // ============================================
 
@@ -994,6 +1134,15 @@ body.show-sidebars {
 article h2 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
+  
+  @media (max-width: 639px) {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  @media (max-width: 375px) {
+    font-size: 1.5rem;
+  }
 }
 
 // Hide header anchor links on index page only
@@ -1054,12 +1203,31 @@ article[data-slug="index"] {
       font-size: 3rem;
       margin-top: 6rem;
     }
+    
+    @media (max-width: 639px) {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+    
+    @media (max-width: 375px) {
+      font-size: 1.5rem;
+      margin-top: 1.5rem;
+    }
   }
 }
 
 // Hero Section - Flexible layout for main hero and other two-column sections
 .hero-section {
   padding: 3rem 0;
+  
+  @media (max-width: 639px) {
+    padding: 2rem 0;
+  }
+  
+  @media (max-width: 375px) {
+    padding: 1.5rem 0;
+  }
   
   @media (min-width: 768px) {
     padding: 6rem 0;
@@ -1072,6 +1240,14 @@ article[data-slug="index"] {
     h2 {
       font-size: 2.5rem;
       margin-top: 0;
+      
+      @media (max-width: 639px) {
+        font-size: 1.75rem;
+      }
+      
+      @media (max-width: 375px) {
+        font-size: 1.5rem;
+      }
     }
   }
   
@@ -1095,18 +1271,31 @@ article[data-slug="index"] {
       margin-left: -8rem;
       margin-right: 2rem;
     }
+    
+    @media (max-width: 767px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
   
   h1 {
-    font-size: 2.75rem;
+    font-size: 2rem;
     line-height: 1.2;
     letter-spacing: -0.02em;
     margin: 0;
     color: var(--darkgray);
     
     @media (min-width: 640px) {
-      font-size: 3.25rem;
+      font-size: 2.75rem;
       line-height: 1.2;
+    }
+    
+    @media (min-width: 768px) {
+      font-size: 3.25rem;
+    }
+    
+    @media (max-width: 375px) {
+      font-size: 1.75rem;
     }
   }
   
@@ -1119,13 +1308,29 @@ article[data-slug="index"] {
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
-    margin-left: -8rem;
-    margin-right: 2rem;
+    
+    @media (min-width: 768px) {
+      margin-left: -8rem;
+      margin-right: 2rem;
+    }
+    
+    @media (max-width: 767px) {
+      margin-left: 0;
+      margin-right: 0;
+      align-items: stretch;
+    }
     
     .cta-button {
       padding: 1rem 2.5rem;
       font-size: 1.125rem;
       white-space: nowrap;
+      
+      @media (max-width: 640px) {
+        padding: 0.875rem 2rem;
+        font-size: 1rem;
+        width: 100%;
+        text-align: center;
+      }
       
       &::after {
         content: " ↓";
@@ -1170,9 +1375,22 @@ article[data-slug="index"] {
       margin-left: 2rem;
     }
     
+    @media (max-width: 767px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    
     img {
-      width: 150%;
-      max-width: 150%;
+      @media (min-width: 768px) {
+        width: 150%;
+        max-width: 150%;
+      }
+      
+      @media (max-width: 767px) {
+        width: 100%;
+        max-width: 100%;
+      }
+      
       border-radius: 0;
       object-fit: cover;
     }
@@ -1197,6 +1415,16 @@ article[data-slug="index"] {
     padding: 3rem 2rem;
     margin: 3rem -2rem;
   }
+  
+  @media (max-width: 639px) {
+    padding: 1.5rem 1rem;
+    margin: 2rem 0;
+  }
+  
+  @media (max-width: 375px) {
+    padding: 1.25rem 0.75rem;
+    margin: 1.5rem 0;
+  }
 }
 
 // Section containers with borders (for alternating visual rhythm)
@@ -1208,6 +1436,16 @@ article[data-slug="index"] {
   @media (min-width: 640px) {
     padding: 3rem 2rem;
     margin: 3rem -2rem;
+  }
+  
+  @media (max-width: 639px) {
+    padding: 1.5rem 1rem;
+    margin: 2rem 0;
+  }
+  
+  @media (max-width: 375px) {
+    padding: 1.25rem 0.75rem;
+    margin: 1.5rem 0;
   }
   
   // Variant with background for alternating sections
@@ -1253,6 +1491,15 @@ article[data-slug="index"] {
   @media (min-width: 640px) {
     font-size: 3rem;
   }
+  
+  @media (max-width: 639px) {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  @media (max-width: 375px) {
+    font-size: 1.5rem;
+  }
 }
 
 .section-subtitle {
@@ -1272,6 +1519,16 @@ article[data-slug="index"] {
   grid-template-columns: 1fr;
   gap: 2.5rem;
   margin-top: 3rem;
+  
+  @media (max-width: 639px) {
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  
+  @media (max-width: 375px) {
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
   
   @media (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
@@ -1339,6 +1596,21 @@ article[data-slug="index"] {
   text-decoration: none;
   border: 2px solid var(--blue-dark);
   transition: all 0.2s ease;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  @media (max-width: 639px) {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9375rem;
+  }
+  
+  @media (max-width: 375px) {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
   
   &:hover {
     background: var(--blue-dark);
@@ -1365,6 +1637,16 @@ article[data-slug="index"] {
   margin-left: auto;
   margin-right: auto;
   
+  @media (max-width: 639px) {
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  @media (max-width: 375px) {
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  
   @media (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
     gap: 3rem;
@@ -1375,9 +1657,23 @@ article[data-slug="index"] {
     text-align: left;
     font-size: 1.125rem;
     
+    @media (max-width: 639px) {
+      font-size: 1rem;
+      padding-left: 1.25rem;
+    }
+    
+    @media (max-width: 375px) {
+      font-size: 0.9375rem;
+      padding-left: 1rem;
+    }
+    
     li {
       margin-bottom: 1rem;
       color: var(--darkgray);
+      
+      @media (max-width: 639px) {
+        margin-bottom: 0.75rem;
+      }
     }
   }
 }
@@ -1409,6 +1705,16 @@ article[data-slug="index"] {
   gap: 1.5rem;
   margin-top: 3rem;
   
+  @media (max-width: 639px) {
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  @media (max-width: 375px) {
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  
   @media (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1423,6 +1729,14 @@ article[data-slug="index"] {
     background: transparent;
     transition: all 0.2s ease;
     
+    @media (max-width: 639px) {
+      padding: 1.5rem 1rem;
+    }
+    
+    @media (max-width: 375px) {
+      padding: 1.25rem 0.875rem;
+    }
+    
     &:hover {
       background: var(--blue-highlight);
       transform: translateY(-2px);
@@ -1433,6 +1747,10 @@ article[data-slug="index"] {
       font-size: 1rem;
       margin-bottom: 0.75rem;
       color: var(--darkgray);
+      
+      @media (max-width: 375px) {
+        font-size: 0.9375rem;
+      }
     }
     
     dd {
@@ -1440,6 +1758,10 @@ article[data-slug="index"] {
       color: var(--darkgray);
       line-height: 1.6;
       font-size: 0.95rem;
+      
+      @media (max-width: 375px) {
+        font-size: 0.875rem;
+      }
     }
   }
 }
@@ -1451,6 +1773,16 @@ article[data-slug="index"] {
   gap: 1.5rem;
   margin-top: 3rem;
   
+  @media (max-width: 639px) {
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  @media (max-width: 375px) {
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  
   @media (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1460,6 +1792,14 @@ article[data-slug="index"] {
     padding: 2rem 1.5rem;
     background: transparent;
     transition: all 0.2s ease;
+    
+    @media (max-width: 639px) {
+      padding: 1.5rem 1rem;
+    }
+    
+    @media (max-width: 375px) {
+      padding: 1.25rem 0.875rem;
+    }
     
     &:hover {
       background: var(--blue-highlight);
@@ -1476,6 +1816,23 @@ article[data-slug="index"] {
       width: calc(100% + 3rem);
       max-width: calc(100% + 3rem);
       border-bottom: 2px solid var(--blue-dark);
+      
+      @media (max-width: 639px) {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        margin-top: -1.5rem;
+        width: calc(100% + 2rem);
+        max-width: calc(100% + 2rem);
+        margin-bottom: 1rem;
+      }
+      
+      @media (max-width: 375px) {
+        margin-left: -0.875rem;
+        margin-right: -0.875rem;
+        margin-top: -1.25rem;
+        width: calc(100% + 1.75rem);
+        max-width: calc(100% + 1.75rem);
+      }
     }
     
     h3 {
@@ -1483,12 +1840,25 @@ article[data-slug="index"] {
       margin-top: 0;
       margin-bottom: 1rem;
       color: var(--darkgray);
+      
+      @media (max-width: 639px) {
+        font-size: 1.125rem;
+        margin-bottom: 0.75rem;
+      }
+      
+      @media (max-width: 375px) {
+        font-size: 1rem;
+      }
     }
     
     p {
       color: var(--darkgray);
       line-height: 1.6;
       font-size: 0.95rem;
+      
+      @media (max-width: 375px) {
+        font-size: 0.875rem;
+      }
     }
   }
 }
@@ -1499,6 +1869,16 @@ article[data-slug="index"] {
   grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-top: 3rem;
+  
+  @media (max-width: 639px) {
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  @media (max-width: 375px) {
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
   
   @media (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
@@ -1515,6 +1895,14 @@ article[data-slug="index"] {
     transition: all 0.2s ease;
     text-align: center;
     
+    @media (max-width: 639px) {
+      padding: 1.5rem 0.75rem;
+    }
+    
+    @media (max-width: 375px) {
+      padding: 1.25rem 0.625rem;
+    }
+    
     &:hover {
       background: var(--blue-highlight);
       transform: translateY(-2px);
@@ -1530,6 +1918,23 @@ article[data-slug="index"] {
       width: calc(100% + 2rem);
       max-width: calc(100% + 2rem);
       border-bottom: 2px solid var(--blue-dark);
+      
+      @media (max-width: 639px) {
+        margin-left: -0.75rem;
+        margin-right: -0.75rem;
+        margin-top: -1.5rem;
+        width: calc(100% + 1.5rem);
+        max-width: calc(100% + 1.5rem);
+        margin-bottom: 1rem;
+      }
+      
+      @media (max-width: 375px) {
+        margin-left: -0.625rem;
+        margin-right: -0.625rem;
+        margin-top: -1.25rem;
+        width: calc(100% + 1.25rem);
+        max-width: calc(100% + 1.25rem);
+      }
     }
     
     .team-name {
@@ -1537,6 +1942,10 @@ article[data-slug="index"] {
       font-size: 1.125rem;
       margin-bottom: 0.5rem;
       line-height: 1.8;
+      
+      @media (max-width: 375px) {
+        font-size: 1rem;
+      }
       
       a {
         color: var(--darkgray);
@@ -1562,6 +1971,10 @@ article[data-slug="index"] {
       margin-bottom: 0.75rem;
       margin-top: 0;
       
+      @media (max-width: 375px) {
+        font-size: 0.8125rem;
+      }
+      
       a {
         color: var(--blue-medium);
         text-decoration: none;
@@ -1577,6 +1990,10 @@ article[data-slug="index"] {
       line-height: 1.6;
       font-size: 0.9rem;
       margin-top: 0;
+      
+      @media (max-width: 375px) {
+        font-size: 0.8125rem;
+      }
     }
   }
 }
@@ -1594,6 +2011,16 @@ article[data-slug="index"] {
     margin: 3rem -2rem;
   }
   
+  @media (max-width: 639px) {
+    padding: 1.5rem 1rem;
+    margin: 2rem 0;
+  }
+  
+  @media (max-width: 375px) {
+    padding: 1.25rem 0.75rem;
+    margin: 1.5rem 0;
+  }
+  
   // Fix top margins for first child elements
   > *:first-child {
     margin-top: 0;
@@ -1603,6 +2030,14 @@ article[data-slug="index"] {
     margin-top: 0;
     font-size: 2.5rem;
     color: var(--darkgray);
+    
+    @media (max-width: 639px) {
+      font-size: 1.75rem;
+    }
+    
+    @media (max-width: 375px) {
+      font-size: 1.5rem;
+    }
   }
   
   p {
@@ -1611,10 +2046,23 @@ article[data-slug="index"] {
     max-width: 48rem;
     margin-left: auto;
     margin-right: auto;
+    
+    @media (max-width: 639px) {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    
+    @media (max-width: 375px) {
+      font-size: 0.9375rem;
+    }
   }
   
   .cta-button {
     margin-top: 2rem;
+    
+    @media (max-width: 639px) {
+      margin-top: 1.5rem;
+    }
   }
 }
 
