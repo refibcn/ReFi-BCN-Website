@@ -1,51 +1,57 @@
 export default () => {
-  // Wait for DOM to be fully ready
   const init = () => {
-    const hamburger = document.querySelector(".hamburger") as HTMLElement
-    const navLinks = document.querySelector(".nav-links") as HTMLElement
+    const menuButton = document.getElementById("mobile-menu-button")
+    const navMenu = document.getElementById("nav-menu")
+    const overlay = document.getElementById("nav-menu-overlay")
     
-    if (!hamburger || !navLinks) {
-      console.warn("[Navigation] Elements not found")
+    if (!menuButton || !navMenu || !overlay) {
+      console.warn("[Navigation] Required elements not found")
       return
     }
     
-    console.log("[Navigation] Initializing menu")
-    
-    // Toggle menu on hamburger click
-    hamburger.addEventListener("click", (e) => {
+    // Toggle menu when clicking the button
+    menuButton.addEventListener("click", (e) => {
       e.preventDefault()
       e.stopPropagation()
-      const isOpen = navLinks.classList.contains("open")
+      
+      const isOpen = navMenu.classList.contains("open")
       
       if (isOpen) {
-        navLinks.classList.remove("open")
-        hamburger.classList.remove("active")
+        navMenu.classList.remove("open")
+        menuButton.classList.remove("active")
+        overlay.classList.remove("open")
       } else {
-        navLinks.classList.add("open")
-        hamburger.classList.add("active")
+        navMenu.classList.add("open")
+        menuButton.classList.add("active")
+        overlay.classList.add("open")
       }
-      
-      console.log("[Navigation] Menu is now:", isOpen ? "closed" : "open")
     })
     
-    // Close menu when clicking a link
-    navLinks.querySelectorAll("a").forEach(link => {
+    // Close menu when clicking overlay
+    overlay.addEventListener("click", () => {
+      navMenu.classList.remove("open")
+      menuButton.classList.remove("active")
+      overlay.classList.remove("open")
+    })
+    
+    // Close menu when pressing escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && navMenu.classList.contains("open")) {
+        navMenu.classList.remove("open")
+        menuButton.classList.remove("active")
+        overlay.classList.remove("open")
+      }
+    })
+    
+    // Close menu when clicking menu items
+    const menuLinks = navMenu.querySelectorAll("a")
+    menuLinks.forEach(link => {
       link.addEventListener("click", () => {
-        navLinks.classList.remove("open")
-        hamburger.classList.remove("active")
+        navMenu.classList.remove("open")
+        menuButton.classList.remove("active")
+        overlay.classList.remove("open")
       })
     })
-    
-    // Close menu when clicking outside
-    document.addEventListener("click", (e) => {
-      const target = e.target as Node
-      if (!hamburger.contains(target) && !navLinks.contains(target)) {
-        navLinks.classList.remove("open")
-        hamburger.classList.remove("active")
-      }
-    })
-    
-    console.log("[Navigation] Menu initialized successfully")
   }
   
   // Run immediately if DOM is ready, otherwise wait
@@ -55,4 +61,3 @@ export default () => {
     init()
   }
 }
-
