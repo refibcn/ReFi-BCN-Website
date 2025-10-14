@@ -132,7 +132,7 @@ body {
 
 // PAGE-LEVEL WIDTH CONSTRAINTS
 .page {
-  max-width: 750px !important;
+  max-width: 800px !important;
   margin: 0 auto !important;
   padding: 0 2rem !important;
   transition: padding 0.2s ease;
@@ -147,7 +147,7 @@ body {
 }
 
 #quartz-body {
-  max-width: 750px !important;
+  max-width: 800px !important;
   margin: 0 auto !important;
   padding: 0 2rem !important;
   transition: padding 0.2s ease;
@@ -464,7 +464,7 @@ header .search button p {
 .center {
   grid-column: 1 / 4 !important;
   width: 100%;
-  max-width: 750px;
+  max-width: 800px;
   margin: 0 auto;
   padding-left: 0;
   padding-right: 0;
@@ -862,7 +862,7 @@ button,
 
 footer {
   // Container matching top bar style with proper alignment
-  max-width: 750px;
+  max-width: 800px;
   margin: 2rem auto 0.5rem;
   padding: 1.5rem 2rem;
   border: 2px solid var(--blue-dark);
