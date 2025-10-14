@@ -132,35 +132,31 @@ body {
 
 // PAGE-LEVEL WIDTH CONSTRAINTS
 .page {
-  max-width: calc(100% - 3rem) !important; // Match header width
+  max-width: 750px !important;
   margin: 0 auto !important;
   padding: 0 2rem !important;
-  transition: padding 0.2s ease, max-width 0.2s ease;
+  transition: padding 0.2s ease;
   
-  @media (max-width: 640px) {
-    max-width: calc(100% - 1rem) !important;
+  @media (max-width: 639px) {
     padding: 0 1rem !important;
   }
   
   @media (max-width: 375px) {
-    max-width: calc(100% - 0.5rem) !important;
     padding: 0 0.75rem !important;
   }
 }
 
 #quartz-body {
-  max-width: calc(100% - 3rem) !important; // Match header width
+  max-width: 750px !important;
   margin: 0 auto !important;
   padding: 0 2rem !important;
-  transition: padding 0.2s ease, max-width 0.2s ease;
+  transition: padding 0.2s ease;
   
-  @media (max-width: 640px) {
-    max-width: calc(100% - 1rem) !important;
+  @media (max-width: 639px) {
     padding: 0 1rem !important;
   }
   
   @media (max-width: 375px) {
-    max-width: calc(100% - 0.5rem) !important;
     padding: 0 0.75rem !important;
   }
 }
@@ -468,23 +464,20 @@ header .search button p {
 .center {
   grid-column: 1 / 4 !important;
   width: 100%;
-  max-width: calc(100% - 3rem); // Match header width
+  max-width: 750px;
   margin: 0 auto;
   padding-left: 0;
   padding-right: 0;
   padding-top: 1rem;
   padding-bottom: 2rem;
   box-sizing: border-box;
-  transition: max-width 0.2s ease;
   
-  @media (max-width: 640px) {
-    max-width: calc(100% - 1rem);
+  @media (max-width: 639px) {
     padding-top: 0.75rem;
     padding-bottom: 1.5rem;
   }
   
   @media (max-width: 375px) {
-    max-width: calc(100% - 0.5rem);
     padding-top: 0.5rem;
     padding-bottom: 1rem;
   }
@@ -869,7 +862,7 @@ button,
 
 footer {
   // Container matching top bar style with proper alignment
-  max-width: calc(100% - 3rem); // Match header and content width
+  max-width: 750px;
   margin: 2rem auto 0.5rem;
   padding: 1.5rem 2rem;
   border: 2px solid var(--blue-dark);
@@ -879,17 +872,11 @@ footer {
   display: flex;
   align-items: center;
   gap: 2rem;
-  transition: max-width 0.2s ease;
   
-  @media (max-width: 640px) {
-    max-width: calc(100% - 1rem);
+  @media (max-width: 639px) {
     padding: 1.5rem 1rem;
     flex-direction: column;
     gap: 1.5rem;
-  }
-  
-  @media (max-width: 375px) {
-    max-width: calc(100% - 0.5rem);
   }
   
   // Logo container
