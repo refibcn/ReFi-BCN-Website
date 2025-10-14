@@ -249,14 +249,14 @@ header .search {
 }
 
 header .search button {
-  width: 2rem;
-  height: 2rem;
-  min-width: 2rem;
-  min-height: 2rem;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: none;
+  background: transparent;
   border: 2px solid var(--blue-dark);
   cursor: pointer;
   color: var(--blue-dark);
@@ -267,24 +267,32 @@ header .search button {
   line-height: 1;
   box-sizing: border-box;
   
-  @media (max-width: 768px) {
-    min-width: 44px;
-    min-height: 44px;
-    width: 44px;
-    height: 44px;
-  }
-  
   svg {
     width: 1rem;
     height: 1rem;
     display: block;
     margin: auto;
+    fill: var(--blue-dark);
+    transition: fill 0.2s ease;
   }
   
   &:hover {
     background: var(--blue-dark);
     color: var(--light);
     border-color: var(--blue-dark);
+    
+    svg {
+      fill: var(--light);
+    }
+  }
+  
+  &:active {
+    background: var(--blue-dark);
+    transform: scale(0.95);
+    
+    svg {
+      fill: var(--light);
+    }
   }
 }
 
