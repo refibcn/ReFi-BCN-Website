@@ -328,20 +328,22 @@ header .search button p {
   }
   
   .mobile-nav-trigger {
-    display: none;
-    margin: 0;
-    min-width: 44px;
-    min-height: 44px;
     width: 44px;
     height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    max-width: 44px;
+    max-height: 44px;
+    display: none;
     align-items: center;
     justify-content: center;
-    border: 1.5px solid var(--blue-dark);
     background: transparent;
-    color: var(--blue-dark);
+    border: 1.5px solid var(--blue-dark);
     cursor: pointer;
-    padding: 0;
+    color: var(--blue-dark);
     transition: all 0.2s ease;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
 
     svg {
@@ -401,7 +403,7 @@ header .search button p {
   
   @media (max-width: 768px) {
     .mobile-nav-trigger {
-      display: inline-flex;
+      display: flex;
     }
     
     .nav-links {
