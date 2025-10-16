@@ -272,6 +272,7 @@ header .search button {
     flex-shrink: 0;
     fill: var(--blue-dark);
     transition: fill 0.2s ease;
+    transform: translateY(1px);
   }
   
   &:hover {
