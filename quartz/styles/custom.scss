@@ -404,9 +404,7 @@ header .search button p {
       left: 0;
       right: 0;
       flex-direction: column;
-      background: rgba(255, 255, 255, 0.95); // Semi-transparent for blur effect
-      backdrop-filter: blur(10px); // Background blur
-      -webkit-backdrop-filter: blur(10px); // Safari support
+      background: var(--light); // Solid background like search modal
       border: 1.5px solid var(--blue-dark);
       border-top: none;
       padding: 1rem;
@@ -458,6 +456,8 @@ header .search button p {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     z-index: 98;
     
     &.open {
