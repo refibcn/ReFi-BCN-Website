@@ -349,6 +349,9 @@ header .search button p {
     svg {
       width: 18px;
       height: 18px;
+      display: block;
+      margin: auto;
+      flex-shrink: 0;
       stroke: var(--blue-dark);
       transition: stroke 0.2s ease;
     }
