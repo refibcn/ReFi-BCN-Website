@@ -253,6 +253,8 @@ header .search button {
   height: 44px;
   min-width: 44px;
   min-height: 44px;
+  max-width: 44px;
+  max-height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -272,6 +274,7 @@ header .search button {
     height: 1rem;
     display: block;
     margin: auto;
+    flex-shrink: 0;
     fill: var(--blue-dark);
     transition: fill 0.2s ease;
   }
@@ -287,6 +290,7 @@ header .search button {
   }
   
   &:active {
+    border-color: var(--blue-dark);
     background: var(--blue-dark);
     transform: scale(0.95);
     
