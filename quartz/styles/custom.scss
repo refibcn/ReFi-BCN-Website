@@ -231,6 +231,7 @@ header .page-title {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  margin-left: auto;
 }
 
 // Search button in header
@@ -240,12 +241,6 @@ header .search {
   justify-content: center;
   margin: 0;
   flex-shrink: 0;
-  margin-left: auto;
-  margin-right: 0.5rem;
-  
-  @media (max-width: 768px) {
-    margin-right: 0.5rem;
-  }
 }
 
 header .search button {
@@ -270,8 +265,8 @@ header .search button {
   box-sizing: border-box;
   
   svg {
-    width: 1rem;
-    height: 1rem;
+    width: 18px;
+    height: 18px;
     display: block;
     margin: auto;
     flex-shrink: 0;
