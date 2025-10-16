@@ -357,6 +357,8 @@ header .search button p {
     }
 
     &:active {
+      background: var(--blue-dark);
+      border-color: var(--blue-dark);
       transform: scale(0.95);
     }
   }
