@@ -1,7 +1,5 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import style from "./styles/navigation.scss"
-// @ts-ignore
-import script from "./scripts/navigation.inline"
 
 export default (() => {
   const Navigation: QuartzComponent = ({ displayClass }: QuartzComponentProps) => {
@@ -32,6 +30,54 @@ export default (() => {
   }
 
   Navigation.css = style
-  Navigation.afterDOMLoaded = script
+  Navigation.afterDOMLoaded = `
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuButton = document.getElementById('mobile-menu-button');
+      const navMenu = document.getElementById('nav-menu');
+      const overlay = document.getElementById('nav-menu-overlay');
+      
+      if (menuButton && navMenu && overlay) {
+        // Toggle menu when clicking the button
+        menuButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          const isOpen = navMenu.classList.contains('open');
+          
+          if (isOpen) {
+            navMenu.classList.remove('open');
+            overlay.classList.remove('open');
+          } else {
+            navMenu.classList.add('open');
+            overlay.classList.add('open');
+          }
+        });
+        
+        // Close menu when clicking overlay
+        overlay.addEventListener('click', function() {
+          navMenu.classList.remove('open');
+          overlay.classList.remove('open');
+        });
+        
+        // Close menu when pressing escape
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+            navMenu.classList.remove('open');
+            overlay.classList.remove('open');
+          }
+        });
+        
+        // Close menu when clicking menu items
+        const menuLinks = navMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            navMenu.classList.remove('open');
+            overlay.classList.remove('open');
+          });
+        });
+      }
+    });
+  `
+  
   return Navigation
 }) satisfies QuartzComponentConstructor
