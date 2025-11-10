@@ -4,20 +4,22 @@ description: "Connecting Catalonia's regenerative movements with global innovati
 ---
 
 <div class="hero-section">
-  <div class="hero-top">
-    <div class="hero-title">
-      <h1>Seeding pathways toward just and resilient economies</h1>
+  <div class="hero-inner">
+    <div class="hero-top">
+      <div class="hero-title">
+        <h1>Seeding pathways toward just and resilient economies</h1>
+      </div>
+      <div class="hero-image">
+        <img src="/static/hero_home.png" alt="ReFi BCN hero illustration"/>
+      </div>
     </div>
-    <div class="hero-image">
-      <img src="/static/hero_home.png" alt="ReFi BCN hero illustration"/>
+    <div class="hero-bottom">
+      <p class="hero-text">
+        We connect Catalonia's regenerative movements with global innovations in finance, 
+        technology, and governance to accelerate the transition toward a life-centered economy.
+      </p>
+      <a href="#about" class="cta-button">Learn More</a>
     </div>
-  </div>
-  <div class="hero-bottom">
-    <p class="hero-text">
-      We connect Catalonia's regenerative movements with global innovations in finance, 
-      technology, and governance to accelerate the transition toward a life-centered economy.
-    </p>
-    <a href="#about" class="cta-button">Learn More</a>
   </div>
 </div>
 
