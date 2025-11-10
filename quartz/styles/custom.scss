@@ -35,6 +35,43 @@ body {
   --blue-medium: #1A3A6B;     // Medium blue (links)
   --blue-light: #2E5491;      // Light blue (hover states)
   --blue-highlight: rgba(9, 32, 69, 0.15);  // Transparent blue for backgrounds
+  --action-btn-size: 46px;
+  --action-btn-border-width: 1.5px;
+  --action-btn-border: var(--action-btn-border-width) solid var(--blue-dark);
+  --action-btn-bg: color-mix(in srgb, var(--light) 95%, rgba(255, 255, 255, 0.6));
+  --action-btn-bg-hover: color-mix(in srgb, var(--light) 88%, rgba(255, 255, 255, 0.8));
+  --action-btn-shadow: 0 15px 35px rgba(9, 32, 69, 0.17);
+  --layout-inline: clamp(1.5rem, 5vw, 3.5rem);
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --layout-inline: clamp(1.25rem, 5vw, 3rem);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --layout-inline: clamp(1.1rem, 4.5vw, 2.25rem);
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --layout-inline: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --layout-inline: 0.85rem;
+  }
+}
+
+@media (max-width: 375px) {
+  :root {
+    --layout-inline: 0.75rem;
+  }
 }
 
 // ============================================
@@ -46,13 +83,6 @@ body {
   
   a:hover {
     color: var(--blue-light) !important;
-  }
-  
-  button {
-    border-color: var(--blue-dark);
-    &:hover {
-      background: var(--blue-dark);
-    }
   }
 }
 
@@ -206,6 +236,9 @@ header .page-title {
   font-size: 1.25rem;
   color: var(--blue-dark);
   flex-shrink: 0;
+  flex: 0 1 auto;
+  min-width: 0;
+  white-space: nowrap;
   
   @media (max-width: 640px) {
     font-size: 1.125rem;
@@ -219,6 +252,7 @@ header .page-title {
     color: var(--blue-dark);
     text-decoration: none;
     border-bottom: none;
+    white-space: nowrap;
     
     &:hover {
       color: var(--blue-light);
@@ -229,9 +263,8 @@ header .page-title {
 // Header actions container
 .header-actions {
   display: flex;
-  gap: 0.5rem;
   align-items: center;
-  margin-left: auto;
+  justify-content: flex-end;
 }
 
 // Search button in header
@@ -240,59 +273,40 @@ header .search {
   align-items: center;
   justify-content: center;
   margin: 0;
-  flex-shrink: 0;
+  flex: 0 0 auto;
+  margin-left: auto;
 }
 
 header .search button {
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
-  min-height: 44px;
-  max-width: 44px;
-  max-height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: 1.5px solid var(--blue-dark);
-  cursor: pointer;
-  color: var(--blue-dark);
-  transition: all 0.2s ease;
-  padding: 0;
   margin: 0;
-  font-weight: normal;
-  line-height: 1;
-  box-sizing: border-box;
+}
+
+header .search .search-button--compact {
+  width: var(--action-btn-size);
+  height: var(--action-btn-size);
+  min-width: var(--action-btn-size);
+  min-height: var(--action-btn-size);
+  padding: 0;
+  gap: 0;
+  border: var(--action-btn-border);
+  background: var(--action-btn-bg);
+  box-shadow: var(--action-btn-shadow);
+  justify-content: center;
+}
+
+header .search .search-button__icon {
+  width: auto;
+  height: auto;
+  background: transparent;
+  box-shadow: none;
+}
+
+header .search .search-button__icon svg {
+  width: 20px;
+  height: 20px;
   
-  svg {
-    width: 18px;
-    height: 18px;
-    display: block;
-    margin: auto;
-    flex-shrink: 0;
-    fill: var(--blue-dark);
-    transition: fill 0.2s ease;
-    transform: translateY(1px);
-  }
-  
-  &:hover {
-    background: var(--blue-dark);
-    color: var(--light);
-    border-color: var(--blue-dark);
-    
-    svg {
-      fill: var(--light);
-    }
-  }
-  
-  &:active {
-    border-color: var(--blue-dark);
-    background: var(--blue-dark);
-    transform: scale(0.95);
-    
-    svg {
-      fill: var(--light);
-    }
+  .search-path {
+    stroke: var(--blue-dark);
   }
 }
 
@@ -313,68 +327,29 @@ header .search button p {
 .navigation {
   display: flex;
   align-items: center;
-  flex: 1;
   justify-content: center;
-  margin-left: 0;
+  min-width: 0;
+  width: 100%;
   
-  @media (max-width: 768px) {
-    flex: 0;
-    justify-content: flex-end;
-    margin-left: 0;
-  }
-  
-  .mobile-nav-trigger {
-    width: 44px;
-    height: 44px;
-    min-width: 44px;
-    min-height: 44px;
-    max-width: 44px;
-    max-height: 44px;
-    display: none;
+  .nav-shell {
+    position: relative;
+    display: flex;
     align-items: center;
     justify-content: center;
-    background: transparent;
-    border: 1.5px solid var(--blue-dark);
-    cursor: pointer;
-    color: var(--blue-dark);
-    transition: all 0.2s ease;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-
-    svg {
-      width: 18px;
-      height: 18px;
-      display: block;
-      margin: auto;
-      flex-shrink: 0;
-      stroke: var(--blue-dark);
-      transition: stroke 0.2s ease;
-    }
-
-    &:hover {
-      background: var(--blue-dark);
-      border-color: var(--blue-dark);
-
-      svg {
-        stroke: var(--light);
-      }
-    }
-
-    &:active {
-      background: var(--blue-dark);
-      border-color: var(--blue-dark);
-      transform: scale(0.95);
-    }
+    width: 100%;
+    min-width: 0;
+    z-index: 5;
   }
   
   .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: clamp(1rem, 2vw, 1.5rem);
     margin: 0;
     padding: 0;
     align-items: center;
+    justify-content: center;
+    white-space: nowrap;
     
     li {
       margin: 0;
@@ -387,7 +362,6 @@ header .search button p {
       font-size: 1rem;
       transition: color 0.2s ease;
       border-bottom: none;
-      white-space: nowrap; // Prevent text wrapping on links
       
       &:hover {
         color: var(--blue-light) !important;
@@ -400,75 +374,64 @@ header .search button p {
     }
   }
   
-  @media (max-width: 768px) {
-    .mobile-nav-trigger {
-      display: flex;
+  .nav-toggle {
+    display: none;
+    margin-left: 1rem;
+  }
+  
+  &[data-collapsed="true"] {
+    .nav-shell {
+      justify-content: flex-end;
     }
     
     .nav-links {
       position: absolute;
-      top: 100%;
-      left: 0;
+      top: calc(100% + 0.5rem);
       right: 0;
       flex-direction: column;
-      background: var(--light); // Solid background like search modal
+      align-items: flex-start;
+      background: var(--light);
       border: 1.5px solid var(--blue-dark);
-      border-top: none;
-      padding: 1rem;
-      gap: 1rem;
-      display: none;
-      z-index: 99;
-      margin-top: 0;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
-      
-      // Animation
+      padding: 0.75rem 0;
+      gap: 0.25rem;
+      min-width: clamp(220px, 50vw, 320px);
+      box-shadow:
+        0 14px 50px rgba(27, 33, 48, 0.12),
+        0 10px 30px rgba(27, 33, 48, 0.16);
       opacity: 0;
-      transform: translateY(-10px);
+      pointer-events: none;
+      transform: translateY(-8px);
       transition: opacity 0.2s ease, transform 0.2s ease;
       
       &.open {
-        display: flex;
         opacity: 1;
+        pointer-events: auto;
         transform: translateY(0);
       }
       
       li {
         width: 100%;
-        text-align: center;
       }
       
       a {
-        display: block;
-        padding: 0.75rem;
-        min-height: 44px;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0; // Keep straight edges
-        transition: background-color 0.15s ease, color 0.15s ease;
+        width: 100%;
+        padding: 0.85rem 1.2rem;
+        border-bottom: 1px solid rgba(9, 32, 69, 0.15);
+        min-height: 44px;
         
         &:hover {
-          background-color: rgba(9, 32, 69, 0.1); // Subtle hover effect
+          background-color: rgba(9, 32, 69, 0.08);
         }
       }
+      
+      li:last-child a {
+        border-bottom: none;
+      }
     }
-  }
-  
-  // Overlay for mobile menu
-  .nav-menu-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    z-index: 98;
     
-    &.open {
-      display: block;
+    .nav-toggle {
+      display: inline-flex;
     }
   }
 }
@@ -1305,8 +1268,10 @@ article[data-slug="index"] {
 
 // Hero Section - Flexible layout for main hero and other two-column sections
 .hero-section {
-  padding: 3rem 0;
-  
+  padding: clamp(2.5rem, 6vw, 6rem) 0;
+  width: 100%;
+  margin: 0 auto;
+
   @media (max-width: 639px) {
     padding: 2rem 0;
   }
@@ -1336,7 +1301,7 @@ article[data-slug="index"] {
       }
     }
   }
-  
+
   // Specific styles for main hero with .hero-top and .hero-bottom
   .hero-top {
     display: grid;
@@ -1994,6 +1959,9 @@ article[data-slug="index"] {
     background: transparent;
     transition: all 0.2s ease;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     
     @media (max-width: 639px) {
       padding: 1.5rem 0.75rem;
@@ -2090,6 +2058,7 @@ article[data-slug="index"] {
       line-height: 1.6;
       font-size: 0.9rem;
       margin-top: 0;
+      flex-grow: 1;
       
       @media (max-width: 375px) {
         font-size: 0.8125rem;
@@ -2165,4 +2134,48 @@ article[data-slug="index"] {
     }
   }
 }
+.action-button {
+  width: var(--action-btn-size);
+  height: var(--action-btn-size);
+  min-width: var(--action-btn-size);
+  min-height: var(--action-btn-size);
+  max-width: var(--action-btn-size);
+  max-height: var(--action-btn-size);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--action-btn-border);
+  background: var(--action-btn-bg);
+  box-shadow: var(--action-btn-shadow);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+  color: var(--blue-dark);
+  padding: 0;
+  line-height: 1;
+  box-sizing: border-box;
 
+  svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--blue-dark);
+    transition: stroke 0.2s ease;
+  }
+
+  &:hover {
+    background: var(--action-btn-bg-hover);
+    border-color: var(--blue-dark);
+  }
+
+  &:active {
+    transform: translateY(1px);
+    background: var(--action-btn-bg-hover);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--blue-medium);
+    outline-offset: 3px;
+  }
+}
