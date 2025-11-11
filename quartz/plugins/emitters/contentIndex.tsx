@@ -35,7 +35,7 @@ const defaultOptions: Options = {
   enableRSS: true,
   rssLimit: 10,
   rssFullHtml: false,
-  rssSlug: "index",
+  rssSlug: "rss",
   includeEmptyFiles: true,
 }
 
@@ -207,13 +207,28 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
     },
     externalResources: (ctx) => {
       if (opts?.enableRSS) {
+        // Determine RSS feed path based on locale
+        const locale = ctx.cfg.configuration.locale as string
+        let rssPath = "/rss.xml"
+        
+        // Extract language prefix from locale (e.g., "ca-ES" -> "ca", "es-ES" -> "es")
+        if (locale.startsWith("ca-")) {
+          rssPath = "/ca/rss.xml"
+        } else if (locale.startsWith("es-")) {
+          rssPath = "/es/rss.xml"
+        } else if (locale.startsWith("en-")) {
+          // English can be at root or /en/
+          // Default to root for consistency with homepage
+          rssPath = "/rss.xml"
+        }
+        
         return {
           additionalHead: [
             <link
               rel="alternate"
               type="application/rss+xml"
               title="RSS Feed"
-              href={`https://${ctx.cfg.configuration.baseUrl}/index.xml`}
+              href={`https://${ctx.cfg.configuration.baseUrl}${rssPath}`}
             />,
           ],
         }
