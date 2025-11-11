@@ -51,16 +51,53 @@ function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndexMap): string
   return `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${urls}</urlset>`
 }
 
-function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndexMap, limit?: number): string {
+function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndexMap, limit?: number, languagePrefix?: string): string {
   const base = cfg.baseUrl ?? ""
+  
+  // Build the base URL with language prefix if provided
+  // languagePrefix can be "ca", "es", "en", or empty/undefined for root English
+  let baseUrlWithPrefix = `https://${base}`
+  if (languagePrefix && languagePrefix !== "en") {
+    baseUrlWithPrefix = `https://${base}/${languagePrefix}`
+  } else if (languagePrefix === "en") {
+    baseUrlWithPrefix = `https://${base}/en`
+  }
 
-  const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => `<item>
+  const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => {
+    // Simplify slug - this removes "index" and trailing slashes
+    let urlSlug = simplifySlug(slug)
+    
+    // Build the full URL with language prefix
+    let fullUrl: string
+    if (!urlSlug || urlSlug === "/" || urlSlug === "") {
+      // Homepage - use language prefix
+      if (languagePrefix && languagePrefix !== "en") {
+        fullUrl = `https://${base}/${languagePrefix}/`
+      } else if (languagePrefix === "en") {
+        fullUrl = `https://${base}/en/`
+      } else {
+        fullUrl = `https://${base}/`
+      }
+    } else {
+      // Other pages - add language prefix if needed
+      const cleanSlug = urlSlug.startsWith("/") ? urlSlug.slice(1) : urlSlug
+      if (languagePrefix && languagePrefix !== "en") {
+        fullUrl = `https://${base}/${languagePrefix}/${cleanSlug}`
+      } else if (languagePrefix === "en") {
+        fullUrl = `https://${base}/en/${cleanSlug}`
+      } else {
+        fullUrl = `https://${base}/${cleanSlug}`
+      }
+    }
+    
+    return `<item>
     <title>${escapeHTML(content.title)}</title>
-    <link>https://${joinSegments(base, encodeURI(slug))}</link>
-    <guid>https://${joinSegments(base, encodeURI(slug))}</guid>
+    <link>${fullUrl}</link>
+    <guid>${fullUrl}</guid>
     <description><![CDATA[ ${content.richContent ?? content.description} ]]></description>
     <pubDate>${content.date?.toUTCString()}</pubDate>
   </item>`
+  }
 
   const items = Array.from(idx)
     .sort(([_, f1], [__, f2]) => {
@@ -82,7 +119,7 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndexMap, limit?:
 <rss version="2.0">
     <channel>
       <title>${escapeHTML(cfg.pageTitle)}</title>
-      <link>https://${base}</link>
+      <link>${baseUrlWithPrefix}</link>
       <description>${!!limit ? i18n(cfg.locale).pages.rss.lastFewNotes({ count: limit }) : i18n(cfg.locale).pages.rss.recentNotes} on ${escapeHTML(
         cfg.pageTitle,
       )}</description>
@@ -119,6 +156,18 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
         }
       }
 
+      // Extract language prefix from output directory
+      // Examples: "public/ca" -> "ca", "public/es" -> "es", "public" -> undefined (root English)
+      let languagePrefix: string | undefined = undefined
+      const outputPath = ctx.argv.output || ""
+      const outputMatch = outputPath.match(/public\/(ca|es|en)$/)
+      if (outputMatch) {
+        languagePrefix = outputMatch[1]
+      } else if (outputPath === "public" || outputPath.endsWith("/public")) {
+        // Root English build - no prefix needed, but we can set it to undefined
+        languagePrefix = undefined
+      }
+
       if (opts?.enableSiteMap) {
         yield write({
           ctx,
@@ -131,7 +180,7 @@ export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
       if (opts?.enableRSS) {
         yield write({
           ctx,
-          content: generateRSSFeed(cfg, linkIndex, opts.rssLimit),
+          content: generateRSSFeed(cfg, linkIndex, opts.rssLimit, languagePrefix),
           slug: (opts?.rssSlug ?? "index") as FullSlug,
           ext: ".xml",
         })
