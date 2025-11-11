@@ -1,0 +1,109 @@
+---
+description: Package management and installation guide
+---
+
+# Package Management
+
+## Available Packages
+
+### Core (Always Included)
+- Essential Quartz framework
+- Base configuration
+- Required for all installations
+
+### Theme (Always Included)
+- Customizable theme architecture
+- CSS variables system
+- Responsive design patterns
+
+### Multilang (Optional)
+- Multi-language build script
+- LanguageSwitcher component
+- i18n support
+
+### Analytics (Optional)
+- Plausible Analytics integration
+- Privacy-compliant tracking
+
+### Comments (Optional)
+- Giscus comments system
+- GitHub Discussions integration
+
+### OG Images (Optional)
+- Custom Open Graph image generation
+- Social media preview support
+
+## Installation
+
+### During Initial Setup
+
+Run the setup script:
+
+```bash
+npm run setup
+```
+
+This will:
+1. Prompt for site information
+2. Let you select packages
+3. Install selected packages
+4. Update configuration files
+
+### Adding Packages Later
+
+1. Copy package files manually from `packages/{package-name}/`
+2. Update `quartz.config.ts` or `quartz.layout.ts` as needed
+3. Update `package.json` scripts if required
+4. See package README for specific instructions
+
+## Package Dependencies
+
+- **Core**: No dependencies (base package)
+- **Theme**: Depends on Core
+- **Multilang**: Depends on Core
+- **Analytics**: Depends on Core
+- **Comments**: Depends on Core, requires GitHub repo
+- **OG Images**: Depends on Core
+
+## Configuration Updates
+
+Each package may require configuration updates:
+
+### Multilang
+- Updates `quartz.config.ts` with locale support
+- Updates `quartz.layout.ts` with LanguageSwitcher
+- Adds `build:multilang` script to `package.json`
+
+### Analytics
+- Updates `quartz.config.ts` with analytics config
+- No layout changes needed
+
+### Comments
+- Updates `quartz.layout.ts` with Comments component
+- Requires Giscus configuration
+
+### OG Images
+- Updates `quartz.config.ts` with CustomOgImages plugin
+- No layout changes needed
+
+## Customization Points
+
+Each package has customization points documented in its README:
+
+- `packages/{package-name}/README.md`
+
+## Package Updates
+
+To update a package:
+1. Check package README for update instructions
+2. Compare your installed version with template version
+3. Merge changes carefully
+4. Test after updating
+
+## Removing Packages
+
+To remove a package:
+1. Remove package files
+2. Revert configuration changes
+3. Remove from `package.json` scripts if added
+4. Test to ensure nothing breaks

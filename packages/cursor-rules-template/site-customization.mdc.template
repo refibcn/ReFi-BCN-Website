@@ -1,0 +1,40 @@
+---
+description: Site-specific customization and design system
+---
+
+# Site Customization
+
+## Design System
+
+**Brand Colors:**
+{{BRAND_COLORS}}
+
+**Key Design Patterns:**
+{{DESIGN_PATTERNS}}
+
+## Custom Components
+
+{{CUSTOM_COMPONENTS}}
+
+## Content Organization
+
+{{CONTENT_ORGANIZATION}}
+
+## Deployment Configuration
+
+**Hosting:** {{DEPLOYMENT_PLATFORM}}
+**Domain:** {{BASE_URL}}
+**Custom Domain Setup:** {{CUSTOM_DOMAIN_NOTES}}
+
+## Customization Notes
+
+{{CUSTOMIZATION_NOTES}}
+
+## Theme Customizations
+
+{{THEME_CUSTOMIZATIONS}}
+
+## Component Overrides
+
+{{COMPONENT_OVERRIDES}}
+

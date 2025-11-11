@@ -1,0 +1,213 @@
+---
+description: Upstream/downstream sync workflow and contribution guide
+---
+
+# Upstream/Downstream Workflow
+
+## Overview
+
+- **Upstream**: Template repository (`ReFiDAO/quartz-refi-template`)
+- **Downstream**: Your fork/repository using the template
+- **Sync**: Pull updates from upstream
+- **Contribute**: Push improvements back to upstream
+
+## Setting Up Upstream
+
+### Initial Setup
+
+```bash
+# Add upstream remote
+git remote add upstream https://github.com/ReFiDAO/quartz-refi-template.git
+
+# Verify
+git remote -v
+```
+
+### Using Sync Script
+
+```bash
+npm run sync:upstream
+# or
+node scripts/sync-upstream.mjs
+```
+
+## Syncing from Upstream
+
+### Manual Sync
+
+```bash
+# Fetch upstream changes
+git fetch upstream
+
+# Checkout your main branch
+git checkout main
+
+# Merge upstream changes
+git merge upstream/main
+
+# Resolve conflicts if any
+# Push changes
+git push origin main
+```
+
+### Review Before Merging
+
+```bash
+# Create review branch
+git checkout -b review-upstream
+
+# Merge upstream
+git merge upstream/main
+
+# Review changes
+git diff main..review-upstream
+
+# If good, merge to main
+git checkout main
+git merge review-upstream
+```
+
+## Contributing Back
+
+### What to Contribute
+
+- Bug fixes in shared code
+- New features useful to all nodes
+- Documentation improvements
+- Package enhancements
+- Performance improvements
+
+### What NOT to Contribute
+
+- Site-specific content
+- Custom color schemes (unless generalizable)
+- Domain-specific configurations
+- Local node branding
+
+### Contribution Process
+
+1. **Fork Template Repository**
+   - Fork `ReFiDAO/quartz-refi-template` on GitHub
+
+2. **Create Feature Branch**
+   ```bash
+   git checkout -b feature/my-improvement
+   ```
+
+3. **Make Changes**
+   - Make your improvements
+   - Test thoroughly
+   - Update documentation
+
+4. **Submit Pull Request**
+   - Push to your fork
+   - Open PR to upstream repository
+   - Describe changes clearly
+
+5. **Template Maintainer Reviews**
+   - Wait for review
+   - Address feedback
+   - PR gets merged
+
+6. **Downstream Repos Pull Updates**
+   - Other repos sync from upstream
+   - Everyone benefits
+
+## Conflict Resolution
+
+### Common Conflicts
+
+- `package.json` dependencies
+- `quartz.config.ts` settings
+- Component customizations
+- Workflow file changes
+
+### Resolution Strategy
+
+1. **Keep Template Defaults**: Template maintains "default" values
+2. **Document Overrides**: Note customizations in `CUSTOMIZATIONS.md`
+3. **Use Git Attributes**: Configure merge strategies if needed
+
+### Resolving Conflicts
+
+```bash
+# When conflict occurs
+git merge upstream/main
+
+# Resolve conflicts in files
+# Edit conflicted files
+# Remove conflict markers
+
+# Stage resolved files
+git add .
+
+# Complete merge
+git commit
+```
+
+## Version Management
+
+### Template Releases
+
+Template uses semantic versioning:
+- `v1.0.0` - Major release (breaking changes)
+- `v1.1.0` - Minor release (new features)
+- `v1.1.1` - Patch release (bug fixes)
+
+### Syncing Specific Versions
+
+```bash
+# Fetch tags
+git fetch upstream --tags
+
+# Checkout specific version
+git checkout v1.0.0
+
+# Create branch from version
+git checkout -b upgrade-to-v1.0.0 v1.0.0
+```
+
+## Best Practices
+
+1. **Sync Regularly**: Monthly sync recommended
+2. **Test Before Merging**: Always test upstream changes
+3. **Document Customizations**: Keep track of overrides
+4. **Contribute Back**: Share improvements with community
+5. **Stay Updated**: Monitor template releases
+
+## Sync Frequency Recommendations
+
+- **Critical Updates**: Immediately (security, breaking bugs)
+- **Feature Updates**: Monthly sync window
+- **Dependency Updates**: Quarterly review
+- **Major Versions**: As needed (with testing period)
+
+## Troubleshooting
+
+### Upstream Not Found
+
+```bash
+# Re-add upstream
+git remote remove upstream
+git remote add upstream https://github.com/ReFiDAO/quartz-refi-template.git
+```
+
+### Merge Conflicts
+
+```bash
+# Abort merge
+git merge --abort
+
+# Try again with strategy
+git merge upstream/main --strategy-option theirs
+```
+
+### Lost Customizations
+
+```bash
+# Check what changed
+git diff main upstream/main
+
+# Restore customizations
+git checkout main -- path/to/custom/file
+```

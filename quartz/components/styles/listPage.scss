@@ -1,0 +1,117 @@
+@use "../../styles/variables.scss" as *;
+
+// ============================================
+// Folder Listing Container - Polished Design
+// ============================================
+.page-listing {
+  border: 2px solid var(--blue-dark);
+  padding: 1.5rem 1.5rem;
+  margin: 2rem 0 0.5rem 0;
+  background: var(--light);
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  
+  @media (min-width: 640px) {
+    padding: 1.75rem 2rem;
+  }
+  
+  // Folder count text - smaller, subtle
+  & > p {
+    font-size: 0.85rem;
+    color: var(--gray);
+    margin: 0 0 1rem 0;
+    font-weight: 500;
+  }
+}
+
+ul.section-ul {
+  list-style: none;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+li.section-li {
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--lightgray);
+  
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  & > .section {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: start;
+
+    @media all and ($mobile) {
+      grid-template-columns: 1fr;
+      
+      & > .tags {
+        display: none;
+      }
+    }
+
+    & > .desc {
+      & > h3 {
+        margin: 0 0 0.1rem 0;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.2;
+        
+        & > a {
+          background-color: transparent;
+          color: var(--blue-medium);
+          text-decoration: none;
+          
+          &:hover {
+            color: var(--blue-light);
+          }
+        }
+      }
+      
+      & > p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--gray);
+        line-height: 1.3;
+      }
+    }
+
+    & .meta {
+      margin: 0;
+      font-size: 0.85rem;
+      opacity: 0.6;
+      white-space: nowrap;
+      
+      @media all and ($mobile) {
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+      }
+    }
+    
+    & > .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+  }
+}
+
+// modifications in popover context
+.popover .section {
+  grid-template-columns: 1fr !important;
+
+  & > .tags {
+    display: none;
+  }
+  
+  & .meta {
+    display: none;
+  }
+}

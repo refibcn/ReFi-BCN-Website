@@ -1,0 +1,77 @@
+name: Sync Upstream
+
+# Optional workflow to automatically sync from upstream template repository
+# Enable this if you want automated weekly syncs
+
+on:
+  schedule:
+    # Run weekly on Sunday at midnight UTC
+    - cron: '0 0 * * 0'
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Add upstream remote
+        run: |
+          git remote add upstream https://github.com/ReFiDAO/quartz-refi-template.git || true
+          git fetch upstream
+
+      - name: Check for updates
+        id: check
+        run: |
+          if git diff --quiet main upstream/main; then
+            echo "updates=false" >> $GITHUB_OUTPUT
+          else
+            echo "updates=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create sync branch
+        if: steps.check.outputs.updates == 'true'
+        run: |
+          git checkout -b sync-upstream-$(date +%Y%m%d)
+          git merge upstream/main --no-edit || true
+
+      - name: Check for conflicts
+        if: steps.check.outputs.updates == 'true'
+        id: conflicts
+        run: |
+          if git diff --check; then
+            echo "conflicts=true" >> $GITHUB_OUTPUT
+          else
+            echo "conflicts=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create PR if no conflicts
+        if: steps.check.outputs.updates == 'true' && steps.conflicts.outputs.conflicts == 'false'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: sync-upstream-$(date +%Y%m%d)
+          title: "Sync from upstream template"
+          body: |
+            Automated sync from upstream template repository.
+            
+            Please review changes before merging.
+          commit-message: "Sync from upstream template"
+
+      - name: Comment on PR if conflicts
+        if: steps.check.outputs.updates == 'true' && steps.conflicts.outputs.conflicts == 'true'
+        run: |
+          echo "Conflicts detected. Manual resolution required."
+          # Could create an issue here instead
+

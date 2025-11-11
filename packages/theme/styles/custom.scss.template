@@ -1,0 +1,44 @@
+// Theme customization template
+// Copy this file to quartz/styles/custom.scss and customize
+
+@use "./base.scss";
+
+// ============================================
+// Custom Theme Styles
+// ============================================
+
+// Brand colors as CSS variables
+:root {
+  // Primary color scheme - customize these
+  --primary-dark: #092045;       // Dark color (main text, borders)
+  --primary-medium: #1A3A6B;     // Medium color (links)
+  --primary-light: #2E5491;      // Light color (hover states)
+  --primary-highlight: rgba(9, 32, 69, 0.15);  // Transparent for backgrounds
+  
+  // Layout variables
+  --layout-inline: clamp(1.5rem, 5vw, 3.5rem);
+  --action-btn-size: 46px;
+  --action-btn-border-width: 1.5px;
+}
+
+// Customize navigation
+.navigation {
+  border-color: var(--primary-dark);
+  
+  a:hover {
+    color: var(--primary-light) !important;
+  }
+}
+
+// Customize links
+article {
+  a {
+    color: var(--primary-medium);
+    &:hover {
+      color: var(--primary-light);
+    }
+  }
+}
+
+// Add your custom styles below
+
