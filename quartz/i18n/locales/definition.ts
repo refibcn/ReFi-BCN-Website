@@ -62,6 +62,18 @@ export interface Translation {
     contentMeta: {
       readingTime: (variables: { minutes: number }) => string
     }
+    languageSwitcher: {
+      label: string
+      selectLanguage: string
+    }
+    navigation: {
+      about: string
+      events: string
+      regenerantCatalunya: string
+      ecosystemMap: string
+      contact: string
+      blog: string
+    }
   }
   pages: {
     rss: {

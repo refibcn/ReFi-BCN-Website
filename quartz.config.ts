@@ -6,6 +6,11 @@ import * as Plugin from "./quartz/plugins"
  *
  * See https://quartz.jzhao.xyz/configuration for more information.
  */
+
+// Support environment variables for multi-language builds
+const LOCALE = (process.env.QUARTZ_LOCALE as string) || "en-US"
+const CONTENT_DIR = (process.env.QUARTZ_CONTENT_DIR as string) || "content"
+
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "ReFi Barcelona",
@@ -15,7 +20,7 @@ const config: QuartzConfig = {
     analytics: {
       provider: "plausible",
     },
-    locale: "en-US",
+    locale: LOCALE as any,
     baseUrl: "refibcn.cat",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",

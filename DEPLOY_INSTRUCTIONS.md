@@ -12,7 +12,7 @@ The site is already configured with:
 Run these commands from the ReFi-BCN-Website directory:
 
 ```bash
-cd "/Users/luizfernando/Desktop/git/Zettelkasten/03 Libraries/ReFi-BCN-Website"
+cd "/Users/luizfernando/Desktop/Workspaces/Zettelkasten/03 Libraries/ReFi-BCN-Website"
 
 # Stage all changes
 git add .

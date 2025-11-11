@@ -59,6 +59,18 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) => `${minutes} min read`,
     },
+    languageSwitcher: {
+      label: "Language",
+      selectLanguage: "Select language",
+    },
+    navigation: {
+      about: "About",
+      events: "Events",
+      regenerantCatalunya: "Regenerant Catalunya",
+      ecosystemMap: "Ecosystem Map",
+      contact: "Contact",
+      blog: "Blog",
+    },
   },
   pages: {
     rss: {

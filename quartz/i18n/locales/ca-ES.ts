@@ -59,6 +59,18 @@ export default {
     contentMeta: {
       readingTime: ({ minutes }) => `Es llegeix en ${minutes} min`,
     },
+    languageSwitcher: {
+      label: "Idioma",
+      selectLanguage: "Selecciona l'idioma",
+    },
+    navigation: {
+      about: "Sobre nosaltres",
+      events: "Esdeveniments",
+      regenerantCatalunya: "Regenerant Catalunya",
+      ecosystemMap: "Mapa de l'ecosistema",
+      contact: "Contacte",
+      blog: "Blog",
+    },
   },
   pages: {
     rss: {

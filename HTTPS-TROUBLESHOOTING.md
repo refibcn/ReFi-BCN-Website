@@ -123,7 +123,7 @@ Or use online tools:
 
 **Check:**
 ```bash
-cd "/Users/luizfernando/Desktop/git/Zettelkasten/03 Libraries/ReFi-BCN-Website"
+cd "/Users/luizfernando/Desktop/Workspaces/Zettelkasten/03 Libraries/ReFi-BCN-Website"
 cat quartz/static/CNAME
 ```
 
@@ -216,7 +216,7 @@ dig refibcn.cat +short
 curl -I https://refibcn.cat
 
 # Check GitHub Pages deployment
-cd "/Users/luizfernando/Desktop/git/Zettelkasten/03 Libraries/ReFi-BCN-Website"
+cd "/Users/luizfernando/Desktop/Workspaces/Zettelkasten/03 Libraries/ReFi-BCN-Website"
 git log -1 --oneline
 ```
 
@@ -326,6 +326,16 @@ Always use these four IPs for A records:
 - Check DNS is correct in Cloudflare
 - Wait up to 24 hours for certificate provisioning
 - Use Cloudflare's "Always Use HTTPS" as a backup solution
+
+
+
+
+
+
+
+
+
+
 
 
 

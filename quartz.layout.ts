@@ -8,6 +8,7 @@ export const sharedPageComponents: SharedLayout = {
     Component.PageTitle(),
     Component.Navigation(),
     Component.Search(),
+    Component.LanguageSwitcher(),
   ],
   afterBody: [],
   footer: Component.Footer({
