@@ -1,0 +1,183 @@
+---
+description: Customization guide for theme, content, and components
+---
+
+# Customization Guide
+
+## Theme Customization
+
+### Colors
+
+Edit CSS variables in `quartz/styles/custom.scss`:
+
+```scss
+:root {
+  --primary-dark: #092045;      // Main color
+  --primary-medium: #1A3A6B;   // Links
+  --primary-light: #2E5491;    // Hover states
+}
+```
+
+### Typography
+
+Update fonts in `quartz.config.ts`:
+
+```typescript
+theme: {
+  typography: {
+    header: "Your Header Font",
+    body: "Your Body Font",
+    code: "Your Code Font",
+  },
+}
+```
+
+### Spacing
+
+Adjust layout spacing:
+
+```scss
+:root {
+  --layout-inline: clamp(1.5rem, 5vw, 3.5rem);
+}
+```
+
+## Content Structure
+
+### Homepage
+
+Edit `content/index.md` for homepage content.
+
+### Navigation
+
+Update navigation links in `quartz.layout.ts`:
+
+```typescript
+footer: Component.Footer({
+  links: {
+    "Your Site": "https://yourdomain.com",
+    "GitHub": "https://github.com/your-org/your-repo",
+  },
+}),
+```
+
+### Content Organization
+
+Organize content in `content/` directory:
+
+```
+content/
+├── index.md          # Homepage
+├── about.md          # About page
+├── blog/             # Blog posts
+└── docs/              # Documentation
+```
+
+## Component Customization
+
+### Custom Components
+
+Create custom components in `quartz/components/`:
+
+```typescript
+import { QuartzComponent, QuartzComponentConstructor } from "./types"
+
+const MyComponent: QuartzComponent = ({ displayClass }) => {
+  return <div class={displayClass}>My Component</div>
+}
+
+MyComponent.css = `
+.my-component {
+  /* styles */
+}
+`
+
+export default (() => MyComponent) satisfies QuartzComponentConstructor
+```
+
+### Override Existing Components
+
+Copy component from `quartz/components/` and modify:
+
+1. Copy component file
+2. Modify as needed
+3. Component will override default
+
+## Configuration Options
+
+### Site Metadata
+
+In `quartz.config.ts`:
+
+```typescript
+configuration: {
+  pageTitle: "Your Site Name",
+  baseUrl: "yourdomain.com",
+  locale: "en-US",
+}
+```
+
+### Plugins
+
+Enable/disable plugins in `quartz.config.ts`:
+
+```typescript
+plugins: {
+  transformers: [
+    // Add or remove transformers
+  ],
+  filters: [
+    // Add or remove filters
+  ],
+  emitters: [
+    // Add or remove emitters
+  ],
+}
+```
+
+## Deployment Customization
+
+### GitHub Pages
+
+Configure in `.github/workflows/deploy.yml`:
+
+```yaml
+env:
+  BASE_URL: yourdomain.com
+```
+
+### Custom Domain
+
+Add `CNAME` file in `quartz/static/`:
+
+```
+yourdomain.com
+```
+
+## Best Practices
+
+1. **Use CSS Variables**: Makes theming easier
+2. **Keep Customizations Documented**: Note changes in README
+3. **Test Responsively**: Check mobile and desktop
+4. **Version Control**: Commit customization changes
+5. **Sync Regularly**: Keep upstream changes in sync
+
+## Common Customizations
+
+### Change Color Scheme
+
+1. Update CSS variables in `custom.scss`
+2. Update theme colors in `quartz.config.ts`
+3. Test light and dark modes
+
+### Add Custom Pages
+
+1. Create markdown file in `content/`
+2. Add to navigation if needed
+3. Configure frontmatter
+
+### Modify Layout
+
+1. Edit `quartz.layout.ts`
+2. Add/remove components
+3. Adjust component order

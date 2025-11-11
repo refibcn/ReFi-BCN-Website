@@ -1,0 +1,94 @@
+---
+alwaysApply: true
+description: Quartz ReFi Template repository overview and structure
+---
+
+# Quartz ReFi Template - Overview
+
+## Template Purpose
+
+This is a **template repository** for creating Quartz-based websites for ReFi local nodes. It provides:
+
+- Modular package system for optional features
+- Upstream/downstream sync capability
+- Customizable theme architecture
+- Best practices for Quartz configuration
+
+## Repository Structure
+
+```
+quartz-refi-template/
+├── packages/              # Modular feature packages
+│   ├── core/              # Core Quartz setup (always included)
+│   ├── multilang/         # Multi-language support (optional)
+│   ├── analytics/         # Analytics integration (optional)
+│   ├── comments/          # Comments system (optional)
+│   ├── og-images/         # OG image generation (optional)
+│   └── theme/             # Theme architecture (always included)
+├── scripts/               # Setup and utility scripts
+├── .cursorrules/          # Cursor rules (this directory)
+├── docs/                  # Documentation
+└── quartz/                # Core Quartz framework files
+```
+
+## Package System
+
+The template uses a modular package system:
+
+- **Core**: Essential Quartz framework (always included)
+- **Theme**: Customizable theme architecture (always included)
+- **Multilang**: Multi-language support with LanguageSwitcher
+- **Analytics**: Plausible Analytics integration
+- **Comments**: Giscus comments system
+- **OG Images**: Custom Open Graph image generation
+
+## Key Files
+
+- `packages/core/quartz.config.ts.template` - Main configuration template
+- `packages/core/quartz.layout.ts.template` - Layout configuration template
+- `scripts/setup-packages.mjs` - Package installation script
+- `scripts/setup-cursor-rules.mjs` - Cursor rules generation script
+- `TEMPLATE-README.md` - Main template documentation
+
+## When Working in This Repository
+
+**This is a template repository for:**
+- Creating new Quartz websites for ReFi local nodes
+- Maintaining shared improvements across all forks
+- Documenting best practices and patterns
+
+**Template Maintainer Workflow:**
+1. Review PRs from downstream repositories
+2. Merge general improvements to template
+3. Tag releases (e.g., `v1.0.0`)
+4. Update documentation
+5. Notify downstream repositories of updates
+
+## Package Management
+
+To add a new package:
+1. Create package directory in `packages/`
+2. Add package files and README
+3. Update `scripts/setup-packages.mjs` to handle installation
+4. Update template configuration files with placeholders
+5. Document in `docs/PACKAGES.md`
+
+## Upstream/Downstream Workflow
+
+- **Upstream**: This template repository
+- **Downstream**: Forks using this template
+- **Sync**: Downstream repos can pull updates via `git fetch upstream`
+- **Contribute**: Downstream repos contribute back via PRs
+
+## Quick Reference
+
+**For Template Maintainers:**
+- Package structure: `packages/`
+- Setup scripts: `scripts/`
+- Documentation: `docs/`
+- Configuration templates: `packages/core/*.template`
+
+**For Downstream Users:**
+- See `docs/SETUP.md` for installation
+- See `docs/UPSTREAM-SYNC.md` for syncing updates
+- See `docs/PACKAGES.md` for package details

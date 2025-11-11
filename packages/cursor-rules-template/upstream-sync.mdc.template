@@ -1,0 +1,113 @@
+---
+description: Upstream sync instructions and contribution guidelines
+---
+
+# Upstream Sync
+
+## Upstream Repository
+
+**URL:** https://github.com/ReFiDAO/quartz-refi-template
+
+**Purpose:** Template repository for Quartz ReFi websites
+
+## Sync Frequency
+
+**Recommended:** Monthly sync window
+
+**Critical Updates:** Immediately (security, breaking bugs)
+
+## How to Sync
+
+### Using Sync Script
+
+```bash
+npm run sync:upstream
+# or
+node scripts/sync-upstream.mjs
+```
+
+### Manual Sync
+
+```bash
+# Fetch upstream changes
+git fetch upstream
+
+# Checkout main branch
+git checkout main
+
+# Merge upstream changes
+git merge upstream/main
+
+# Resolve conflicts if any
+# Push changes
+git push origin main
+```
+
+### Review Before Merging
+
+```bash
+# Create review branch
+git checkout -b review-upstream
+
+# Merge upstream
+git merge upstream/main
+
+# Review changes
+git diff main..review-upstream
+
+# If good, merge to main
+git checkout main
+git merge review-upstream
+```
+
+## Contributing Back
+
+### What to Contribute
+
+- Bug fixes in shared code
+- New features useful to all nodes
+- Documentation improvements
+- Package enhancements
+
+### What NOT to Contribute
+
+- Site-specific content
+- Custom color schemes (unless generalizable)
+- Domain-specific configurations
+- Local node branding
+
+### Contribution Process
+
+1. Fork template repository on GitHub
+2. Create feature branch
+3. Make changes and test
+4. Submit pull request
+5. Template maintainer reviews and merges
+
+## Conflict Resolution
+
+### Common Conflicts
+
+- `package.json` dependencies
+- `quartz.config.ts` settings
+- Component customizations
+
+### Resolution Strategy
+
+1. Keep template defaults where possible
+2. Document overrides in `CUSTOMIZATIONS.md`
+3. Resolve conflicts carefully
+
+## Version Management
+
+Template uses semantic versioning:
+- `v1.0.0` - Major release
+- `v1.1.0` - Minor release
+- `v1.1.1` - Patch release
+
+## Last Sync
+
+**Date:** {{LAST_SYNC_DATE}}
+**Version:** {{LAST_SYNC_VERSION}}
+**Notes:** {{SYNC_NOTES}}
+

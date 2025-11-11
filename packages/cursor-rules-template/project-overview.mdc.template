@@ -1,0 +1,86 @@
+---
+alwaysApply: true
+description: Site-specific project overview and context
+---
+
+# {{SITE_NAME}} - Project Overview
+
+## Organization Context
+**{{SITE_NAME}}** is {{MISSION_DESCRIPTION}}
+
+## Mission
+{{MISSION_STATEMENT}}
+
+## Core Activities
+{{CORE_ACTIVITIES}}
+
+## Core Team
+{{TEAM_MEMBERS}}
+
+## Website Purpose
+
+**This Repository Serves As:**
+- **Digital Home:** Primary web presence at https://{{BASE_URL}}
+- **Community Hub:** Information about events, initiatives, and how to get involved
+- **Ecosystem Gateway:** Entry point to the broader ReFi ecosystem
+- **Trust Builder:** Professional presentation of team, activities, and impact
+
+## Upstream Relationship
+
+**Template Repository:** https://github.com/ReFiDAO/quartz-refi-template
+
+**Last Synced:** {{LAST_SYNC_DATE}}
+
+**Customizations:**
+- {{CUSTOMIZATIONS}}
+
+## Repository Structure
+
+**Content Files:**
+- `content/index.md` - Homepage
+- `content/` - Site content
+
+**Styling:**
+- `quartz/styles/custom.scss` - Custom styles
+- `quartz/components/styles/` - Component-specific styles
+
+**Configuration:**
+- `quartz.config.ts` - Site metadata, base URL
+- `quartz.layout.ts` - Page layout, header/footer components
+- `.github/workflows/deploy.yml` - Automatic deployment
+
+## When Working in This Repository
+
+**This is a Quartz Website Repository for:**
+- Publishing {{SITE_NAME}}'s public web presence
+- Showcasing activities, events, and team
+- Providing information and calls-to-action
+- Connecting the community
+
+**Repository Workflow:**
+1. Edit content files in `content/` folder
+2. Edit styles in `quartz/styles/custom.scss`
+3. Preview locally: `npx quartz build --serve` (http://localhost:8080)
+4. Commit and push to `main` branch
+5. GitHub Actions automatically deploys to {{BASE_URL}}
+6. Changes live in ~1-2 minutes
+
+**Always Check First:**
+- Is the design consistent with existing patterns?
+- Does the content align with {{SITE_NAME}}'s mission?
+- Is the styling following the design system?
+- Will this work responsively on mobile?
+
+## Key Resources
+
+**Live Sites:**
+- Main Website: https://{{BASE_URL}}
+
+**External Links:**
+- GitHub Repository: https://github.com/{{GITHUB_ORG}}/{{GITHUB_REPO}}
+- Upstream Template: https://github.com/ReFiDAO/quartz-refi-template
+
+**Contact:**
+- Email: {{CONTACT_EMAIL}}
+- GitHub: @{{GITHUB_ORG}}
+

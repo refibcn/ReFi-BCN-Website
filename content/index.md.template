@@ -1,0 +1,23 @@
+---
+title: Welcome
+---
+
+# {{SITE_NAME}}
+
+Welcome to your Quartz ReFi website!
+
+## Getting Started
+
+Edit this file (`content/index.md`) to customize your homepage.
+
+## Next Steps
+
+1. Customize your theme in `quartz/styles/custom.scss`
+2. Add more content pages
+3. Configure your site in `quartz.config.ts`
+4. Deploy to GitHub Pages
+
+## Documentation
+
+See `docs/` directory for complete documentation.
+
