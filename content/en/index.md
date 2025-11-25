@@ -68,7 +68,7 @@ description: "Connecting Catalonia's regenerative movements with global innovati
 
 Together with local partners like **Miceli Social** and **La Fundició**, and global sponsors including **Gitcoin**, **Celo**, and the **Ethereum Foundation**, nearly **€30,000** will be allocated directly to regenerative projects — from restoring the **Fluvià river** to strengthening **solidarity-based community infrastructures** in Barcelona.
 
-<a href="https://regenerant-catalunya.refibcn.cat" class="cta-button">Learn More</a>
+<a href="https://regenerant.refibcn.cat/" class="cta-button">Learn More</a>
 
 </div>
 

@@ -68,7 +68,7 @@ description: "Connectant els moviments regeneratius de Catalunya amb les innovac
 
 Juntament amb socis locals com **Miceli Social** i **La Fundició**, i patrocinadors globals com **Gitcoin**, **Celo** i la **Ethereum Foundation**, gairebé **30.000€** s'assignaran directament a projectes regeneratius — des de la restauració del riu **Fluvià** fins al reforçament d'**infraestructures comunitàries basades en la solidaritat** a Barcelona.
 
-<a href="https://regenerant-catalunya.refibcn.cat" class="cta-button">Saber-ne més</a>
+<a href="https://regenerant.refibcn.cat/" class="cta-button">Saber-ne més</a>
 
 </div>
 

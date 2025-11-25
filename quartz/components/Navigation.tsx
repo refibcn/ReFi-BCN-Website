@@ -66,7 +66,7 @@ export default (() => {
           <ul id="nav-menu" class="nav-links">
             <li><a href={getHomepageHashLink(langPrefix, "about")}>{navCopy.about}</a></li>
             <li><a href={getHomepageHashLink(langPrefix, "events")}>{navCopy.events}</a></li>
-            <li><a href={getHomepageHashLink(langPrefix, "regenerant-catalunya")}>{navCopy.regenerantCatalunya}</a></li>
+            <li><a href="https://regenerant.refibcn.cat/">{navCopy.regenerantCatalunya}</a></li>
             <li><a href={getHomepageHashLink(langPrefix, "ecosystem-map")}>{navCopy.ecosystemMap}</a></li>
             <li><a href={getHomepageHashLink(langPrefix, "contact")}>{navCopy.contact}</a></li>
           </ul>

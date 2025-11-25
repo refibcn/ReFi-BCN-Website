@@ -3,7 +3,7 @@
     "logo": "assets/favicons.png",
     "title": "ReFi Barcelona",
     "links": [
-      { "href": "/regenerant-cat", "name": "Regenerant Catalunya" },
+      { "href": "https://regenerant.refibcn.cat/", "name": "Regenerant Catalunya" },
       { "href": "https://mapa.refibcn.cat", "name": "Ecosystem Map" },
       { "href": "/blog", "name": "Blog" },
       { "href": "mailto:hola@ReFiBCN.cat", "name": "Contact" }
