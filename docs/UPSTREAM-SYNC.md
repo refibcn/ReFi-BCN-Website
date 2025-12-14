@@ -6,6 +6,12 @@ How to sync improvements from the template repository to your fork.
 
 The template repository (`ReFiDAO/quartz-refi-template`) is the upstream source. Your fork is downstream. This guide explains how to pull updates from upstream.
 
+## Plain-language version (for operators)
+
+- **Your repo** (where you work): `origin`
+- **Template source repo** (where updates come from): `upstream`
+- **Syncing** = “pull template updates into your repo”
+
 ## Setting Up Upstream Remote
 
 ### Initial Setup
@@ -14,6 +20,12 @@ Add the upstream remote to your repository:
 
 ```bash
 git remote add upstream https://github.com/ReFiDAO/quartz-refi-template.git
+```
+
+If your `origin` is currently SSH and you want the simplest setup, switch it to HTTPS:
+
+```bash
+git remote set-url origin https://github.com/your-org/your-repo.git
 ```
 
 Verify it's added:
